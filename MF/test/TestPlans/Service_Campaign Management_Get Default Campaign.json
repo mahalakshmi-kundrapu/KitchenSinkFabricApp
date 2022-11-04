@@ -1,0 +1,146 @@
+{
+    "description": "This service is used to fetch default Campaign.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Get Default Campaign",
+    "url": "services/data/v1/CampaignManagementObjService/operations/defaultcampaign/getDefaultCampaign?",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "9051570",
+            "name": "Fetch Default Campaign",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "47132328",
+                    "path": "$.description",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "92828302",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "94470387",
+                    "path": "$.specifications.WEB.APPLY_FOR_NEW_ACCOUNT[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "14210585",
+                    "path": "$.specifications.WEB.APPLY_FOR_NEW_ACCOUNT[*].destinationURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "94983556",
+                    "path": "$.specifications.WEB.APPLY_FOR_NEW_ACCOUNT[*].imageResolution",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "41702006",
+                    "path": "$.specifications.WEB.APPLY_FOR_NEW_ACCOUNT[*].imageIndex",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "19744786",
+                    "path": "$.specifications.WEB.ACCOUNT_DASHBOARD[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "91181823",
+                    "path": "$.specifications.WEB.ACCOUNT_DASHBOARD[*].destinationURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "78942408",
+                    "path": "$.specifications.WEB.ACCOUNT_DASHBOARD[*].imageIndex",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "92139325",
+                    "path": "$.specifications.MOBILE.POST_LOGIN[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "47103112",
+                    "path": "$.specifications.MOBILE.PRE_LOGIN[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "60878373",
+                    "path": "$.specifications.MOBILE.ACCOUNT_DASHBOARD[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "69522504",
+                    "path": "$.httpStatusCode",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

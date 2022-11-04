@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+    hr {
+        border: 1px solid black;
+    }
+
+    #suiteResultsOverviewTable td,
+    #suiteResultsOverviewTable th,
+    #suiteExecutionOverviewTable td,
+    #suiteExecutionOverviewTable th {
+        padding: 8px;
+        border: 1px solid black;
+        word-wrap: break-word;
+    }
+
+    #suiteResultsSummaryTable td,
+    #suiteResultsSummaryTable th {
+        padding: 8px;
+        border: 1px solid black;
+        white-space: nowrap;
+    }
+
+    #suiteResultsOverviewTable .actionCell:hover {
+        cursor: pointer;
+        background-color: #e6f3ff;
+
+    }
+
+    #suiteResultsSummaryTable {
+        font-family: Helvetica, Arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    #suiteExecutionOverviewTable {
+        font-family: Helvetica, Arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    #suiteResultsOverviewTable {
+        font-family: Helvetica, Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .button {
+        font-weight: 700;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.3s;
+        /*  Safari */
+        transition-duration: 0.3s;
+        cursor: pointer;
+    }
+
+    .actionButton {
+        background-color: #F2F2F2;
+        color: black;
+        border: 1.5px solid #737373;
+    }
+
+    .actionButton:hover {
+        background-color: #E0E0E0;
+    }
+
+    .actionButton:active {
+        background-color: #A4A4A4;
+    }
+
+    #searchCriteria_input {
+        width: 100%;
+        padding: 6px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 10pt;
+    }
+
+    #responseTimeThreshold_input {
+        width: 30%;
+        padding: 6px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 10pt;
+    }
+
+    .testStatusSpan {
+        padding: 6px;
+        border-radius: 8px;
+        display: inline-block;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+
+    .testPrioritySpan {
+        padding: 6px;
+        border-radius: 8px;
+        display: inline-block;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<head>
+    <title>Fabric Services Test Report</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hAzNodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NjcyOSwgMjAxMi8wNS8wMy0xMzo0MDowMyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIEVsZW1lbnRzIDEyLjAgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QkM2QkYzNkI2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QkM2QkYzN0I2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRCQzZCRjM0QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRCQzZCRjM1QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/9sAQwAEAwMEAwMEBAQEBQUEBQcLBwcGBgcOCgoICxAO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"
+        style="position: absolute; left: 15px; top: 18px; z-index: -1;" height="82" width="92" />
+
+    <div>
+        <br>
+        <h1 align="center" style="font-family: Helvetica;">Fabric
+            Services - Test Report</h1>
+        <hr>
+    </div>
+
+    <div align="center">
+        <br> <br>
+
+        <table id="suiteExecutionOverviewTable">
+            <tr bgcolor="#EFF8FB">
+                <th style="font-size: 18px; text-align: center;" colspan="2">
+                    Test Suite Execution Overview</th>
+            </tr>
+            <tr>
+                <td width='35%'>Application</td>
+                <td id='appNameCell'></td>
+            </tr>
+            <tr>
+                <td width='35%'>Build Version</td>
+                <td id='appVersionCell'></td>
+            </tr>
+            <tr>
+                <td width='35%'>Test Suite Duration</td>
+                <td id='testDurationCell'></td>
+            </tr>
+            <tr>
+                <td>Test Suite Start Time</td>
+                <td id='testStartTimeCell'></td>
+            </tr>
+            <tr>
+                <td>Test Suite Completion Time</td>
+                <td id='testCompletionTimeCell'></td>
+            </tr>
+            <tr>
+                <td>Test Suite Initiated By</td>
+                <td id='testInitiatedByCell'></td>
+            </tr>
+            <tr>
+                <td>Test Environment Host URL</td>
+                <td id='testEnvironmentHostURLCell'></td>
+            </tr>
+        </table>
+        <br> <br> <br>
+
+        <table id="suiteResultsSummaryTable">
+            <tr bgcolor="#EFF8FB">
+                <th style="font-size: 18px; text-align: center;" colspan="2">
+                    Test Suite Results Summary</th>
+            </tr>
+            <tr>
+                <td width='35%'>Passed Test Cases</td>
+                <td id='passedCasesCountCell'></td>
+            </tr>
+            <tr>
+                <td>Failed Test Cases</td>
+                <td id='failedCasesCountCell'></td>
+            </tr>
+            <tr>
+                <td>Error Test Cases</td>
+                <td id='errorCasesCountCell'></td>
+            </tr>
+            <tr>
+                <td>Skipped Test Cases</td>
+                <td id='skippedCasesCountCell'></td>
+            </tr>
+            <tr>
+                <td>Total Test Cases</td>
+                <td id='totalCasesCountCell'></td>
+            </tr>
+            <tr>
+                <td>Percentage of Passed Test Cases</td>
+                <td id='passPercentageCell'></td>
+            </tr>
+        </table>
+        <br> <br> <br>
+
+        <table id="suiteResultsOverviewTable">
+            <tr bgcolor="#F2F2F2">
+                <th style="font-size: 18px; text-align: center;" colspan="8">
+                    Test Suite Results</th>
+            </tr>
+
+            <tr>
+                <td colspan="1" align='left' style="border-right-style:hidden;">
+                    Search:
+                </td>
+                <td colspan="7">
+                    <span>
+                        <input onkeyup="searchCriteria_input_onKeyup()" type='text' id='searchCriteria_input'
+                            placeholder='Service Name'>
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td colspan="2" align='center' style="border-top-style:hidden;border-right-style:hidden;">
+                    &nbsp;&nbsp;&nbsp;<label for="responseTimeThreshold_input">Response Time
+                        Threshold (ms):</label>&nbsp;
+                    <input onkeypress="responseTimeThreshold_input_onKeyPress(event)"
+                        onkeyup="responseTimeThreshold_input_onKeyup()" type='text' id='responseTimeThreshold_input'
+                        placeholder='Threshold Time (ms)'>
+                </td>
+
+
+                <td colspan="2" align='center' style="border-top-style:hidden;border-right-style:hidden;">
+                    <label for="testStatus_span"> Test Status:</label>&nbsp;&nbsp;
+                    <span class='testStatusSpan' id='testStatus_span'>
+                        <input type="checkbox" checked id='Pass_chk' onclick='chk_Pass_onclick(this)'
+                            name="P0_chk">&nbsp;Pass&nbsp;&nbsp;
+                        <input type="checkbox" checked id='Fail_chk' onclick='chk_Fail_onclick(this)'
+                            name="P2_chk">&nbsp;Fail&nbsp;&nbsp;
+                        <input type="checkbox" checked id='Slow_chk' onclick='chk_Slow_onclick(this)'
+                            name="P2_chk">&nbsp;Slow&nbsp;&nbsp;
+                        <input type="checkbox" checked id='Skip_chk' onclick='chk_Skip_onclick(this)'
+                            name="P1_chk">&nbsp;Skip&nbsp;&nbsp;
+                        <input type="checkbox" checked id='Error_chk' onclick='chk_Error_onclick(this)'
+                            name="P3_chk">&nbsp;Error
+                    </span>
+                </td>
+
+
+                <td colspan="4" align='center' style="border-top-style:hidden;">
+                    &nbsp;&nbsp;<label for="testPriority_span">Test Priority:</label>&nbsp;&nbsp;
+                    <span class='testPrioritySpan' id='testPriority_span'>
+                        <input type="checkbox" checked id='P0_chk' onclick='chk_P0_onclick(this)'
+                            name="P0_chk">&nbsp;P0&nbsp;&nbsp;
+                        <input type="checkbox" checked id='P1_chk' onclick='chk_P1_onclick(this)'
+                            name="P1_chk">&nbsp;P1&nbsp;&nbsp;
+                        <input type="checkbox" checked id='P2_chk' onclick='chk_P2_onclick(this)'
+                            name="P2_chk">&nbsp;P2&nbsp;&nbsp;
+                        <input type="checkbox" checked id='P3_chk' onclick='chk_P3_onclick(this)' name="P3_chk">&nbsp;P3
+                    </span>
+                </td>
+
+            </tr>
+
+            <tr bgcolor=" #EFF8FB">
+                <th style="font-size: 17px; text-align: center; width: 3%">S.No</th>
+                <th style="font-size: 18px; text-align: center; width: 24%">Service</th>
+                <th style="font-size: 18px; text-align: center; width: 24%">Test Case</th>
+                <th style="font-size: 18px; text-align: center; width: 18%">Message</th>
+                <th style="font-size: 18px; text-align: center; width: 7%">Status Code</th>
+                <th style="font-size: 18px; text-align: center; width: 7%">Priority</th>
+                <th style="font-size: 18px; text-align: center; width: 7%">Response Time (ms)</th>
+                <th style="font-size: 18px; text-align: center; width: 10%">Test Status</th>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div align='right'>
+        <button class="button actionButton" type="button" onclick='exportReport_btnClick()'
+            style="height: 35px; width: 13%">
+            Export Report&nbsp;&nbsp;<img
+                src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5Ljk3OCAyOS45NzgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5Ljk3OCAyOS45Nzg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMjUuNDYyLDE5LjEwNXY2Ljg0OEg0LjUxNXYtNi44NDhIMC40ODl2OC44NjFjMCwxLjExMSwwLjksMi4wMTIsMi4wMTYsMi4wMTJoMjQuOTY3YzEuMTE1LDAsMi4wMTYtMC45LDIuMDE2LTIuMDEyICAgdi04Ljg2MUgyNS40NjJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMTQuNjIsMTguNDI2bC01Ljc2NC02Ljk2NWMwLDAtMC44NzctMC44MjgsMC4wNzQtMC44MjhzMy4yNDgsMCwzLjI0OCwwczAtMC41NTcsMC0xLjQxNmMwLTIuNDQ5LDAtNi45MDYsMC04LjcyMyAgIGMwLDAtMC4xMjktMC40OTQsMC42MTUtMC40OTRjMC43NSwwLDQuMDM1LDAsNC41NzIsMGMwLjUzNiwwLDAuNTI0LDAuNDE2LDAuNTI0LDAuNDE2YzAsMS43NjIsMCw2LjM3MywwLDguNzQyICAgYzAsMC43NjgsMCwxLjI2NiwwLDEuMjY2czEuODQyLDAsMi45OTgsMGMxLjE1NCwwLDAuMjg1LDAuODY3LDAuMjg1LDAuODY3cy00LjkwNCw2LjUxLTUuNTg4LDcuMTkzICAgQzE1LjA5MiwxOC45NzksMTQuNjIsMTguNDI2LDE0LjYyLDE4LjQyNnoiIGZpbGw9IiMwMDAwMDAiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+        </button>
+    </div>
+    <br>
+    <hr><br>
+</body>
+
+<script>
+    /*Test Article Content - START*/
+    var dataJSON = "$$RESULT_JSON_CONTENT$$";
+    /*Test Article Content - END*/
+
+    var resultsJSON = dataJSON.services;
+    var metaJSON = dataJSON.suiteMeta;
+    var searchValue;
+    var isP0Checked = true;
+    var isP1Checked = true;
+    var isP2Checked = true;
+    var isP3Checked = true;
+    var isPassChecked = true;
+    var isFailChecked = true;
+    var isSlowChecked = true;
+    var isSkipChecked = true;
+    var isErrorChecked = true;
+
+    var responseTimeThresholdDefaultValue = 2000;
+
+    populateSuiteMetaTable();
+    populateSuiteSummaryTable();
+    setDefaultValues();
+    populateResultsTable();
+
+    //Function to set the default values of the DOM elements
+    function setDefaultValues() {
+        if (typeof responseTimeThresholdDefaultValue !== 'undefined' && !isNaN(responseTimeThresholdDefaultValue)) {
+            document.getElementById('responseTimeThreshold_input').value = responseTimeThresholdDefaultValue;
+        }
+    }
+
+    //Function to handle on-click event of Pass_chk checkbox
+    function chk_Pass_onclick(chkBox) {
+        isPassChecked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of Fail_chk checkbox
+    function chk_Fail_onclick(chkBox) {
+        isFailChecked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of Slow_chk checkbox
+    function chk_Slow_onclick(chkBox) {
+        isSlowChecked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of Skip_chk checkbox
+    function chk_Skip_onclick(chkBox) {
+        isSkipChecked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of Error_chk checkbox
+    function chk_Error_onclick(chkBox) {
+        isErrorChecked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of chk_P0 checkbox
+    function chk_P0_onclick(chkBox) {
+        isP0Checked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of chk_P1 checkbox
+    function chk_P1_onclick(chkBox) {
+        isP1Checked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of chk_P2 checkbox
+    function chk_P2_onclick(chkBox) {
+        isP2Checked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-click event of chk_P3 checkbox
+    function chk_P3_onclick(chkBox) {
+        isP3Checked = chkBox.checked;
+        refreshResultsTable();
+    }
+
+    //Function to populate Meta Data of the Test Suite
+    function populateSuiteMetaTable() {
+        try {
+            if (metaJSON == undefined) {
+                return;
+            }
+            if (!isEmptyVar(metaJSON.appName)) {
+                document.getElementById('appNameCell').innerHTML = metaJSON.appName;
+            }
+            if (!isEmptyVar(metaJSON.appVersion)) {
+                document.getElementById('appVersionCell').innerHTML = metaJSON.appVersion;
+            }
+            document.getElementById('testDurationCell').innerHTML = metaJSON.testDuration + " ms";
+            document.getElementById('testStartTimeCell').innerHTML = metaJSON.testStartDateTime;
+            document.getElementById('testCompletionTimeCell').innerHTML = metaJSON.testCompletionDateTime;
+            document.getElementById('testEnvironmentHostURLCell').innerHTML = metaJSON.hostURL;
+            document.getElementById('testInitiatedByCell').innerHTML = metaJSON.testSuiteTriggeredBy;
+        } catch (err) {
+            console.error(err);
+            alert("Unexpected Error. Check console log for details.")
+        }
+    }
+
+    //Function to populate Summary of the Test Suite
+    function populateSuiteSummaryTable() {
+        try {
+            if (metaJSON == undefined) {
+                return;
+            }
+
+            document.getElementById('passedCasesCountCell').innerHTML = metaJSON.passedCases;
+            if (!isNaN(metaJSON.passedCases) && metaJSON.passedCases > 0) {
+                document.getElementById('passedCasesCountCell').style.color = "#619C45";
+            }
+
+            document.getElementById('failedCasesCountCell').innerHTML = metaJSON.failedCases;
+            if (!isNaN(metaJSON.failedCases) && metaJSON.failedCases > 0) {
+                document.getElementById('failedCasesCountCell').style.color = "#e60000";
+            }
+
+            document.getElementById('errorCasesCountCell').innerHTML = metaJSON.errorCases;
+            if (!isNaN(metaJSON.errorCases) && metaJSON.errorCases > 0) {
+                document.getElementById('errorCasesCountCell').style.color = "#e60000";
+            }
+
+            document.getElementById('skippedCasesCountCell').innerHTML = metaJSON.skippedCases;
+            if (!isNaN(metaJSON.skippedCases) && metaJSON.skippedCases > 0) {
+                document.getElementById('skippedCasesCountCell').style.color = "#b3b3b3";
+            }
+
+            document.getElementById('totalCasesCountCell').innerHTML = metaJSON.totalCases;
+
+            var passPecentage = metaJSON.passPercentage;
+            var passPercentageCell = document.getElementById('passPercentageCell');
+            document.getElementById('passPercentageCell').innerHTML = passPecentage + "%";
+            passPercentageCell.style.backgroundImage = '-webkit-linear-gradient(left, #8cc171 ' + passPecentage +
+                '%, #F2F2F2 0%)';
+
+        } catch (err) {
+            console.error(err);
+            alert("Unexpected Error. Check console log for details.")
+        }
+    }
+
+    //Function to handle on-key-up event of searchCriteria_input textbox
+    function searchCriteria_input_onKeyup() {
+        searchValue = document.getElementById("searchCriteria_input").value;
+        refreshResultsTable();
+    }
+
+    //Function to handle on-key-press event of responseTimeThreshold_input textbox
+    function responseTimeThreshold_input_onKeyPress(evt) {
+        var theEvent = evt || window.event;
+
+        // Handle paste
+        if (theEvent.type === 'paste') {
+            key = event.clipboardData.getData('text/plain');
+        } else {
+            // Handle key press
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+            // key = evt.target.value;
+        }
+
+        //Validate Input
+        var regex = /[0-9]/;
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) {
+                theEvent.preventDefault();
+            }
+        }
+    }
+
+    //Function to handle on-key-up event of responseTimeThreshold_input textbox
+    function responseTimeThreshold_input_onKeyup() {
+        refreshResultsTable();
+    }
+
+    //Function to refresh the Test Results Table
+    function refreshResultsTable() {
+        clearResultsTable();
+        populateResultsTable();
+    }
+
+    //Function to delete entries from the Results Table
+    function clearResultsTable() {
+        var suiteOverviewTable = document.getElementById("suiteResultsOverviewTable");
+        var currCountOfRows = suiteOverviewTable.rows.length;
+        for (var index = 4; index < currCountOfRows; index++) {
+            suiteOverviewTable.deleteRow(-1);
+        }
+    }
+
+    //Function to perform case-insensitive contains check
+    function isContainsIgnoreCase(sourceString, searchValue) {
+        if (typeof sourceString == "string" && typeof searchValue == "string") {
+            return sourceString.trim().toLowerCase().includes(searchValue.trim().toLowerCase());
+        }
+        return false;
+    }
+
+    //Function to determine if the Service is to be displayed as per the Filter Criteria
+    function isServiceTobeDisplayed(serviceInfo) {
+        try {
+
+            // Compare against Search Field Value when Search Field is populated
+            if (!isEmptyVar(searchValue)) {
+                //Compare Service Name
+                if (!isContainsIgnoreCase(serviceInfo.serviceName, searchValue)) {
+                    return false;
+                }
+            }
+
+            // Traverse Test Cases of Service to see if any of the Test-Case matches the Test Case Priority Settings
+            var currServiceTests = serviceInfo.tests;
+            for (var currTest in currServiceTests) {
+                if (isTestTobeDisplayed(currServiceTests[currTest]) === true) {
+                    return true;
+                }
+            }
+
+            return false;
+
+        } catch (err) {
+            console.error(err);
+            return false;
+        }
+    }
+
+    //Function to determine if a test-case 
+    function isSlowTest(testInfo) {
+        try {
+            var responseTimeThreshold = document.getElementById('responseTimeThreshold_input').value;
+            if (typeof responseTimeThreshold !== 'undefined' && responseTimeThreshold !== "" && !isNaN(
+                    responseTimeThreshold)) {
+                return testInfo.responseTime > responseTimeThreshold;
+            }
+            return false;
+        } catch (err) {
+            return false;
+        }
+    }
+
+    //Function to determine if the TestCase is to be displayed as per the Filter Criteria
+    function isTestTobeDisplayed(testInfo) {
+        try {
+            var isCriteriaMet = true;
+
+            //First Check - Test Priority
+            isP0Checked = document.getElementById('P0_chk').checked;
+            isP1Checked = document.getElementById('P1_chk').checked;
+            isP2Checked = document.getElementById('P2_chk').checked;
+            isP3Checked = document.getElementById('P3_chk').checked;
+            isCriteriaMet = (
+                (isP0Checked === true && testInfo.testPriority == "P0") ||
+                (isP1Checked === true && testInfo.testPriority == "P1") ||
+                (isP2Checked === true && testInfo.testPriority == "P2") ||
+                (isP3Checked === true && testInfo.testPriority == "P3")
+            );
+            if (isCriteriaMet === false) {
+                return false;
+            }
+
+            /* 
+             * A test is considered to be SLOW only if the test status is PASS 
+             * and the response time does not fall in the set ideal limit
+             */
+
+            //Second Check - Test Status
+            if (testInfo.testStatus == "PASS") {
+                //Passed Test
+                if (isPassChecked === true) {
+                    if (isSlowChecked === false && isSlowTest(testInfo) === true) {
+                        //If isSlow is not checked and if test case is slow, return false
+                        return false;
+                    } else {
+                        //If isSlow is checked return true
+                        return true;
+                    }
+                } else {
+                    if (isSlowChecked === true && isSlowTest(testInfo) === true) {
+                        return true;
+                    }
+                }
+                return false;
+            } else if (isFailChecked === true && testInfo.testStatus == "FAIL") {
+                //Failed Test
+                return true;
+            } else if (isSkipChecked === true && testInfo.testStatus == "SKIP") {
+                //Skipped Test
+                return true;
+            } else if (isErrorChecked === true && testInfo.testStatus == "ERROR") {
+                //Error in Test Execution
+                return true;
+            } else {
+                //Default return value
+                return false;
+            }
+            return isCriteriaMet;
+        } catch (err) {
+            console.error(err);
+            return false;
+        }
+    }
+
+    //Function to get the Service document of the passed Service
+    function getServiceDocument(serviceInfo) {
+        try {
+            if (serviceInfo) {
+                var serviceInfoStr = JSON.stringify(serviceInfo);
+                var htmlContent =
+                    "<!DOCTYPE html><html><head> <title>Service Overview</title> <style>h4, p, a{font-family: Helvetica, Arial, sans-serif;}table{border-collapse: collapse; font-family: Helvetica, Arial, sans-serif; width: 100%;}th{padding: 8px; border: 1px solid black;}.noWrapCell{padding: 8px; border: 1px solid black; white-space: nowrap;}.wrapCell{padding: 8px; border: 1px solid black; word-wrap: break-word;}td, tr{padding: 8px; border: 1px solid black;}tr:nth-child(even){background-color: #f2f2f2;}</style></head><body><img src='data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hAzNodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NjcyOSwgMjAxMi8wNS8wMy0xMzo0MDowMyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIEVsZW1lbnRzIDEyLjAgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QkM2QkYzNkI2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QkM2QkYzN0I2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRCQzZCRjM0QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRCQzZCRjM1QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/9sAQwAEAwMEAwMEBAQEBQUEBQcLBwcGBgcOCgoICxAO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' style='position: absolute;display: block; left: 15px; top: 18px;' height='62' width='72'/><br><h2 align='center' style='font-family: Helvetica;'>Fabric Service Overview</h2> <hr> <br><table> <tr bgcolor='#8cb3d9'> <td width='20%'></td><td></td></tr><tr> <td width='20%'><b>Name</b></td><td id='service_Name_td'></td></tr><tr> <td width='20%'><b>URL</b></td><td id='service_URL_td'></td></tr><tr> <td width='20%'><b>HTTP Method</b></td><td id='service_Method_td'></td></tr><tr> <td width='20%'><b>Description</b></td><td id='service_Desc_td'></td></tr></table> <br><h3 align='center' style='font-family: Helvetica;'>Input/Output Fields Description</h3> <div> <table id='serviceDescription_InputFieldsTable'> <tr bgcolor='#8cb3d9'> <th style='text-align: left; color: black' colspan='4'>Input Fields</th> </tr><tr><th width='35%'>Field</th> <th width='45%'>Description</th> <th width='15%'>Range</th> <th width='5%'>isMandatory</th> </tr></table> <br><br><table id='serviceDescription_OutputFieldsTable'> <tr bgcolor='#8cb3d9'> <th style='text-align: left; color: black' colspan='4'>Output Fields</th> </tr><tr> <th width='35%'>Field</th> <th width='45%'>Description</th> <th width='15%'>Range</th> <th width='5%'>isMandatory</th> </tr></table> <br><h3 align='center' style='font-family: Helvetica;'>Service Scenarios</h3> <table id='serviceDescription_scenarioTable'> <tr bgcolor='#8cb3d9'> <th style='text-align: left; color: black' colspan='3'>Handled Payloads</th> </tr><tr> <th width='30%' nowrap='nowrap'>Scenario</th> <th nowrap='nowrap'>Request Body</th> <th nowrap='nowrap'>Response Body</th> </tr></table> </div><script type='text/javascript'> var documentJSON=" +
+                    serviceInfoStr +
+                    "; setServiceDocument(); function setServiceDocument(){if (documentJSON){if (documentJSON.serviceName){document.getElementById('service_Name_td').innerHTML=documentJSON.serviceName;}if (documentJSON.URL){document.getElementById('service_URL_td').innerHTML=documentJSON.URL;}if (documentJSON.httpMethod){document.getElementById('service_Method_td').innerHTML=documentJSON.httpMethod;}if (documentJSON.serviceDescription){document.getElementById('service_Desc_td').innerHTML=documentJSON.serviceDescription;}/*Set Input Parameters Description*/ var inputFieldsDocument=documentJSON.inputFieldsDocument; if (inputFieldsDocument){tableReferece=document.getElementById('serviceDescription_InputFieldsTable'); for (var index=0; index < inputFieldsDocument.length; index++){/*Add New Row*/ currRow=tableReferece.insertRow(-1); /*Field Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=inputFieldsDocument[index].name; currCell.className='noWrapCell'; /*Description Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=inputFieldsDocument[index].description; /*Is Mandatory Cell*/ currCell=currRow.insertCell(-1); if (inputFieldsDocument[index].isMandatory){currCell.innerHTML='<img src=\"data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNC41MDIsNzUuNDk2Yy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTgtMzYuMjA0LDBMMTYxLjU5NCwzODIuMjAzTDQzLjcwMiwyNjQuMzExYy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTctMzYuMjA0LDAgICAgYy05Ljk5OCw5Ljk5Ny05Ljk5OCwyNi4yMDUsMCwzNi4yMDNsMTM1Ljk5NCwxMzUuOTkyYzkuOTk0LDkuOTk3LDI2LjIxNCw5Ljk5LDM2LjIwNCwwTDUwNC41MDIsMTExLjcgICAgQzUxNC41LDEwMS43MDMsNTE0LjQ5OSw4NS40OTQsNTA0LjUwMiw3NS40OTZ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==\"/>'}currCell.style.textAlign='center'; /*Range Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=inputFieldsDocument[index].range;}}/*Set Output Parameters Description */ var outputFieldsDocument=documentJSON.outputFieldsDocument; if (outputFieldsDocument){tableReferece=document.getElementById('serviceDescription_OutputFieldsTable'); for (var index=0; index < outputFieldsDocument.length; index++){/*Add New Row*/ currRow=tableReferece.insertRow(-1); /*Field Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=outputFieldsDocument[index].name; currCell.className='noWrapCell'; /*Description Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=outputFieldsDocument[index].description; /*Is Mandatory Cell*/ currCell=currRow.insertCell(-1); if (outputFieldsDocument[index].isMandatory){currCell.innerHTML='<img src=\"data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNC41MDIsNzUuNDk2Yy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTgtMzYuMjA0LDBMMTYxLjU5NCwzODIuMjAzTDQzLjcwMiwyNjQuMzExYy05Ljk5Ny05Ljk5OC0yNi4yMDUtOS45OTctMzYuMjA0LDAgICAgYy05Ljk5OCw5Ljk5Ny05Ljk5OCwyNi4yMDUsMCwzNi4yMDNsMTM1Ljk5NCwxMzUuOTkyYzkuOTk0LDkuOTk3LDI2LjIxNCw5Ljk5LDM2LjIwNCwwTDUwNC41MDIsMTExLjcgICAgQzUxNC41LDEwMS43MDMsNTE0LjQ5OSw4NS40OTQsNTA0LjUwMiw3NS40OTZ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==\"/>'}currCell.style.textAlign='center'; /*Range Cell*/ currCell=currRow.insertCell(-1); currCell.innerHTML=outputFieldsDocument[index].range;}}/*Set Service Scenarios */ var currRequestBody; var currServiceTests=documentJSON.tests; tableReferece=document.getElementById('serviceDescription_scenarioTable'); for (var currTest in currServiceTests){if (currServiceTests[currTest].testStatus=='PASS'){currRequestBody=stringifyJSON(currServiceTests[currTest].requestBody);}currRow=tableReferece.insertRow(-1); currCell=currRow.insertCell(-1); currCell.innerHTML=currTest; currCell.className='noWrapCell'; currCell=currRow.insertCell(-1); if (currServiceTests[currTest].requestBody){currCell.innerHTML=stringifyJSON(currServiceTests[currTest].requestBody);}currCell=currRow.insertCell(-1); if (currServiceTests[currTest].responseBody){currCell.innerHTML=stringifyJSON(currServiceTests[currTest].responseBody);}}}}function stringifyJSON(sourceJSON){try{var json={}; if (isEmptyVar(sourceJSON)){return sourceJSON;}if (typeof sourceJSON=='string'){json=JSON.parse(sourceJSON);}else{json=sourceJSON;}var stringifiedJSON=JSON.stringify(json, null, 4); stringifiedJSON=stringifiedJSON.split(\" \").join('&nbsp;'); stringifiedJSON=stringifiedJSON.split('\\n').join('<br>'); return stringifiedJSON;}catch (err){console.warn(err); console.log('Returning sourceJSON as it is...'); return sourceJSON;}}function isEmptyVar(testVar){try{if (testVar==null || testVar==undefined || testVar==''){return true;}return false;}catch (err){console.error(err); alert('Unexpected Error. Check console log for details');}}</scr" +
+                    "ipt></body></html>";
+                return htmlContent;
+            }
+        } catch (err) {
+            console.error(err);
+            return "Error in constructing service document. Check Console log.";
+        }
+
+    }
+    //Function to populate the Results Table
+    function populateResultsTable() {
+        try {
+            var suiteOverviewTable = document.getElementById("suiteResultsOverviewTable");
+            var currServiceCell, currIndexCell;
+            var currRow, currCell;
+            var indexVar = 0;
+            var currService;
+            var currRowSpan = 0;
+            var currServiceTests;
+            var currTestStatus;
+            var isSlowService;
+            var currColorCode;
+            var currTestStatusCellColorCode;
+
+            var isSearchCriteriaMatch;
+
+            for (var testPlanIndex = 0; testPlanIndex < metaJSON.testPlanExecutionOrder.length; testPlanIndex++) {
+                currService = metaJSON.testPlanExecutionOrder[testPlanIndex];
+
+                //JSON object aggregating basic info about the current service
+                var currServiceInfo = {};
+                currServiceInfo.serviceName = currService;
+                currServiceInfo.URL = resultsJSON[currService].serviceURL;
+                currServiceInfo.httpMethod = resultsJSON[currService].serviceHTTPMethod;
+                currServiceInfo.serviceDescription = resultsJSON[currService].serviceDescription;
+                currServiceInfo.inputFieldsDocument = resultsJSON[currService].inputFieldsDocument;
+                currServiceInfo.outputFieldsDocument = resultsJSON[currService].outputFieldsDocument;
+                currServiceInfo.passedCases = resultsJSON[currService].passedCases;
+                currServiceInfo.failedCases = resultsJSON[currService].failedCases;
+                currServiceInfo.tests = resultsJSON[currService].tests;
+
+                if (isServiceTobeDisplayed(currServiceInfo) === false) {
+                    continue;
+                }
+
+                //Display friendly string aggregating basic info about the current service
+                var currServiceInfoStr = getServiceDocument(currServiceInfo);
+                var currServiceSummaryCount = "Service Name: " + currService + "\n\n" +
+                    "URL: " + resultsJSON[currService].serviceURL + "\n\n" +
+                    "Service HTTP Method: " + resultsJSON[currService].serviceHTTPMethod + "\n\n" +
+                    "Passed Cases  : " + resultsJSON[currService].passedCases + "\n\n" +
+                    "Failed Cases  : " + resultsJSON[currService].failedCases + "\n\n" +
+                    "Error Cases   : " + resultsJSON[currService].errorCases + "\n\n" +
+                    "Skipped Cases : " + resultsJSON[currService].skippedCases;
+
+                //Index of current service
+                indexVar++;
+
+                //Reset the Row Span Count of current service. Value set as per the count of test cases in current service
+                currRowSpan = 0;
+
+                //Adding a Row at the current end postion of the table
+                currRow = suiteOverviewTable.insertRow(-1);
+
+                //'Index Cell' of current Service
+                currIndexCell = currRow.insertCell(-1);
+                currIndexCell.innerHTML = indexVar;
+                currIndexCell.className = 'actionCell';
+                $(currIndexCell).data('content', currServiceSummaryCount, null, 4);
+                $(currIndexCell).data('alertType', 'alert');
+
+                //'Service Name' cell of current Service
+                currServiceCell = currRow.insertCell(-1);
+                currServiceCell.innerHTML = currService;
+                currServiceCell.className = 'actionCell';
+                $(currServiceCell).data('content', currServiceInfoStr, null, 4);
+                $(currServiceCell).data('alertType', 'window');
+
+                //List of tests of current Service
+                currServiceTests = resultsJSON[currService].tests;
+                for (var currTest in currServiceTests) {
+
+                    if (isTestTobeDisplayed(currServiceTests[currTest]) === false) {
+                        continue;
+                    }
+
+                    //Increment the currRowSpan count for each test
+                    currRowSpan++;
+
+                    //Status of current Test
+                    currTestStatus = currServiceTests[currTest].testStatus;
+                    if (currTestStatus == 'PASS') {
+                        currColorCode = "#619C45";
+                    } else if (currTestStatus == 'FAIL') {
+                        currColorCode = "#e60000";
+                    } else if (currTestStatus == 'ERROR') {
+                        currColorCode = "#e60000";
+                    } else if (currTestStatus == 'SKIP') {
+                        currColorCode = "#b3b3b3";
+                    }
+                    currTestStatusCellColorCode = currColorCode;
+
+                    //Set color code to #ffa64d if service is regarded to be a slow service
+                    if (currTestStatus == 'PASS') {
+                        if (isSlowTest(currServiceTests[currTest]) === true) {
+                            //Passed but slow response time
+                            currTestStatus = 'SLOW';
+                            currTestStatusCellColorCode = "#ffa64d";
+                        } else {
+                            // Passed with response time
+                            currTestStatusCellColorCode = "#619C45";
+                        }
+                    }
+
+                    var cellContents = "";
+                    if (currTestStatus != 'SKIP') {
+                        cellContents = "<style> " +
+                            "table { border-collapse:collapse;font-family: Helvetica, Arial, sans-serif;border-collapse: collapse;width: 100%;}" +
+                            "td,tr { padding: 8px; border: 1px solid black;word-wrap: break-word;}" +
+                            "</style> " +
+                            "<br><table>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#DADCDD'><b>Test</b></td>" +
+                            "<td style=\"font-weight:bold;text-align: center;\"> " +
+                            currTest + ": " + "<span style=\"font-weight:bold;text-align: center; color:" +
+                            currColorCode + "\">" + getValidationStatus(currTestStatus) + "</span></td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#F2F2F2'><b>Request Body</b></td>" +
+                            "<td><p>" + stringifyJSON(currServiceTests[currTest].requestBody) + "</p></td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#DADCDD'><b>Request Headers</b></td>" +
+                            "<td><p>" + stringifyJSON(currServiceTests[currTest].requestHeaders) + "</p></td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#F2F2F2'><b>Response Body Assertions</b></td>" +
+                            "<td>" + getResponseAssertionAsMessage(currServiceTests[currTest]
+                                .responseBodyAssertions,
+                                currServiceTests[currTest].validationMessage, currServiceTests[currTest]
+                                .responseBody) +
+                            "</td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#DADCDD'><b>Response Body</b></td>" +
+                            "<td><p>" + stringifyJSON(currServiceTests[currTest].responseBody) + "</p></td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#F2F2F2'><b>Response Header Assertions</b></td>" +
+                            "<td>" + getResponseAssertionAsMessage(currServiceTests[currTest]
+                                .responseHeaderAssertions,
+                                currServiceTests[currTest].validationMessage, currServiceTests[currTest]
+                                .responseBody) +
+                            "</td>" +
+                            "</tr>" +
+
+                            "<tr>" +
+                            "<td nowrap='nowrap' bgcolor='#DADCDD'><b>Response Headers</b></td>" +
+                            "<td><p>" + stringifyJSON(currServiceTests[currTest].responseHeaders) + "</p></td>" +
+                            "</tr>" +
+
+                            "</table><br>";
+                    }
+
+                    //'Test Name' cell
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = currTest;
+                    if (currTestStatus != 'SKIP') {
+                        var testNameCellContent = cellContents;
+                        currCell.className = 'actionCell';
+                        $(currCell).data('testName', currService + "-" + currTest);
+                        $(currCell).data('content', testNameCellContent, null, 4);
+                        $(currCell).data('alertType', "window");
+                    }
+
+                    //'Test Message' cell
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = "Test Skipped"
+                    if (currTestStatus != 'SKIP') {
+                        var testMessageCellContent = cellContents
+                        currCell.innerHTML = getValidationMessageSummary(currServiceTests[currTest]
+                            .validationMessage,
+                            currServiceTests[currTest].testStatus);
+                        currCell.className = 'actionCell';
+                        $(currCell).data('testName', currService + "-" + currTest);
+                        $(currCell).data('content', testMessageCellContent, null, 4);
+                        $(currCell).data('alertType', "window");
+                    }
+
+                    //'Test Status Code' cell 
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = currServiceTests[currTest].statusCode;
+                    currCell.style.textAlign = "center";
+
+                    //'Test Priority' cell 
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = currServiceTests[currTest].testPriority;
+                    currCell.style.textAlign = "center";
+
+                    //'Test Duration' cell
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = currServiceTests[currTest].responseTime;
+                    currCell.style.textAlign = "center";
+
+                    //'Test Status' cell
+                    currCell = currRow.insertCell(-1);
+                    currCell.innerHTML = currTestStatus;
+                    currCell.style.textAlign = "center";
+                    currCell.style.color = currTestStatusCellColorCode;
+
+                    //To prevent an extra row and the end of each Service
+                    if (currRowSpan !== Object.keys(currServiceTests).length) {
+                        currRow = suiteOverviewTable.insertRow(-1);
+                    }
+
+                }
+
+                /*Set the Row Span of the current Index Cell and the current Service Cell
+                to span the number of rows equal to the number of test cases of current Service*/
+                currIndexCell.rowSpan = currRowSpan;
+                currServiceCell.rowSpan = currRowSpan;
+
+            }
+            addListeners();
+        } catch (err) {
+            console.error(err);
+            alert("Unexpected Error. Check console log for details.")
+        }
+    }
+
+    function addListeners() {
+        //Function to handle event listeners to Test Result Table Cells
+        document.querySelectorAll('#suiteResultsOverviewTable td')
+            .forEach(e => e.addEventListener("click", function () {
+
+                var alertType = $(this).data('alertType');
+                var content = $(this).data('content');
+
+                if (content !== undefined) {
+
+                    if (alertType == 'alert') {
+                        alert(content);
+                        return;
+                    } else {
+                        var testName = $(this).data('testName');
+                        var windowContent;
+                        if (!isEmptyVar(testName)) {
+                            windowContent = "<html><head><title>" +
+                                testName + "</title></head><body>" +
+                                "<br>" +
+                                content +
+                                "</body></html>"
+                        } else {
+                            windowContent = content;
+                            console.log(windowContent);
+                        }
+                        var messageWindow = window.open("", "_blank");
+                        messageWindow.document.write(windowContent);
+                    }
+                }
+            }));
+    }
+
+    //Function to Stringify JSON
+    function stringifyJSON(sourceJSON) {
+        try {
+            var json = {};
+            if (isEmptyVar(sourceJSON)) {
+                return sourceJSON;
+            }
+            if (typeof sourceJSON == 'string') {
+                json = JSON.parse(sourceJSON);
+            } else {
+                json = sourceJSON;
+            }
+            //sourceJSON is a string - PARSE IT TO JSON
+            var stringifiedJSON = JSON.stringify(json, null, 4);
+            stringifiedJSON = stringifiedJSON.split(" ").join("&nbsp;");
+            stringifiedJSON = stringifiedJSON.split("\n").join("<br>");
+            return stringifiedJSON;
+        } catch (err) {
+            console.warn(err);
+            console.log("Returning sourceJSON as it is...");
+            return sourceJSON;
+        }
+    }
+
+    //Function to get the Assertion Message as a display friendly message
+    function getValidationMessageSummary(validationMessage, testStatus) {
+        if (validationMessage == null) {
+            return null;
+        }
+
+        if (testStatus == "ERROR") {
+            return "Error in Test Execution";
+        }
+
+        if (testStatus == "SKIP") {
+            return "Test Skipped";
+        }
+
+        try {
+            var currArr = JSON.parse(validationMessage);
+            var count = 0;
+            for (var curr in currArr) {
+                if (currArr[curr] != "-") {
+                    count++;
+                }
+            }
+            if (count == 0) {
+                return "0 Failed Assertions";
+            } else if (count == 1) {
+                return "1 Failed Assertion";
+            } else {
+                return count + " Failed Assertions";
+            }
+
+        } catch (err) {
+            return validationMessage;
+        }
+    }
+
+    function getResponseAssertionAsMessage(responseAssertions, validationMessage, responseBody) {
+        try {
+            if (isEmptyVar(responseAssertions)) {
+                return "None";
+            }
+            var count = 0;
+            var response = "";
+            var currJSON;
+            var currValue, currType;
+            var isPassedAssertion = false;
+            var currColorCode;
+            var assertionResult;
+
+            for (var currAssertion in responseAssertions) {
+                count++;
+                isPassedAssertion = false;
+                currColorCode = "#e60000";
+                try {
+                    currJSON = JSON.parse(validationMessage);
+                    assertionResult = currJSON[responseAssertions[currAssertion].id];
+                    if (currJSON[responseAssertions[currAssertion].id] == "-") {
+                        //Passed Assertion
+                        assertionResult = 'Pass';
+                        isPassedAssertion = true;
+                        currColorCode = "#000000";
+                    }
+                } catch (err) {
+                    // Unparseable validation message
+                    assertionResult = validationMessage;
+                }
+
+                response = response + "<b><span style=\"color:" + currColorCode + "\">Assertion " + count +
+                    ":</span></b>" +
+                    "<br>&nbsp;&nbsp;&nbsp" + "Path:&nbsp" + responseAssertions[currAssertion].path + "" +
+                    "<br>&nbsp;&nbsp;&nbsp" + "Is Value Agnostic:&nbsp" + responseAssertions[currAssertion]
+                    .isValueAgnostic +
+                    "<br>&nbsp;&nbsp;&nbsp" + "Expected Type:&nbsp" + responseAssertions[currAssertion].dataType;
+
+                if (responseAssertions[currAssertion].isValueAgnostic === false) {
+                    response = response + "<br>&nbsp;&nbsp;&nbsp" + "Expected Value:&nbsp'" + responseAssertions[
+                            currAssertion].value + "'" +
+                        "<br>&nbsp;&nbsp;&nbsp" + "Operator:&nbsp'" + responseAssertions[currAssertion].operator + "'";
+                }
+
+                try {
+                    //Parse response body and fetch response value
+                    currValue = jsonPath(JSON.parse(responseBody), responseAssertions[currAssertion].path);
+                    if (currValue === false) {
+                        //JSONPath returns false if the element is not found.
+                        currValue = "";
+                    }
+                } catch (err) {
+                    //Response Body is not a JSON String
+                    currValue = "COULD NOT PARSE";
+                }
+                response = response + "<br>&nbsp;&nbsp;&nbsp" + "Response Value:&nbsp'" + currValue + "'";
+                response = response + "<br>&nbsp;&nbsp;&nbsp" + "Assertion Result:&nbsp;" + assertionResult;
+
+                if (count !== responseAssertions.length) {
+                    response = response + "<br><br>";
+                }
+            }
+            return response.trim();
+        } catch (err) {
+            console.error(err);
+            alert("Unexpected Error. Check console log for details.")
+        }
+    }
+
+    function getArrayAsHTMLMessage(inputArray) {
+        var response;
+        var count = 0;
+        for (var currEle in inputArray) {
+            response = response + inputArray[currEle];
+            count++;
+            if (count !== inputArray.length) {
+                response = response + "<br>";
+            }
+        }
+    }
+
+    function getValidationStatus(testStatus) {
+        if (testStatus == 'PASS' || testStatus == 'SLOW') {
+            return "Pass";
+        } else if (testStatus == "FAIL") {
+            return "Fail";
+        } else if (testStatus == "SKIP") {
+            return "-";
+        }
+        return "Mismatch";
+    }
+
+    //Function to check if the variable does not have any content
+    function isEmptyVar(testVar) {
+        if (testVar == null || testVar == undefined || testVar == "") {
+            return true;
+        }
+        return false;
+    }
+
+    //Function to export the report the report
+    function exportReport_btnClick() {
+        try {
+            let dataStr = $('html').html();
+            let dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+
+            let exportFileDefaultName = "Fabric Services Report-" + metaJSON.appName + "-v" + metaJSON.appVersion +
+                ".html";
+
+            let linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        } catch (err) {
+            console.error(err);
+            alert("Unexpected Error. Check console log for details.")
+        }
+    }
+    /* JSONPath 0.8.0 - XPath for JSON
+     *
+     * Copyright (c) 2007 Stefan Goessner (goessner.net)
+     * Licensed under the MIT (MIT-LICENSE.txt) licence.
+     */
+    function jsonPath(obj, expr, arg) {
+        var P = {
+            resultType: arg && arg.resultType || "VALUE",
+            result: [],
+            normalize: function (expr) {
+                var subx = [];
+                return expr.replace(/[\['](\??\(.*?\))[\]']/g, function ($0, $1) {
+                        return "[#" + (subx.push($1) - 1) + "]";
+                    })
+                    .replace(/'?\.'?|\['?/g, ";")
+                    .replace(/;;;|;;/g, ";..;")
+                    .replace(/;$|'?\]|'$/g, "")
+                    .replace(/#([0-9]+)/g, function ($0, $1) {
+                        return subx[$1];
+                    });
+            },
+            asPath: function (path) {
+                var x = path.split(";"),
+                    p = "$";
+                for (var i = 1, n = x.length; i < n; i++)
+                    p += /^[0-9*]+$/.test(x[i]) ? ("[" + x[i] + "]") : ("['" + x[i] + "']");
+                return p;
+            },
+            store: function (p, v) {
+                if (p) P.result[P.result.length] = P.resultType == "PATH" ? P.asPath(p) : v;
+                return !!p;
+            },
+            trace: function (expr, val, path) {
+                if (expr) {
+                    var x = expr.split(";"),
+                        loc = x.shift();
+                    x = x.join(";");
+                    if (val && val.hasOwnProperty(loc))
+                        P.trace(x, val[loc], path + ";" + loc);
+                    else if (loc === "*")
+                        P.walk(loc, x, val, path, function (m, l, x, v, p) {
+                            P.trace(m + ";" + x, v, p);
+                        });
+                    else if (loc === "..") {
+                        P.trace(x, val, path);
+                        P.walk(loc, x, val, path, function (m, l, x, v, p) {
+                            typeof v[m] === "object" && P.trace("..;" + x, v[m], p + ";" + m);
+                        });
+                    } else if (/,/.test(loc)) { // [name1,name2,...]
+                        for (var s = loc.split(/'?,'?/), i = 0, n = s.length; i < n; i++)
+                            P.trace(s[i] + ";" + x, val, path);
+                    } else if (/^\(.*?\)$/.test(loc)) // [(expr)]
+                        P.trace(P.eval(loc, val, path.substr(path.lastIndexOf(";") + 1)) + ";" + x, val,
+                            path);
+                    else if (/^\?\(.*?\)$/.test(loc)) // [?(expr)]
+                        P.walk(loc, x, val, path, function (m, l, x, v, p) {
+                            if (P.eval(l.replace(/^\?\((.*?)\)$/, "$1"), v[m], m)) P.trace(m + ";" + x,
+                                v,
+                                p);
+                        });
+                    else if (/^(-?[0-9]*):(-?[0-9]*):?([0-9]*)$/.test(
+                            loc)) // [start:end:step]  phyton slice syntax
+                        P.slice(loc, x, val, path);
+                } else
+                    P.store(path, val);
+            },
+            walk: function (loc, expr, val, path, f) {
+                if (val instanceof Array) {
+                    for (var i = 0, n = val.length; i < n; i++)
+                        if (i in val)
+                            f(i, loc, expr, val, path);
+                } else if (typeof val === "object") {
+                    for (var m in val)
+                        if (val.hasOwnProperty(m))
+                            f(m, loc, expr, val, path);
+                }
+            },
+            slice: function (loc, expr, val, path) {
+                if (val instanceof Array) {
+                    var len = val.length,
+                        start = 0,
+                        end = len,
+                        step = 1;
+                    loc.replace(/^(-?[0-9]*):(-?[0-9]*):?(-?[0-9]*)$/g, function ($0, $1, $2, $3) {
+                        start = parseInt($1 || start);
+                        end = parseInt($2 || end);
+                        step = parseInt($3 || step);
+                    });
+                    start = (start < 0) ? Math.max(0, start + len) : Math.min(len, start);
+                    end = (end < 0) ? Math.max(0, end + len) : Math.min(len, end);
+                    for (var i = start; i < end; i += step)
+                        P.trace(i + ";" + expr, val, path);
+                }
+            },
+            eval: function (x, _v, _vname) {
+                try {
+                    return $ && _v && eval(x.replace(/@/g, "_v"));
+                } catch (e) {
+                    throw new SyntaxError("jsonPath: " + e.message + ": " + x.replace(/@/g, "_v").replace(
+                        /\^/g,
+                        "_a"));
+                }
+            }
+        };
+
+        var $ = obj;
+        if (expr && obj && (P.resultType == "VALUE" || P.resultType == "PATH")) {
+            P.trace(P.normalize(expr).replace(/^\$;/, ""), obj, "$");
+            return P.result.length ? P.result : false;
+        }
+    }
+</script>
+
+</html>

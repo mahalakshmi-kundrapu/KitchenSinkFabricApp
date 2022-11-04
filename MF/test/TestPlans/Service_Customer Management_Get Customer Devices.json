@@ -1,0 +1,150 @@
+{
+  "name" : "Get Customer Devices",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerDevice/GetCustomerDevices",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the customer device information<br>",
+  "tests" : [ {
+    "id" : "59434008",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"$filter\":\"Customer_username eq 'dbpolbuser'\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "40452029",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "59612355",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "74579183",
+    "name" : "Fetch Customer Devices",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "40979867",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "97969335",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "79772000",
+      "path" : "$.customer_device_information_view[*].Device_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "$filter",
+    "description" : "Required. ODATA query to filter the customer device information. Eg. {\"$filter\":\"customer_Id eq 1\"} where 1 is the customer_id",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "customer_device_information_view.Customer_id",
+    "description" : "Customer id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Channel_id",
+    "description" : "Channel id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.LastLoginTime",
+    "description" : "Last login time",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Device_id",
+    "description" : "Device id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Status_id",
+    "description" : "Status id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Status_name",
+    "description" : "status description",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.DeviceName",
+    "description" : "Device name",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.LastUsedIp",
+    "description" : "Last used IP",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Registered_Date",
+    "description" : "Registered timestamp",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view.Channel_Description",
+    "description" : "Channel in which the device is registered",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_device_information_view",
+    "description" : "JSON array of customer device information",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

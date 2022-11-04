@@ -1,0 +1,28 @@
+{
+  "operationConfig" : {
+    "name" : "downloadCustomerResults4395",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CustomerManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "downloadCustomerResults"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "Customer",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

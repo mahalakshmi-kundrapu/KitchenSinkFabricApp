@@ -1,0 +1,138 @@
+{
+  "name" : "Get List of Customers And Groups",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/getListOfCustomersAndGroups",
+  "moduleName" : "Admin Dashboard",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "17979863",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "89095490",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "71127738",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "92823831",
+    "name" : "Fetch List of Customers And Groups Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "67176902",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "13068861",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "37131749",
+      "path" : "$.customerInfo[*].customer_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "75242028",
+      "path" : "$.customerInfo[*].customer_Username",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "groupNames",
+    "description" : "List of all the groups",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_MiddleName",
+    "description" : "Customer's MiddleName",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Username",
+    "description" : "Customer's Username",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Gender",
+    "description" : "Customer's Gender",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Salutation",
+    "description" : "Customer's Salutation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_FirstName",
+    "description" : "Customer's FirstName",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customercommunication_Value",
+    "description" : "Customer's Communication Value.Ex:Phone number,EMail ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_LastName",
+    "description" : "Customer's LastName",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

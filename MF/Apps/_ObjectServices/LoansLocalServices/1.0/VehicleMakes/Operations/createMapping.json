@@ -1,0 +1,35 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_vehiclemakes_create6514",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"request_in\" outputpath=\"request_out\">\n        <exec-function name=\"kony.string:concat\" output=\"$vars\" outputpath=\"result1\">\n            <set-arg inputpath=\"VehicleTypeId\"/>\n            <set-arg name=\"input2\" input=\"-\"/>\n            <set-arg inputpath=\"MakeId\"/>\n        </exec-function>\n        <set-param inputpath=\"$vars/result1\" outputpath=\"id\"/>\n        <set-param inputpath=\"MakeId\" outputpath=\"MakeId\"/>\n        <set-param inputpath=\"MakeName\" outputpath=\"MakeName\"/>\n        <set-param inputpath=\"ParentVehicleTypeName\" outputpath=\"ParentVehicleTypeName\"/>\n        <set-param inputpath=\"VehicleTypeId\" outputpath=\"VehicleTypeId\"/>\n        <set-param inputpath=\"VehicleTypeName\" outputpath=\"VehicleTypeName\"/>\n    </map>\n</mapper>\n",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"vehiclemakes\" outputpath=\"VehicleMakes\"><set-param inputpath=\"VehicleTypeId\" outputpath=\"VehicleTypeId\"/><set-param inputpath=\"VehicleTypeName\" outputpath=\"VehicleTypeName\"/><set-param inputpath=\"ParentVehicleTypeName\" outputpath=\"ParentVehicleTypeName\"/><set-param inputpath=\"MakeId\" outputpath=\"MakeId\"/><set-param inputpath=\"MakeName\" outputpath=\"MakeName\"/><set-param inputpath=\"id\" outputpath=\"id\"/></map></map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"VehicleMakes\",\"xy\":\"169 100\",\"__gohashid\":211},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"ConsumerLendingDB (1.0).dbxdb_vehiclemakes_create\",\"xy\":\"770 100\",\"__gohashid\":212},{\"key\":\"block:kony.string:concat:1\",\"name\":\"kony.string:stringConcatenate\",\"text\":\"String Concatenate\",\"category\":\"functionTemplateNTo1\",\"outPortId\":\"result1\",\"outPortText\":\"result\",\"valueArray\":[{\"inPortId\":\"input1\",\"inPortText\":\"value\",\"__gohashid\":3961},{\"inPortId\":\"input2\",\"inPortText\":\"value\",\"__gohashid\":4305},{\"inPortId\":\"input3\",\"inPortText\":\"value\",\"__gohashid\":4359}],\"loc\":\"460 101\",\"__gohashid\":3862,\"visible\":true},{\"key\":\"block:kony.util:constant:1\",\"name\":\"kony.basic:constant\",\"text\":\"Constant\",\"category\":\"functionTemplateConstant\",\"outPortId\":\"-\",\"outPortText\":\"value\",\"loc\":\"185 366\",\"__gohashid\":4064,\"visible\":true}],\"linkDataArray\":[{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5313,\"from\":\"source:VehicleMakes:VehicleTypeId:\",\"to\":\"block:kony.string:concat:1\",\"fromPort\":\"source:VehicleMakes:VehicleTypeId:\",\"toPort\":\"input1\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5790,\"from\":\"block:kony.util:constant:1\",\"to\":\"block:kony.string:concat:1\",\"fromPort\":\"-\",\"toPort\":\"input2\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5983,\"from\":\"source:VehicleMakes:MakeId:\",\"to\":\"block:kony.string:concat:1\",\"fromPort\":\"source:VehicleMakes:MakeId:\",\"toPort\":\"input3\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":6440,\"from\":\"source:VehicleMakes:MakeId:\",\"to\":\"target:MakeId:\",\"fromPort\":\"source:VehicleMakes:MakeId:\",\"toPort\":\"target:MakeId:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":6746,\"from\":\"source:VehicleMakes:MakeName:\",\"to\":\"target:MakeName:\",\"fromPort\":\"source:VehicleMakes:MakeName:\",\"toPort\":\"target:MakeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":7017,\"from\":\"source:VehicleMakes:ParentVehicleTypeName:\",\"to\":\"target:ParentVehicleTypeName:\",\"fromPort\":\"source:VehicleMakes:ParentVehicleTypeName:\",\"toPort\":\"target:ParentVehicleTypeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":9641,\"from\":\"source:VehicleMakes:VehicleTypeId:\",\"to\":\"target:VehicleTypeId:\",\"fromPort\":\"source:VehicleMakes:VehicleTypeId:\",\"toPort\":\"target:VehicleTypeId:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":10082,\"from\":\"source:VehicleMakes:VehicleTypeName:\",\"to\":\"target:VehicleTypeName:\",\"fromPort\":\"source:VehicleMakes:VehicleTypeName:\",\"toPort\":\"target:VehicleTypeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":33420,\"from\":\"block:kony.string:concat:1\",\"to\":\"target:id:\",\"fromPort\":\"result1\",\"toPort\":\"target:id:\"}],\"blockCount\":{\"variableCount\":1,\"stringConcatenate\":1,\"constant\":1},\"variableMap\":{\"result1\":true},\"xmlMappingOverride\":false}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_vehiclemakes_create"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "VehicleMakes",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

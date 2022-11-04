@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.kony.adminconsole</groupId>
+		<artifactId>AdminConsoleAggregator</artifactId>
+		<version>4.2.6.116</version>
+	</parent>
+
+	<artifactId>ArtifactsManager</artifactId>
+	<name>Kony Digital Banking Artifacts Manager</name>
+	<description>This module manages all the artifacts that are needed by Kony Digital Banking Admin Console application.</description>
+	<packaging>pom</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>AdminConsoleCommons</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>AdminConsoleCommons</artifactId>
+			<version>${project.version}</version>
+			<classifier>encryption-utils</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>AdminConsoleServices</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>LogServices</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.dbp</groupId>
+			<artifactId>LoansServices</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>AdminConsoleDBMigrations</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.adminconsole</groupId>
+			<artifactId>LogServicesDBMigrations</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.dbp</groupId>
+			<artifactId>DBPFramework</artifactId>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<project.repo.dir>${project.basedir}/../../..</project.repo.dir>
+		<project.dist.folder.name>release</project.dist.folder.name>
+		<project.dist.dir>${project.repo.dir}/${project.dist.folder.name}</project.dist.dir>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.dist.dir}</directory>
+							<excludes>
+								<exclude>templates/**/*</exclude>
+							</excludes>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>package-binaries-tools</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<outputDirectory>${project.repo.dir}</outputDirectory>
+							<attach>false</attach>
+							<descriptors>
+								<descriptor>${project.basedir}/assembly/copy-binaries.xml</descriptor>
+								<descriptor>${project.basedir}/assembly/copy-tools.xml</descriptor>
+							</descriptors>
+							<finalName>${project.dist.folder.name}</finalName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>package-adminconsole-app</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<outputDirectory>${project.dist.dir}/apps</outputDirectory>
+							<attach>false</attach>
+							<descriptors>
+								<descriptor>${project.basedir}/assembly/copy-adminconsole-app.xml</descriptor>
+							</descriptors>
+							<finalName>KonyBankingAdminConsole-${project.version}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

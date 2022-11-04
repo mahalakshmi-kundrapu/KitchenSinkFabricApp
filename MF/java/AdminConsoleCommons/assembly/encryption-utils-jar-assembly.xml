@@ -1,0 +1,32 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+	<id>encryption-utils</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<includes>
+				<include>commons-codec:commons-codec</include>
+				<include>commons-cli:commons-cli</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+	<files>
+		<file>
+			<outputDirectory>com/kony/adminconsole/commons/crypto/</outputDirectory>
+			<source>${project.build.outputDirectory}/com/kony/adminconsole/commons/crypto/EncryptionUtils.class</source>
+		</file>
+		<file>
+			<outputDirectory>com/kony/adminconsole/commons/tools/</outputDirectory>
+			<source>${project.build.outputDirectory}/com/kony/adminconsole/commons/tools/EncryptionCLI.class</source>
+		</file>
+	</files>
+
+</assembly>

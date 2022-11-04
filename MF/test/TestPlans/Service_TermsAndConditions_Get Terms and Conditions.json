@@ -1,0 +1,169 @@
+{
+    "name": "Get Terms and Conditions",
+    "url": "services/data/v1/TermsAndConditionsObjService/operations/termsandconditions/getTermsAndConditions",
+    "moduleName": "TermsAndConditions",
+    "httpMethod": "POST",
+    "description": "Get service to get terms and conditions for consumer facing apps like Retail Banking, Consumer Lending and New User Onboarding.",
+    "tests": [
+        {
+            "id": "7706243",
+            "name": "Empty_Payload",
+            "identityService": "KonyBankingAdminConsoleAPIIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "X-Kony-AC-API-Access-By": "OLB"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "10477582",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "operator": "equals",
+                    "value": "0",
+                    "variableName": null,
+                    "isNullable": false,
+                    "isValueAgnostic": false
+                },
+                {
+                    "id": "94926281",
+                    "path": "$.termAndConditionContent",
+                    "dataType": "string",
+                    "operator": "",
+                    "value": "",
+                    "variableName": null,
+                    "isNullable": true,
+                    "isValueAgnostic": true
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "62197238",
+            "name": "RequestContentUsingCode",
+            "testSequence": 2,
+            "requestBody": "{\"termAndConditionCode\":\"RB_Footer_T&C\"}",
+            "testPriority": "P0",
+            "securityLevel": "AuthenticatedAppUser",
+            "customAuthBody": "",
+            "identityService": "KonyBankingAdminConsoleAPIIdentityService",
+            "isCustomAuthTest": false,
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "X-Kony-AC-API-Access-By": "OLB"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "60259040",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "operator": "equals",
+                    "value": "0",
+                    "variableName": null,
+                    "isNullable": false,
+                    "isValueAgnostic": false
+                },
+                {
+                    "id": "22124109",
+                    "path": "$.termAndConditionContent",
+                    "dataType": "string",
+                    "operator": "",
+                    "value": "",
+                    "variableName": null,
+                    "isNullable": true,
+                    "isValueAgnostic": true
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "95753723",
+            "name": "RequestContentUsingLanguageId",
+            "testSequence": 3,
+            "requestBody": "{\"languageCode\":\"en-US\"}",
+            "testPriority": "P0",
+            "securityLevel": "AuthenticatedAppUser",
+            "customAuthBody": "",
+            "identityService": "KonyBankingAdminConsoleAPIIdentityService",
+            "isCustomAuthTest": false,
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "X-Kony-AC-API-Access-By": "OLB"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "29480508",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "operator": "equals",
+                    "value": "0",
+                    "variableName": null,
+                    "isNullable": false,
+                    "isValueAgnostic": false
+                },
+                {
+                    "id": "84223819",
+                    "path": "$.termAndConditionContent",
+                    "dataType": "string",
+                    "operator": "",
+                    "value": "",
+                    "variableName": null,
+                    "isNullable": true,
+                    "isValueAgnostic": true
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "11258061",
+            "name": "Multilingual Test",
+            "testSequence": 4,
+            "requestBody": "{\"termAndConditionCode\":\"RB_Footer_T&C\",\"languageCode\":\"en-US\"}",
+            "testPriority": "P0",
+            "securityLevel": "AuthenticatedAppUser",
+            "customAuthBody": "",
+            "identityService": "KonyBankingAdminConsoleAPIIdentityService",
+            "isCustomAuthTest": false,
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "X-Kony-AC-API-Access-By": "OLB"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "50840632",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "operator": "equals",
+                    "value": "0",
+                    "variableName": null,
+                    "isNullable": false,
+                    "isValueAgnostic": false
+                },
+                {
+                    "id": "82058629",
+                    "path": "$.termAndConditionContent",
+                    "dataType": "string",
+                    "operator": "",
+                    "value": "",
+                    "variableName": null,
+                    "isNullable": true,
+                    "isValueAgnostic": true
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthHeaders": {}
+        }
+    ],
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "inputFieldsDescription": {},
+    "outputFieldsDescription": {}
+}

@@ -1,0 +1,38 @@
+{
+  "serviceType" : "integration",
+  "jars" : [ {
+    "name" : "sql2o-1.5.4.jar",
+    "type" : "jar"
+  }, {
+    "name" : "owasp-java-html-sanitizer-20180219.1.jar",
+    "type" : "jar"
+  }, {
+    "name" : "AdminConsoleCommons.jar",
+    "type" : "jar"
+  }, {
+    "name" : "LogServices.jar",
+    "type" : "jar"
+  }, {
+    "name" : "DBPFramework.jar",
+    "type" : "servicejar"
+  }, {
+    "name" : "commons-csv-1.5.jar",
+    "type" : "jar"
+  }, {
+    "name" : "poi-ooxml-schemas-3.9.jar",
+    "type" : "jar"
+  }, {
+    "name" : "xmlbeans-2.3.0.jar",
+    "type" : "jar"
+  }, {
+    "name" : "poi-3.9.jar",
+    "type" : "jar"
+  }, {
+    "name" : "dom4j-1.6.1.jar",
+    "type" : "dependentJar"
+  }, {
+    "name" : "poi-ooxml-3.9.jar",
+    "type" : "jar"
+  } ],
+  "description" : "All of the external dependency libraries of Customer360 have been tagged to this Java Service. This Java Service has no operations and is used only to manage the dependency libraries."
+}

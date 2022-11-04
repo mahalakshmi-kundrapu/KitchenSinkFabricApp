@@ -1,0 +1,73 @@
+{
+  "operationConfig" : {
+    "name" : "GetLoanProductJava1245",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">      <map inputpath=\"response_in\" outputpath=\"response_out\">      <set-param inputpath=\"dbpErrCode\" outputpath=\"dbpErrCode\" />                                                                        <set-param inputpath=\"dbpErrMsg\" outputpath=\"dbpErrMsg\" />     <map inputpath=\"loanproduct\" outputpath=\"LoanProduct\">\t              <set-param inputpath=\"LoanType_id\" outputpath=\"LoanType_id\"/>\t              <set-param inputpath=\"MinLimitAmount\" outputpath=\"MinLimitAmount\"/>\t              <set-param inputpath=\"MaxLimitAmount\" outputpath=\"MaxLimitAmount\"/>\t              <set-param inputpath=\"Name\" outputpath=\"Name\"/>\t              <set-param inputpath=\"Description\" outputpath=\"Description\"/>\t              <set-param inputpath=\"Code\" outputpath=\"Code\"/>\t              <set-param inputpath=\"Image\" outputpath=\"Image\"/>\t              <set-param inputpath=\"AtAGlance\" outputpath=\"AtAGlance\"/>\t              <set-param inputpath=\"APR\" outputpath=\"APR\"/>\t              <set-param inputpath=\"AnnualFee\" outputpath=\"AnnualFee\"/>\t              <set-param inputpath=\"Rewards\" outputpath=\"Rewards\"/>                  <set-param inputpath=\"createdby\" outputpath=\"createdby\"/>                  <set-param inputpath=\"createdts\" outputpath=\"createdts\"/>                  <set-param inputpath=\"id\" outputpath=\"id\"/>                  <set-param inputpath=\"lastmodifiedts\" outputpath=\"lastmodifiedts\"/>                  <set-param inputpath=\"modifiedby\" outputpath=\"modifiedby\"/>                  <set-param inputpath=\"softdeleteflag\" outputpath=\"softdeleteflag\"/>                  <set-param inputpath=\"synctimestamp\" outputpath=\"synctimestamp\"/>            </map>      </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"LoanProduct\",\"xy\":\"770 100\",\"__gohashid\":277},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"dbpLoansLocalServicesJava (1.0).GetLoanProductJava\",\"xy\":\"150 100\",\"__gohashid\":278}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:LoanProduct\",\"fromPort\":\"target\",\"toPort\":\"target:LoanProduct\",\"visible\":true,\"common\":false,\"__gohashid\":773},{\"from\":\"target:LoanProduct\",\"to\":\"target:LoanProduct:fields\",\"fromPort\":\"target:LoanProduct\",\"toPort\":\"target:LoanProduct:fields\",\"visible\":true,\"common\":false,\"__gohashid\":774},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:AnnualFee:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:AnnualFee:\",\"visible\":true,\"common\":false,\"__gohashid\":775},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:APR:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:APR:\",\"visible\":true,\"common\":false,\"__gohashid\":776},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:AtAGlance:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:AtAGlance:\",\"visible\":true,\"common\":false,\"__gohashid\":777},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:Code:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:Code:\",\"visible\":true,\"common\":false,\"__gohashid\":778},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:createdby:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":779},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:createdts:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":780},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:Description:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:Description:\",\"visible\":true,\"common\":false,\"__gohashid\":781},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:id:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:id:\",\"visible\":true,\"common\":false,\"__gohashid\":782},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:Image:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:Image:\",\"visible\":true,\"common\":false,\"__gohashid\":783},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:lastmodifiedts:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":784},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:LoanType_id:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:LoanType_id:\",\"visible\":true,\"common\":false,\"__gohashid\":785},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:MaxLimitAmount:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:MaxLimitAmount:\",\"visible\":true,\"common\":false,\"__gohashid\":786},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:MinLimitAmount:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:MinLimitAmount:\",\"visible\":true,\"common\":false,\"__gohashid\":787},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:modifiedby:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":788},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:Name:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:Name:\",\"visible\":true,\"common\":false,\"__gohashid\":789},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:Rewards:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:Rewards:\",\"visible\":true,\"common\":false,\"__gohashid\":790},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:softdeleteflag:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":791},{\"from\":\"target:LoanProduct:fields\",\"to\":\"target:LoanProduct:synctimestamp:\",\"fromPort\":\"target:LoanProduct:fields\",\"toPort\":\"target:LoanProduct:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":792}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "GetLoanProductJava"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "LoanProduct",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

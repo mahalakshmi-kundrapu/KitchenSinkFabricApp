@@ -1,0 +1,13 @@
+{
+  "serviceType" : "integration",
+  "jars" : [ {
+    "name" : "AdminConsoleServices.jar",
+    "type" : "jar"
+  }, {
+    "name" : "LoansServices.jar",
+    "type" : "jar"
+  }, {
+    "name" : "AdminConsoleCommons.jar",
+    "type" : "jar"
+  } ]
+}

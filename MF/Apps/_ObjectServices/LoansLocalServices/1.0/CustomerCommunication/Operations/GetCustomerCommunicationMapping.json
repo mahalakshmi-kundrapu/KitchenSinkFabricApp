@@ -1,0 +1,30 @@
+{
+  "operationConfig" : {
+    "name" : "CustomerCommunicationGet7255",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">    <map inputpath=\"request_in\" outputpath=\"request_out\">        <set-param inputpath=\"EMail\" outputpath=\"EMail\"/>      </map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"CustomerCommunication\",\"xy\":\"150 100\",\"__gohashid\":267},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"dbpLoansLocalServicesJava (1.0).CustomerCommunicationGet\",\"xy\":\"770 100\",\"__gohashid\":268}],\"linkDataArray\":[{\"from\":\"source\",\"to\":\"source:CustomerCommunication\",\"fromPort\":\"source\",\"toPort\":\"source:CustomerCommunication\",\"visible\":true,\"common\":false,\"__gohashid\":231},{\"from\":\"source:CustomerCommunication\",\"to\":\"source:CustomerCommunication:fields\",\"fromPort\":\"source:CustomerCommunication\",\"toPort\":\"source:CustomerCommunication:fields\",\"visible\":true,\"common\":false,\"__gohashid\":232},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:createdby:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":233},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:createdts:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":234},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:Customer_id:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:Customer_id:\",\"visible\":true,\"common\":false,\"__gohashid\":235},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:Description:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:Description:\",\"visible\":true,\"common\":false,\"__gohashid\":236},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:Extension:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:Extension:\",\"visible\":true,\"common\":false,\"__gohashid\":237},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:id:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:id:\",\"visible\":true,\"common\":false,\"__gohashid\":238},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:isPrimary:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:isPrimary:\",\"visible\":true,\"common\":false,\"__gohashid\":239},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:lastmodifiedts:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":240},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:modifiedby:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":241},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:softdeleteflag:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":242},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:synctimestamp:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":243},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:Type_id:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:Type_id:\",\"visible\":true,\"common\":false,\"__gohashid\":244},{\"from\":\"source:CustomerCommunication:fields\",\"to\":\"source:CustomerCommunication:Value:\",\"fromPort\":\"source:CustomerCommunication:fields\",\"toPort\":\"source:CustomerCommunication:Value:\",\"visible\":true,\"common\":false,\"__gohashid\":245},{\"from\":\"target\",\"to\":\"target:parameters\",\"fromPort\":\"target\",\"toPort\":\"target:parameters\",\"visible\":true,\"common\":false,\"__gohashid\":246},{\"from\":\"target:parameters\",\"to\":\"target:EMail:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:EMail:\",\"visible\":true,\"common\":false,\"__gohashid\":247}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "CustomerCommunicationGet"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "CustomerCommunication",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : false
+  }
+}

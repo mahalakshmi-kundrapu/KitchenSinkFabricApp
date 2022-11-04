@@ -1,0 +1,256 @@
+{
+  "name" : "Get Alert Categories",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertcategory/getCustomerAlertCategories",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used fetch the Alert Categories of the Customer.",
+  "tests" : [ {
+    "id" : "37874801",
+    "name" : "Default Locale",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "87126454",
+      "path" : "$.records[*].alertcategory_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "2686314",
+      "path" : "$.records[*].alertcategory_Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "89021836",
+      "path" : "$.records[*].alertcategory_status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "49863116",
+      "path" : "$.records[0].alertcategorytext_DisplayName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "44688624",
+      "path" : "$.records[0].alertcategory_DisplaySequence",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "2762495",
+      "path" : "$.records[*].alertcategorytext_Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "34079229",
+      "path" : "$.records[*].alertcategorytext_LanguageCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "42702643",
+    "name" : "Locale with Quantifier",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "Accept-Language" : "en-US;q=0.8"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "36312592",
+      "path" : "$.records[*].alertcategory_Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "99034317",
+      "path" : "$.records[*].alertcategory_status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "54993650",
+      "path" : "$.records[*].alertcategory_DisplaySequence",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "19378118",
+      "path" : "$.records[*].alertcategory_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "44506230",
+      "path" : "$.records[*].alertcategorytext_Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "76128362",
+      "path" : "$.records[*].alertcategorytext_LanguageCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "48343921",
+    "name" : "API User Access",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "Accept-Language" : "en-US",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "61461544",
+      "path" : "$.records[*].alertcategory_Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "28066026",
+      "path" : "$.records[*].alertcategory_DisplaySequence",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "59595293",
+      "path" : "$.records[*].alertcategorytext_LanguageCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "34647999",
+      "path" : "$.records[*].alertcategory_accountLevel",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "alertcategory_accountLevel",
+    "description" : "TRUE if the Alert Category contains Account Level Alerts",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategory_Name",
+    "description" : "Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategory_status_id",
+    "description" : "Status ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategory_DisplaySequence",
+    "description" : "Display Sequence of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategorytext_LanguageCode",
+    "description" : "Language Code of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategory_id",
+    "description" : "ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategorytext_DisplayName",
+    "description" : "Display Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertcategorytext_Description",
+    "description" : "Description of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

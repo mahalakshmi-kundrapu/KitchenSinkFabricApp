@@ -1,0 +1,174 @@
+{
+  "name" : "Edit Alert Type",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertType/editAlertType",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to edit the Alert Type.",
+  "tests" : [ {
+    "id" : "99513434",
+    "name" : "Edit Alert type Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"alertCategoryCode\":\"ALERT_CAT_TRANSACTIONAL\",\"alertName\":\"Profile Update\",\"alertCode\":\"PROFILE_UPDATE\",\"statusId\":\"SID_ACTIVE\",\"isGlobalAlert\":\"FALSE\",\"appPreferences\":{\"BUSINESS_BANKING\":true,\"CONSUMER_LENDING\":true},\"userTypePreferences\":{\"TYPE_ID_MICRO_BUSINESS\":true,\"TYPE_ID_RETAIL\":true},\"attributeId\":\"ALERT_ATTRIBUTE_AMOUNT\",\"conditionId\":\"\",\"value1\":\"200\",\"value2\":\"220\",\"addedDisplayPreferences\":[{\"languageCode\":\"en-US\",\"displayName\":\"Fund Transfer Limit Exceeded\",\"description\":\"Fund Transfer Limit Exceeded\"},{\"languageCode\":\"fr-FR\",\"displayName\":\"Transfert de fonds arrêté\",\"description\":\"Description des Transfert de fonds arrêté\"}],\"removedDisplayPreferences\":[\"en-GB\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "20952076",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "82891891",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "37144120",
+    "name" : "Empty Payload Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "45291621",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "24447176",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "72751517",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "alertCategoryCode",
+    "description" : "Code the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertName",
+    "description" : "Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertCode",
+    "description" : "Code the Alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "statusId",
+    "description" : "Status ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isGlobalAlert",
+    "description" : "TRUE to enable support globally",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "APP_ID",
+    "description" : "TRUE to enable support / FALSE to disable support",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "USER_TYPE",
+    "description" : "TRUE to enable support / FALSE to disable support",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "attributeId",
+    "description" : "ID of the Attribute",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "conditionId",
+    "description" : "ID of the Condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "value1",
+    "description" : "Alert Preference field 1 Value",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "value2",
+    "description" : "Alert Preference field 2 Value",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "displayName",
+    "description" : "Display Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedDisplayPreferences",
+    "description" : "List of deleted Display Preferences",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "languageCode",
+    "description" : "Language Code of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "USER_TYPE",
+    "description" : "TRUE if it is supported",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Locale",
+    "description" : "Display Preference Status",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,229 @@
+{
+  "name" : "Get Customer Alert Category Channel Preference",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertcategory/getCustomerAlertCategoryChannelPreference",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This Service is used to fetch Alert Category Channel Preferences of a Customer.",
+  "tests" : [ {
+    "id" : "62475583",
+    "name" : "Get Preference",
+    "testSequence" : 1,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "36896812",
+      "path" : "$.records[*].isSubscribed",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "4176074",
+      "path" : "$.records[*].channeltext_Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "57668251",
+      "path" : "$.records[*].channel_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "9666971",
+      "path" : "$.records[*].channel_status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "80038328",
+      "path" : "$.records[*].isChannelSupported",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "72590054",
+    "name" : "Get Preference - API User Auth",
+    "testSequence" : 2,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "86611529",
+      "path" : "$.records[*].channel_status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "14647718",
+      "path" : "$.records[*].isSubscribed",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "10438993",
+      "path" : "$.records[*].channeltext_Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "86026561",
+      "path" : "$.records[*].channel_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "86253420",
+      "path" : "$.records[*].isChannelSupported",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "32497405",
+      "path" : "$.records[*].channel_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "27711163",
+    "name" : "Invalid Payload - Missing Customer ID",
+    "testSequence" : 3,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\"}",
+    "testPriority" : "P1",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "93780943",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20688",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "9649383",
+    "name" : "Invalid Payload - Missing Category ID",
+    "testSequence" : 4,
+    "requestBody" : "{\"CustomerId\":\"1\"}",
+    "testPriority" : "P1",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "63966821",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "AlertCategoryId",
+    "description" : "ID of an Alert Category - Mandatory Parameter",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CustomerId",
+    "description" : "ID of a Customer - Mandatory Parameter",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "channel_status_id",
+    "description" : "Status ID of a channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channeltext_LanguageCode",
+    "description" : "Language Code of a Channel Text",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isSubscribed",
+    "description" : "Subscription Status of a Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channeltext_Description",
+    "description" : "Description of a Channel text",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channel_id",
+    "description" : "ID of a channel",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

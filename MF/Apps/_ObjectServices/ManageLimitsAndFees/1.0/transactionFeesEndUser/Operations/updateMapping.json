@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "updateTransactionFeesForEndUser5971",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "LimitsAndFeesIntegration",
+      "serviceVersion" : "1.0",
+      "operationName" : "updateTransactionFeesForEndUser"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

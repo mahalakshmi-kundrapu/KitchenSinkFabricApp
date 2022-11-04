@@ -1,0 +1,174 @@
+{
+  "name" : "Create Applicant",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Applicant/createApplicant",
+  "moduleName" : "Applicant Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create new Applicant into the system.",
+  "tests" : [ {
+    "id" : "14635529",
+    "name" : "Create Applicant Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"criteriaID\":\"KONY_DBX_BANK_MEMBER_ACQ\",\"reason\":\"Invalid SSN\",\"status\":\"SID_APP_FAILED\",\"contactInformation\":{\"emailAddress\":\"applicant@kony.com\",\"phoneNumber\":\"123123123456\"},\"personalInformation\":{\"firstName\":\"Kony India\",\"middleName\":\"K\",\"lastName\":\"Applicant\",\"dateofBirth\":\"10-11-1995\",\"SSN\":\"123477725\"},\"addressInformation\":{\"addressLine1\":\"Kony India\",\"addressLine2\":\"Phoenix\",\"city\":\"Hyderabad\",\"state\":\"Telangana\",\"zipcode\":\"501241\",\"country\":\"India\",\"uspsValidationStatus\":\"True\"},\"identityInformation\":{\"idType\":\"ID_DRIVING_LICENSE\",\"idValue\":\"1000099900900\",\"idState\":\"Telangana\",\"idCountry\":\"India\",\"issueDate\":\"11-12-2012\",\"expiryDate\":\"15-12-2012\",\"mothersMaidenName\":\"Hyege\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "23965551",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "60141140",
+      "path" : "$.applicantID",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "71222927",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "70612736",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "97755833",
+    "name" : "Empty Criteria ID Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"criteriaID\":\"\",\"reason\":\"Invalid SSN\",\"status\":\"SID_APP_FAILED\",\"contactInformation\":{\"emailAddress\":\"applicant@kony.com\",\"phoneNumber\":\"123123123456\"},\"personalInformation\":{\"firstName\":\"Kony India\",\"middleName\":\"K\",\"lastName\":\"Applicant\",\"dateofBirth\":\"10-11-1995\",\"SSN\":\"123477725\"},\"addressInformation\":{\"addressLine1\":\"Kony India\",\"addressLine2\":\"Phoenix\",\"city\":\"Hyderabad\",\"state\":\"Telangana\",\"zipcode\":\"501241\",\"country\":\"India\",\"uspsValidationStatus\":\"True\"},\"identityInformation\":{\"idType\":\"ID_DRIVING_LICENSE\",\"idValue\":\"1000099900900\",\"idState\":\"Telangana\",\"idCountry\":\"India\",\"issueDate\":\"11-12-2012\",\"expiryDate\":\"15-12-2012\",\"mothersMaidenName\":\"Hyege\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "72244610",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20461",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "14273772",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "56456867",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "firstName",
+    "description" : "First name of the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "lastName",
+    "description" : "Last name of the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "documentsSubmitted",
+    "description" : "Documents submitted - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "productId",
+    "description" : "Product applied - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "statusId",
+    "description" : "Status of applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdby",
+    "description" : "Name of the user who created the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "contactNumber",
+    "description" : "Contact Number of the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "middleName",
+    "description" : "Middle name of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "emailId",
+    "description" : "Email ID of the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the applicant - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channelId",
+    "description" : "Channel in which the applicant was created - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "applicantId",
+    "description" : "ID of applicant which has been created",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

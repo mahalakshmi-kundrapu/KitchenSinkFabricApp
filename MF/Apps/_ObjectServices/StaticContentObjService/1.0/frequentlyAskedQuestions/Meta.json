@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "updateFAQs" : "updateFAQsMapping",
+    "getCategories" : "getCategoriesMapping",
+    "createFAQs" : "createFAQsMapping",
+    "getFAQs" : "getFAQsMapping",
+    "deleteFAQs" : "deleteFAQsMapping",
+    "getOlbFaqs" : "getOlbFaqsMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "GetCustomerGroup" : "GetCustomerGroupMapping",
+    "createCustomerGroup" : "createCustomerGroupMapping",
+    "GetAllGroups" : "GetAllGroupsMapping",
+    "EditCustomerGroup" : "EditCustomerGroupMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

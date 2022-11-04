@@ -1,0 +1,1 @@
+update transaction set postedDate=transactionDate where transactionDate is not null and Id<>0;

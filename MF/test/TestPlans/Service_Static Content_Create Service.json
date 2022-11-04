@@ -1,0 +1,299 @@
+{
+  "name" : "Create Service",
+  "url" : "services/data/v1/StaticContentObjService/operations/service/createService",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create a new service",
+  "tests" : [ {
+    "id" : "90750284",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"User_id\": \"Kony Dev\", \"Service\": [ { \"Type_id\": \"SER_TYPE_TRNS\", \"Channel_id\": \"CH_01\", \"Code\": \"1\", \"Category_Id\": \"1\", \"DisplayName\": \"Display Name\", \"DisplayDescription\": \"Display Description\", \"Name\": \"Kony Services\", \"Description\": \" Cards services\", \"Status_id\": \"SID_ACTIVE\", \"MaxTransferLimit\": \"5000\", \"MinTransferLimit\": \"10\", \"TransferDenominations\": \"100\", \"IsFutureTransaction\": \"1\", \"TransactionCharges\": \"20\", \"IsAuthorizationRequired\": \"0\", \"IsSMSAlertActivated\": \"0\", \"SMSCharges\": \"0\", \"IsBeneficiarySMSAlertActivated\": \"1\", \"BeneficiarySMSCharge\": \"15\", \"HasWeekendOperation\": \"0\", \"IsOutageMessageActive\": \"0\", \"IsAlertActive\": \"1\", \"IsTCActive\": \"1\", \"IsAgreementActive\": \"1\", \"IsCampaignActive\": \"1\", \"WorkSchedule_id\": \"WORK_SCH_ID1\", \"TransactionLimit_id\": \"TID1\" } ], \"transactionFeeName\": \"IMPS\", \"transactionFeeDescription\": \"abcde\", \"transferFeeSlabs\": [ { \"minAmount\": \"100\", \"maxAmount\": \"200\", \"fees\": \"2\" }, { \"minAmount\": \"251\", \"maxAmount\": \"450\", \"fees\": \"1\" } ], \"periodLimits\": [ { \"periodId\": \"P1\", \"periodLimit\": \"10\" }, { \"periodId\": \"P2\", \"periodLimit\": \"20\" } ]}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "42374836",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "22934783",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "73420549",
+    "name" : "Create Service Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"User_id\":\"Kony Dev\",\"Service\":[{\"Type_id\":\"SER_TYPE_TRNS\",\"Channel_id\":\"CH_01\",\"Code\":\"1\",\"Category_Id\":\"1\",\"DisplayName\":\"Display Name\",\"DisplayDescription\":\"Display Description\",\"Name\":\"Kony Services\",\"Description\":\" Cards services\",\"Status_id\":\"SID_ACTIVE\",\"MaxTransferLimit\":\"5000\",\"MinTransferLimit\":\"10\",\"TransferDenominations\":\"100\",\"IsFutureTransaction\":\"1\",\"TransactionCharges\":\"20\",\"IsAuthorizationRequired\":\"0\",\"IsSMSAlertActivated\":\"0\",\"SMSCharges\":\"0\",\"IsBeneficiarySMSAlertActivated\":\"1\",\"BeneficiarySMSCharge\":\"15\",\"HasWeekendOperation\":\"0\",\"IsOutageMessageActive\":\"0\",\"IsAlertActive\":\"1\",\"IsTCActive\":\"1\",\"IsAgreementActive\":\"1\",\"IsCampaignActive\":\"1\",\"WorkSchedule_id\":\"WORK_SCH_ID1\",\"TransactionLimit_id\":\"TID1\"}],\"transactionFeeName\":\"IMPS\",\"transactionFeeDescription\":\"abcde\",\"transferFeeSlabs\":[{\"minAmount\":\"100\",\"maxAmount\":\"200\",\"fees\":\"2\"},{\"minAmount\":\"251\",\"maxAmount\":\"450\",\"fees\":\"1\"}],\"periodLimits\":[{\"periodId\":\"P1\",\"periodLimit\":\"10\"},{\"periodId\":\"P2\",\"periodLimit\":\"20\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "36584415",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "87555905",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "94234231",
+    "name" : "Empty Payload",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "21380876",
+      "path" : "$.errmsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "25763426",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "minAmount",
+    "description" : "transfer Fee slabs minimum amount",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "fees",
+    "description" : "transfer Fee slabs total fee",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Service description",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DisplayDescription",
+    "description" : "Dispaly description of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsSMSAlertActivated",
+    "description" : "Flag for SMS alerts",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "BeneficiarySMSCharge",
+    "description" : "The charge for each beneficiary sms alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAgreementActive",
+    "description" : "Flag to check whether agreement related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "transactionFeeName",
+    "description" : "Name of the transaction fee",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Channel_id",
+    "description" : "Channel type id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsFutureTransaction",
+    "description" : "Flag for Future transaction accessibility",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "transactionFeeDescription",
+    "description" : "Description of the transaction",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "periodLimit",
+    "description" : "period limit",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsBeneficiarySMSAlertActivated",
+    "description" : "Flag for beneficiary SMS alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsOutageMessageActive",
+    "description" : "Flag to check whether outage message related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "MaxTransferLimit",
+    "description" : "Maximum amount that can be transferred by using that service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "MinTransferLimit",
+    "description" : "Minimum amount that can be transferred by using that service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DisplayName",
+    "description" : "Display name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "HasWeekendOperation",
+    "description" : "Flag for weekend operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "User_id",
+    "description" : "Id of the logged in user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionCharges",
+    "description" : "Charges applied for each transaction under this service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "maxAmount",
+    "description" : "transfer Fee slabs maximum amount",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "periodId",
+    "description" : "Id of the period in periodic limits",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status id of the created service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAuthorizationRequired",
+    "description" : "Flag for authorization of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransferDenominations",
+    "description" : "Denominations in which amount to be transferred",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "SMSCharges",
+    "description" : "The charges for each sms alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsCampaignActive",
+    "description" : "Flag to check whether campaign related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Code",
+    "description" : "Service code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Category_Id",
+    "description" : "Id of the category under which service comes",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "WorkSchedule_id",
+    "description" : "Id of the service work schedule",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsTCActive",
+    "description" : "Flag to check whether Terms and conditions related to that service are active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAlertActive",
+    "description" : "Flag to check whether alerts related to that service are active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionLimit_id",
+    "description" : "Id of the service transaction limit",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Type_id",
+    "description" : "Service type id",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "opstatus",
+    "description" : "Status of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status code in HTTP.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,6 @@
+{
+  "config" : {
+    "metadataSecurity" : "public",
+    "conflict_policy" : "none"
+  }
+}

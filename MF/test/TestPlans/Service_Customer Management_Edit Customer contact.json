@@ -1,0 +1,246 @@
+{
+  "name" : "Edit Customer contact",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerContact/EditCustomerContact",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "CustomerContact-Update service is used to create or update the following:\nCommunication address\nEmail address\nContact number\nPreferred time and method to contact",
+  "tests" : [ {
+    "id" : "9581680",
+    "name" : "Edit Contact Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"ModifiedByName\":\"Ed new\",\"userName\":\"dbpolbuser\",\"Addresses\":[{\"Addr_type\":\"ADR_TYPE_OTHER\",\"isPrimary\":\"0\",\"addrLine1\":\"Church Gate changed1\",\"addrLine2\":\"Bank Bhavan\",\"ZipCode\":\"500009\",\"City_id\":\"C1\",\"Region_id\":\"R1\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "13366100",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Operation successful",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "60967305",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "45983730",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "67766235",
+    "name" : "User Name Empty Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"ModifiedByName\":\"Ed new\",\"userName\":\"\",\"Addresses\":[{\"Addr_type\":\"ADR_TYPE_OTHER\",\"isPrimary\":\"0\",\"addrLine1\":\"Church Gate changed1\",\"addrLine2\":\"Bank Bhavan\",\"ZipCode\":\"500009\",\"City_id\":\"C1\",\"Region_id\":\"R1\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "71068213",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Failure",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "6632385",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "74440398",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "51766980",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "31686143",
+    "name" : "Invalid User Name Check",
+    "testSequence" : 3,
+    "requestBody" : "{\"ModifiedByName\":\"Ed new\",\"userName\":\"dbpolbuser123\",\"Addresses\":[{\"Addr_type\":\"ADR_TYPE_OTHER\",\"isPrimary\":\"0\",\"addrLine1\":\"Church Gate changed1\",\"addrLine2\":\"Bank Bhavan\",\"ZipCode\":\"500009\",\"City_id\":\"C1\",\"Region_id\":\"R1\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "51436672",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Failure",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "9809342",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20613",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "3378434",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "42695362",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "68836974",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Unable to find the user",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Addresses",
+    "description" : "The list of addresses which needs to be updated",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "PhoneNumbers",
+    "description" : "The list of phone numbers which needs to be updated",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "deleteCommunicationID",
+    "description" : "Primary key of the communication, which needs to be deleted",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "EmailIds",
+    "description" : "The list of email addresses which needs to be updated",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "deleteAddressID",
+    "description" : "Primary key of the address which needs to be deleted",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Customer_id",
+    "description" : "Required. Primary key of the customer table. (Used by Admin Console application)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "PreferredContactTime",
+    "description" : "Preferred contact time of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userName",
+    "description" : "Username of the customer. (Used by OLB application) - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "PreferredContactMethod",
+    "description" : "Preferred contact method of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation is successful or not.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CreateEmail1",
+    "description" : "JSON response of the created email",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DeleteCommunication",
+    "description" : "JSON response of the deleted communication",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "updatePreferredTimes",
+    "description" : "JSON response of the updated customer preference",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "UpdateEmail",
+    "description" : "JSON response of the updated email",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DeleteAddress",
+    "description" : "JSON response of the deleted address",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

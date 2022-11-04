@@ -1,0 +1,20 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "fetchConfigurations" : "fetchConfigurationsMapping",
+    "getConfigurations" : "getConfigurationsMapping",
+    "fetchBundleAndConfigurations" : "fetchBundleAndConfigurationsMapping",
+    "getConfigurationsPreLogin" : "getConfigurationsPreLoginMapping",
+    "deleteBundleAndConfigurations" : "deleteBundleAndConfigurationsMapping",
+    "manageBundleAndConfigurations" : "manageBundleAndConfigurationsMapping",
+    "fetchBundles" : "fetchBundlesMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

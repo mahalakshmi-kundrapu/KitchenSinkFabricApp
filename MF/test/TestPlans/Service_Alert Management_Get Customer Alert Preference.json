@@ -1,0 +1,255 @@
+{
+  "name" : "Get Customer Alert Preference",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertType/getCustomerAlertTypePreference",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch Alert Type Preferences of Customer.",
+  "tests" : [ {
+    "id" : "51538926",
+    "name" : "Get Preference",
+    "testSequence" : 1,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "Accept-Language" : "en-US"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "58052421",
+      "path" : "$.categorySubscription.isSubscribed",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "35386631",
+      "path" : "$.categorySubscription.isInitialLoad",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "89390673",
+      "path" : "$.records[*].alerttypetext_Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "98356680",
+      "path" : "$.records[*].alerttypetext_DisplayName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "43285376",
+      "path" : "$.records[*].alerttype_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "65685618",
+      "path" : "$.records[*].alerttype_IsGlobal",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "4642951",
+      "path" : "$.records[*].alerttype_AlertCategoryId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "ALERT_CAT_TRANSACTIONAL",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "61123316",
+    "name" : "Get Preference - API User Auth",
+    "testSequence" : 2,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "Accept-Language" : "en-US",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "35657838",
+      "path" : "$.categorySubscription.isSubscribed",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "29188885",
+      "path" : "$.categorySubscription.isInitialLoad",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "92956482",
+      "path" : "$.records[*].alerttype_AlertCategoryId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "ALERT_CAT_TRANSACTIONAL",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "26524137",
+      "path" : "$.records[*].alerttypetext_DisplayName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "71166664",
+      "path" : "$.records[*].alerttype_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "83673574",
+    "name" : "Invalid Payload - Missing Customer ID",
+    "testSequence" : 3,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\"}",
+    "testPriority" : "P1",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "35782598",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20792",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "AlertCategoryId",
+    "description" : "ID of the Alert Category - Mandatory ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CustomerId",
+    "description" : "ID of the Customer _ Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "isSubscribed",
+    "description" : "Subscription Status of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isInitialLoad",
+    "description" : "TRUE if the Customer had previously subscribed/unsubscribed to the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttypetext_Description",
+    "description" : "Description of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_AlertCategoryId",
+    "description" : "ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Customer_id",
+    "description" : "ID of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "AlertTypeId",
+    "description" : "ID of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttypetext_DisplayName",
+    "description" : "Display Name of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_id",
+    "description" : "ID of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_Status_id",
+    "description" : "Status ID of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_IsGlobal",
+    "description" : "TRUE if the Alert Type is applicable to all customers irrespective of subscription",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_DisplaySequence",
+    "description" : "Display Sequence number of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttype_Name",
+    "description" : "Name of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alerttypetext_LanguageCode",
+    "description" : "Language Code of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,95 @@
+{
+  "name" : "Delete FAQs",
+  "url" : "services/data/v1/StaticContentObjService/operations/frequentlyAskedQuestions/deleteFAQs",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This API is delete a particular FAQ",
+  "tests" : [ {
+    "id" : "84984887",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"user_ID\": \"UID1\", \"RemoveFlag\":\"TRUE\", \"listOfFAQs\": [ \"FAQ_ID4\",\"FAQ_ID3\" ]}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "48220586",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "97735607",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "90844225",
+    "name" : "Delete FAQs Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"user_ID\":\"UID1\",\"RemoveFlag\":\"TRUE\",\"listOfFAQs\":[\"FAQ_ID4\",\"FAQ_ID3\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "7719922",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "60232633",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "user_ID",
+    "description" : "Id of the user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "RemoveFlag",
+    "description" : "Flag for deletion",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "listOfFAQs",
+    "description" : "List of FAQ's tp be deleted",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

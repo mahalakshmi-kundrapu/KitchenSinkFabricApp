@@ -1,0 +1,26 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getRequestCategory" : "getRequestCategoryMapping",
+    "downloadMessageAttachment" : "downloadMessageAttachmentMapping",
+    "getRequestMessages" : "getRequestMessagesMapping",
+    "createNewCustomerRequestMessage" : "createNewCustomerRequestMessageMapping",
+    "assignRequests" : "assignRequestsMapping",
+    "getRequestSummaryCount" : "getRequestSummaryCountMapping",
+    "createNewCustomerRequest" : "createNewCustomerRequestMapping",
+    "getRequests" : "getRequestsMapping",
+    "getallmessages" : "getallmessagesMapping",
+    "getCustomerRequests" : "getCustomerRequestsMapping",
+    "getMessageAttachments" : "getMessageAttachmentsMapping",
+    "getUnreadMessageCount" : "getUnreadMessageCountMapping",
+    "updateCustomerRequest" : "updateCustomerRequestMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

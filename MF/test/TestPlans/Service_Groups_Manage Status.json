@@ -1,0 +1,101 @@
+{
+  "name" : "Manage Status",
+  "url" : "services/data/v1/CustomerGroupsAndEntitlObjSvc/operations/Group/manageStatus",
+  "moduleName" : "Groups",
+  "httpMethod" : "POST",
+  "description" : "This service is used to activate/deactivate a group",
+  "tests" : [ {
+    "id" : "78965341",
+    "name" : "Manage Group Status",
+    "testSequence" : 1,
+    "requestBody" : "{\"Group_id\":\"GID_LOAN_CUSTOMERS\",\"Status_id\":\"SID_ACTIVE\",\"Name\":\"Home Loan Customers\",\"Description\":\"Home Loan Customers Description\",\"User_id\":\"UID10\",\"removedEntitlementIds\":[{\"Group_id\":\"GID_LOAN_CUSTOMERS\",\"Service_id\":\"SERVICE_ID1\"}],\"addedEntitlementIds\":[{\"Service_id\":\"SERVICE_ID6\",\"TransactionLimit_id\":\"TID1\",\"TransactionFee_id\":\"TID1\"},{\"Service_id\":\"SERVICE_ID7\",\"TransactionLimit_id\":\"TID1\",\"TransactionFee_id\":\"TID1\"}],\"removedCustomerIds\":[],\"addedCustomerIds\":[]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "53114428",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "56129385",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "addedEntitlementIds",
+    "description" : "List of the entitlements added to the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Group_id",
+    "description" : "Id of the Group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Description of the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status ID of the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "addedCustomerIds",
+    "description" : "List of the customers added to the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedEntitlementIds",
+    "description" : "List of the entitlements removed from the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedCustomerIds",
+    "description" : "List of the customers added to the group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the group",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Operation Status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Operation Status Code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Backend HTTP status Code",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

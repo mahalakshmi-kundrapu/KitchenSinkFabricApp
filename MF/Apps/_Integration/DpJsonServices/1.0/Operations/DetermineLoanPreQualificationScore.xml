@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="DetermineLoanPreQualificationScore" passwordencrypted="false" security="public" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="http://_$_DBX_HOSTFABRIC_URL_$_/services/dbxRuleServiceJava/ExecuteKonyRuleEngine"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="POST"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false"/>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="Customer_id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1,2" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="AccountBalance" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="400006,400006" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="AnnualIncome" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="400006,400006" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="Age" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="35,35" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="CreditScore" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="800,800" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="EmploymentType" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Full-Time,Full-Time" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="#macro( arrayGet $index $array )&#xA;#foreach( $value in $array )&#xA;#if($index == $velocityCount)$value#end&#xA;#end#end&#xA;#set ($id = $Customer_id.split(&quot;,&quot;))&#xA;#set ($ab = $AccountBalance.split(&quot;,&quot;))&#xA;#set ($ai = $AnnualIncome.split(&quot;,&quot;))&#xA;#set ($age = $Age.split(&quot;,&quot;))&#xA;#set ($cs = $CreditScore.split(&quot;,&quot;))&#xA;#set ($et = $EmploymentType.split(&quot;,&quot;))&#xA;#foreach($items in $id)&#xA;#set($i = $velocityCount)&#xA;#end&#xA;{&#xA;&quot;decisionName&quot;:&quot;DetermineLoanPreQualificationScore&quot;,&#xA;&quot;record&quot;:[&#xA;#foreach($items1 in $id)&#xA;{&#xA;&quot;baseKey&quot;:&quot;Customer_id&quot;,&#xA;#if (&quot;$!id&quot; != &quot;&quot;)&#xA;&quot;baseValue&quot;: &quot;#arrayGet($velocityCount $id)&quot;,&#xA;#else&#xA;&quot;baseValue&quot;: null,&#xA;#end&#xA;&quot;resultKey&quot;: &quot;PrequalifyScore&quot;,&#xA;#if (&quot;$!ab&quot; != &quot;&quot;)&#xA;&quot;accountBalance&quot;: &quot;#arrayGet($velocityCount $ab)&quot;,&#xA;#else&#xA;&quot;accountBalance&quot;: null,&#xA;#end&#xA;#if (&quot;$!ai&quot; != &quot;&quot;)&#xA;&quot;annualIncome&quot;: &quot;#arrayGet($velocityCount $ai)&quot;,&#xA;#else&#xA;&quot;annualIncome&quot;: null,&#xA;#end&#xA;#if (&quot;$!age&quot; != &quot;&quot;)&#xA;&quot;age&quot;: &quot;#arrayGet($velocityCount $age)&quot;,&#xA;#else&#xA;&quot;age&quot;: null,&#xA;#end&#xA;#if (&quot;$!cs&quot; != &quot;&quot;)&#xA;&quot;creditScore&quot;: &quot;#arrayGet($velocityCount $cs)&quot;,&#xA;#else&#xA;&quot;creditScore&quot;: null,&#xA;#end&#xA;#if (&quot;$!et&quot; != &quot;&quot;)&#xA;&quot;employmentType&quot;: &quot;#arrayGet($velocityCount $et)&quot;&#xA;#else&#xA;&quot;employmentType&quot;: null&#xA;#end&#xA;#if($!i != $velocityCount)},&#xA;#else}&#xA;#end&#xA;#end&#xA;]&#xA;}" description="" encode="false" format="" formatvalue="" name="message" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="#macro( arrayGet $index $array )&#xA;#foreach( $value in $array )&#xA;#if($index == $velocityCount)$value#end&#xA;#end#end&#xA;#set ($id = $Customer_id.split(&quot;,&quot;))&#xA;#set ($ab = $AccountBalance.split(&quot;,&quot;))&#xA;#set ($ai = $AnnualIncome.split(&quot;,&quot;))&#xA;#set ($age = $Age.split(&quot;,&quot;))&#xA;#set ($cs = $CreditScore.split(&quot;,&quot;))&#xA;#set ($et = $EmploymentType.split(&quot;,&quot;))&#xA;#foreach($items in $id)&#xA;#set($i = $velocityCount)&#xA;#end&#xA;{&#xA;&quot;decisionName&quot;:&quot;DetermineLoanPreQualificationScore&quot;,&#xA;&quot;record&quot;:[&#xA;#foreach($items1 in $id)&#xA;{&#xA;&quot;baseKey&quot;:&quot;Customer_id&quot;,&#xA;#if (&quot;$!id&quot; != &quot;&quot;)&#xA;&quot;baseValue&quot;: &quot;#arrayGet($velocityCount $id)&quot;,&#xA;#else&#xA;&quot;baseValue&quot;: null,&#xA;#end&#xA;&quot;resultKey&quot;: &quot;PrequalifyScore&quot;,&#xA;#if (&quot;$!ab&quot; != &quot;&quot;)&#xA;&quot;accountBalance&quot;: &quot;#arrayGet($velocityCount $ab)&quot;,&#xA;#else&#xA;&quot;accountBalance&quot;: null,&#xA;#end&#xA;#if (&quot;$!ai&quot; != &quot;&quot;)&#xA;&quot;annualIncome&quot;: &quot;#arrayGet($velocityCount $ai)&quot;,&#xA;#else&#xA;&quot;annualIncome&quot;: null,&#xA;#end&#xA;#if (&quot;$!age&quot; != &quot;&quot;)&#xA;&quot;age&quot;: &quot;#arrayGet($velocityCount $age)&quot;,&#xA;#else&#xA;&quot;age&quot;: null,&#xA;#end&#xA;#if (&quot;$!cs&quot; != &quot;&quot;)&#xA;&quot;creditScore&quot;: &quot;#arrayGet($velocityCount $cs)&quot;,&#xA;#else&#xA;&quot;creditScore&quot;: null,&#xA;#end&#xA;#if (&quot;$!et&quot; != &quot;&quot;)&#xA;&quot;employmentType&quot;: &quot;#arrayGet($velocityCount $et)&quot;&#xA;#else&#xA;&quot;employmentType&quot;: null&#xA;#end&#xA;#if($!i != $velocityCount)},&#xA;#else}&#xA;#end&#xA;#end&#xA;]&#xA;}">
+            <accessType></accessType>
+        </template-param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="false">
+        <param datatype="collection" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="decisionresult" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="decisionresult" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+    </service-output>
+</service>

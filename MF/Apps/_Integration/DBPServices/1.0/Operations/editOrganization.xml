@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="editOrganization" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="preprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="postprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://_$_AC_DBP_SERVICES_URL_$_/services/data/v1/RBObjects/operations/DbxOrganization/updateOrganization"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="POST"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="urlprovider" value="com.kony.adminconsole.commons.handler.ServiceURLProvider"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false">
+            <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="X-Kony-Authorization" order="" paramOrder="0" parentOrder="0" sms-name="" src="expression" sourcevalue="$Request.backendToken" srcformatvalue="" target="" targetdatatype="" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+        </header>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="id" order="" paramOrder="1" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Type" order="" paramOrder="2" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Name" order="" paramOrder="3" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Description" order="" paramOrder="4" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Communication" order="" paramOrder="5" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Address" order="" paramOrder="6" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Owner" order="" paramOrder="7" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Membership" order="" paramOrder="8" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="AccountsList" order="" paramOrder="9" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="{&#xA;  &#x9;&quot;id&quot;: &quot;$id&quot;,&#xA;    &quot;Type&quot;: &quot;$Type&quot;,&#xA;    &quot;Name&quot;: &quot;$Name&quot;,&#xA;    &quot;Description&quot;: &quot;$Description&quot;,&#xA;    &quot;Communication&quot;: [ #foreach $Communication &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;{&#xA;            &quot;Phone&quot;: &quot;$Phone&quot;,&#xA;            &quot;Email&quot;: &quot;$Email&quot;&#xA;        }&#xA;          #end ],&#xA;&#x9;&#xA;    &quot;Address&quot;: [ #foreach $Address &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9; {&#xA;            &quot;country&quot;: &quot;$country&quot;,&#xA;            &quot;cityName&quot;: &quot;$cityName&quot;,&#xA;            &quot;state&quot;: &quot;$state&quot;,&#xA;            &quot;zipCode&quot;: &quot;$zipCode&quot;,&#xA;            &quot;addressLine1&quot;: &quot;$addressLine1&quot;,&#xA;            &quot;addressLine2&quot;: &quot;$addressLine2&quot;&#xA;        }&#xA;          #end ],&#xA;    &quot;Owner&quot;: [ #foreach $Owner &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;{&#xA;            &quot;FirstName&quot;: &quot;$FirstName&quot;,&#xA;            &quot;MidleName&quot;: &quot;$MidleName&quot;,&#xA;            &quot;LastName&quot;: &quot;$LastName&quot;,&#xA;            &quot;DOB&quot;: &quot;$DOB&quot;,&#xA;            &quot;EmailId&quot;: &quot;$EmailId&quot;,&#xA;            &quot;Ssn&quot;: &quot;$Ssn&quot;,&#xA;            &quot;PhoneNumber&quot;: &quot;$PhoneNumber&quot;,&#xA;            &quot;IdType&quot;: &quot;$IdType&quot;,&#xA;            &quot;IdValue&quot;: &quot;$IdValue&quot;&#xA;        }&#xA;          #end ],&#xA;    &quot;Membership&quot;: [ #foreach $Membership &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9; {&#xA;            &quot;Taxid&quot;: &quot;$Taxid&quot;&#xA;         }&#xA;          #end ],&#xA;    &quot;AccountsList&quot;: [ #foreach $AccountsList &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;  {&#xA;            &quot;Account_id&quot;: &quot;$Account_id&quot;&#xA;          }&#xA;          #end ]&#xA;}" description="" encode="false" format="" formatvalue="" name="message" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="{&#xA;  &#x9;&quot;id&quot;: &quot;$id&quot;,&#xA;    &quot;Type&quot;: &quot;$Type&quot;,&#xA;    &quot;Name&quot;: &quot;$Name&quot;,&#xA;    &quot;Description&quot;: &quot;$Description&quot;,&#xA;    &quot;Communication&quot;: [ #foreach $Communication &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;{&#xA;            &quot;Phone&quot;: &quot;$Phone&quot;,&#xA;            &quot;Email&quot;: &quot;$Email&quot;&#xA;        }&#xA;          #end ],&#xA;&#x9;&#xA;    &quot;Address&quot;: [ #foreach $Address &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9; {&#xA;            &quot;country&quot;: &quot;$country&quot;,&#xA;            &quot;cityName&quot;: &quot;$cityName&quot;,&#xA;            &quot;state&quot;: &quot;$state&quot;,&#xA;            &quot;zipCode&quot;: &quot;$zipCode&quot;,&#xA;            &quot;addressLine1&quot;: &quot;$addressLine1&quot;,&#xA;            &quot;addressLine2&quot;: &quot;$addressLine2&quot;&#xA;        }&#xA;          #end ],&#xA;    &quot;Owner&quot;: [ #foreach $Owner &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;{&#xA;            &quot;FirstName&quot;: &quot;$FirstName&quot;,&#xA;            &quot;MidleName&quot;: &quot;$MidleName&quot;,&#xA;            &quot;LastName&quot;: &quot;$LastName&quot;,&#xA;            &quot;DOB&quot;: &quot;$DOB&quot;,&#xA;            &quot;EmailId&quot;: &quot;$EmailId&quot;,&#xA;            &quot;Ssn&quot;: &quot;$Ssn&quot;,&#xA;            &quot;PhoneNumber&quot;: &quot;$PhoneNumber&quot;,&#xA;            &quot;IdType&quot;: &quot;$IdType&quot;,&#xA;            &quot;IdValue&quot;: &quot;$IdValue&quot;&#xA;        }&#xA;          #end ],&#xA;    &quot;Membership&quot;: [ #foreach $Membership &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9; {&#xA;            &quot;Taxid&quot;: &quot;$Taxid&quot;&#xA;         }&#xA;          #end ],&#xA;    &quot;AccountsList&quot;: [ #foreach $AccountsList &#xA;          #if($velocityCount!=1)&#xA;          ,&#xA;          #end&#xA;&#x9;&#x9;  {&#xA;            &quot;Account_id&quot;: &quot;$Account_id&quot;&#xA;          }&#xA;          #end ]&#xA;}">
+            <accessType></accessType>
+        </template-param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="true"/>
+</service>

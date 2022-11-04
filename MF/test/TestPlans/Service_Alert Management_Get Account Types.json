@@ -1,0 +1,86 @@
+{
+  "name" : "Get Account Types",
+  "url" : "services/data/v1/MasterDataObjService/operations/accounttype/getAccountTypes",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the Account types.",
+  "tests" : [ {
+    "id" : "12481939",
+    "name" : "Fetch Account Types Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "55747985",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "57958612",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "TypeID",
+    "description" : "ID of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "features",
+    "description" : "Features of the Account",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "supportChecks",
+    "description" : "Boolean flag denoting if the Account supports Cheque",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "displayName",
+    "description" : "Display Name of the Account",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "rates",
+    "description" : "Account Charges",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TypeDescription",
+    "description" : "Description of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "termsAndConditions",
+    "description" : "Terms and Conditions of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "info",
+    "description" : "Information about the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,57 @@
+{
+  "name" : "Reorder Alert Category",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertcategory/reorderAlertCategory",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to Reorder the Alert Category.",
+  "tests" : [ {
+    "id" : "30497767",
+    "name" : "Set Alert Category Order",
+    "testSequence" : 1,
+    "requestBody" : "{\"categoryOrder\":{\"ALERT_CAT_SECURITY\":1,\"ALERT_CAT_TRANSACTIONAL\":2}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "75926382",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "CATEGORY_CODE_1",
+    "description" : "Sequence of the Category Code 1",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CATEGORY_CODE_2",
+    "description" : "Sequence of the Category Code 2",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CATEGORY_CODE_N",
+    "description" : "Sequence of the Category Code N",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "status",
+    "description" : "Operation status",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

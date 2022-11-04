@@ -1,0 +1,16 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getBBCustomerServiceLimit" : "getBBCustomerServiceLimitMapping",
+    "createBBCustomerServiceLimit" : "createBBCustomerServiceLimitMapping",
+    "editBBCustomerServiceLimit" : "editBBCustomerServiceLimitMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

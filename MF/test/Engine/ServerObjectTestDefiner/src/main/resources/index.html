@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="/ServerObjectTestDefiner/rest/Resource/site/jquery.min.js"></script>
+<script src="/ServerObjectTestDefiner/rest/Resource/site/jquery-confirm.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/ServerObjectTestDefiner/rest/Resource/site/TestPlanDefiner_StyleSheet.css">
+<link rel="stylesheet" type="text/css" href="/ServerObjectTestDefiner/rest/Resource/site/jquery-confirm.min.css">
+<script type="text/javascript" src="/ServerObjectTestDefiner/rest/Resource/site/TestPlanDefiner_Controller.js">
+</script>
+
+<!-- <script src="/jquery.min.js"></script>
+<script src="/jquery-confirm.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/TestPlanDefiner_StyleSheet.css">
+<link rel="stylesheet" type="text/css" href="/jquery-confirm.min.css">
+<script type="text/javascript" src="/TestPlanDefiner_Controller.js"></script> -->
+
+<head>
+	<title>Fabric Service Definer</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/hAzNodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NjcyOSwgMjAxMi8wNS8wMy0xMzo0MDowMyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIEVsZW1lbnRzIDEyLjAgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0QkM2QkYzNkI2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0QkM2QkYzN0I2NDcxMUU1OEY1NkE0Rjk0N0EzQ0E5NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRCQzZCRjM0QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRCQzZCRjM1QjY0NzExRTU4RjU2QTRGOTQ3QTNDQTk0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/9sAQwAEAwMEAwMEBAQEBQUEBQcLBwcGBgcOCgoICxAO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"
+		style="position: absolute; left: 15px; top: 18px; z-index: -1;" height="82" width="92" />
+
+	<br>
+	<h1 align="center" style="font-family: Helvetica;">Fabric Service Definer</h1>
+	<hr>
+	<form>
+
+		<a style="font-size: 10pt; color:#a4a4a8; padding-left: 15px; font-family: Helvetica, Arial, sans-serif;">Fields
+			marked with the asterisk (*) are mandatory</a>
+		<p
+			style="font-size: 18px; color:#a4a4a8; text-decoration: underline; padding-left: 15px; font-family: Helvetica, Arial, sans-serif;">
+			Step 1: Define Service &amp; Document Input/Ouput Fields </p>
+		<div id='serviceOverviewDiv' align="center">
+
+			<table id="serviceOverview_table">
+				<tr bgcolor="#000000">
+					<th style="font-size: 18px; text-align: center; color: white" colspan="2">Service Definition</th>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<span>
+							Environment *
+							<select style="max-width: 30%;" id='runtime_select'
+								onchange='runtime_select_onchange(this)'>
+							</select>
+						</span>
+						<span style="padding-left: 25%">
+							Application *
+							<select id='application_select' onchange='application_select_onchange(this)'>
+							</select>
+						</span>
+
+					</td>
+				</tr>
+				<tr>
+					<td width="20%">Module Name *</td>
+					<td><input type='text' id='serviceModuleName_input' placeholder='Module Name'></td>
+				</tr>
+				<tr>
+					<td width="20%">Service Name *</td>
+					<td><input type='text' id='serviceName_input' placeholder='Service Name'></td>
+				</tr>
+				<tr>
+					<td width="20%">Service URL *</td>
+					<td width="80%">
+						<div class="fieldBlock">
+							<input spellcheck="false" autocomplete="off" data-gramm="false" type='text' readonly
+								id='serviceURL_prefix_input' style="background-color: #F2F2F2"
+								placeholder='Environment URL'>
+						</div>
+						<div class="fieldBlock">&nbsp;</div>
+						<div class="fieldBlock">
+							<input spellcheck="false" autocomplete="off" data-gramm="false" type='text'
+								id='serviceURL_input' placeholder='Service URL' size="85">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Request Method *</td>
+					<td align="left"><select style="max-width: 30%;" id='requestMethod_select'>
+							<option value="POST">POST</option>
+							<option value="PUT">PUT</option>
+							<option value="GET">GET</option>
+							<option value="DELETE">DELETE</option>
+							<option value="PATCH">PATCH</option>
+							<option value="OPTIONS">OPTIONS</option>
+						</select>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<div align='center'>
+			<table id='serviceDescription_Table'>
+
+				<tr style="border-bottom-style:hidden;">
+					<td>
+						<p>Service Description</p>
+						<textarea id="serviceDescription_textArea" spellcheck="false" autocomplete="off"
+							style="width:100%;font-size: 10pt" data-gramm="false"></textarea>
+					</td>
+				</tr>
+
+				<tr style="border-bottom-style:hidden;">
+					<td>
+						<p>Service Input Fields</p>
+						<table id="serviceDescription_InputFieldsTable">
+							<tr bgcolor="#F2F2F2">
+								<th>Field</th>
+								<th>Description</th>
+								<th>isMandatory</th>
+								<th>Range</th>
+								<th></th>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p>Service Output Fields</p>
+						<table id="serviceDescription_OutputFieldsTable">
+							<tr bgcolor="#F2F2F2">
+								<th>Field</th>
+								<th>Description</th>
+								<th>isMandatory</th>
+								<th>Range</th>
+								<th></th>
+							</tr>
+						</table>
+
+						<br>
+						<div align='right'>
+							<a id='previewAnchor' style="font-size: 15px;" onclick='previewAnchor_onClick()'>Preview
+								Document</a>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<br>
+		<p
+			style="font-size: 18px;color:#a4a4a8; text-decoration: underline; padding-left: 15px; font-family: Helvetica, Arial, sans-serif;">
+			Step
+			2: Add Test Case(s) to current Test Plan</p>
+		<div id="testDefinitionDiv" align="center">
+			<table id='testDefiniton_table'>
+				<tr bgcolor="#000000">
+					<th style="font-size: 18px; text-align: center; color: white" colspan="2">Test Case Definition</th>
+				</tr>
+				<tr>
+					<td width="20%">Test Name *</td>
+					<td><input spellcheck="false" autocomplete="off" data-gramm="false" type='text' id='testName_input'
+							placeholder='Test Name'></td>
+				</tr>
+				<tr>
+					<td width="20%">Test Priority *</td>
+					<td align="left"><select id='testPriority_select' style="max-width: 30%;">
+							<option value="P0">P0</option>
+							<option value="P1">P1</option>
+							<option value="P2">P2</option>
+							<option value="P3">P3</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td>Identity *</td>
+					<td align="center">
+
+						<label for='securityLevel_select'>Security Level&nbsp;</label>
+						<select id='securityLevel_select' onchange='securityLevel_select_onchage(this)'>
+							<option value="AuthenticatedAppUser">Authenticated App User</option>
+							<option value="AnonymousAppUser">Anonymous App User</option>
+							<option value="Public">Public</option>
+						</select>
+
+						&nbsp; &nbsp; &nbsp;
+						<label for='identityService_select'>Identity Service&nbsp;</label>
+						<select id='identityService_select' onchange='identityService_select_onchage(this)'>
+						</select>
+
+					</td>
+				</tr>
+				<tr>
+					<td>Test Sequence *</td>
+					<td><input type='text' id='testSequence_txt' placeholder='Test Sequence'
+							onkeypress='validateTestSequence(event)'></td>
+				</tr>
+				<tr>
+					<td>Custom Auth Payload
+						<input type="checkbox" onclick='customAuthPayload_chk_onchange(this)' id='customAuthPayload_chk'
+							name="customAuthPayload_chk">
+					</td>
+					<td align="center">
+						<table style="width:100%;border: none; border-spacing:0;  border-collapse: collapse; ">
+							<tr style="width:'100%';border: none;">
+								<td style="width:'50%';border: none;">
+									<a id='AuthRequestHeaders_a'
+										style="font-size: 9pt;color:#a4a4a8;  font-family: Helvetica, Arial, sans-serif;">
+										Default Auth Request Headers</a>
+									<textarea style="width:100%;font-size: 10pt" id="authPayloadHeaders_txtArea"
+										spellcheck="false" autocomplete="off" data-gramm="false"></textarea>
+								</td>
+								<td style="width:'50%';border: none;">
+									<a id='AuthRequestBody_a'
+										style="font-size: 9pt;color:#a4a4a8; font-family: Helvetica, Arial, sans-serif;">
+										Default Auth Request Body</a>
+									<textarea style="width:100%;font-size: 10pt" id="authPayloadBody_txtArea"
+										spellcheck="false" autocomplete="off" data-gramm="false"></textarea>
+								</td>
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+				<tr>
+					<td>Request Body</td>
+					<td align="center"><textarea id="requestBody_txtArea" spellcheck="false" autocomplete="off"
+							style="width:100%;font-size: 10pt" data-gramm="false"></textarea></td>
+				</tr>
+				<tr>
+					<td>Request Headers</td>
+					<td>
+						<div>
+							<table id="requestHeaders_table">
+							</table>
+							<br>
+							<div align='center'>
+								<button type="button" class="button actionButton" style="height: 28px;"
+									onclick="removeHeader_btnClick()">Remove
+									Header</button>&nbsp; &nbsp; &nbsp; &nbsp;
+								<button type="button" class="button actionButton" style="height: 28px;"
+									onclick="addHeader_btnClick()">Add
+									Header</button>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan='2' align="right">
+						<button class="button executeButton" type="button" onclick="executeRequest_btnClick(this)"
+							style="height: 35px;" id='executeRequest_btn'>Execute
+							Request&nbsp;
+							<img style="vertical-align: middle;"
+								src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3OC43MDMgNDc4LjcwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc4LjcwMyA0NzguNzAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1NC4yLDE4OS4xMDFsLTMzLjYtNS43Yy0zLjUtMTEuMy04LTIyLjItMTMuNS0zMi42bDE5LjgtMjcuN2M4LjQtMTEuOCw3LjEtMjcuOS0zLjItMzguMWwtMjkuOC0yOS44ICAgIGMtNS42LTUuNi0xMy04LjctMjAuOS04LjdjLTYuMiwwLTEyLjEsMS45LTE3LjEsNS41bC0yNy44LDE5LjhjLTEwLjgtNS43LTIyLjEtMTAuNC0zMy44LTEzLjlsLTUuNi0zMy4yICAgIGMtMi40LTE0LjMtMTQuNy0yNC43LTI5LjItMjQuN2gtNDIuMWMtMTQuNSwwLTI2LjgsMTAuNC0yOS4yLDI0LjdsLTUuOCwzNGMtMTEuMiwzLjUtMjIuMSw4LjEtMzIuNSwxMy43bC0yNy41LTE5LjggICAgYy01LTMuNi0xMS01LjUtMTcuMi01LjVjLTcuOSwwLTE1LjQsMy4xLTIwLjksOC43bC0yOS45LDI5LjhjLTEwLjIsMTAuMi0xMS42LDI2LjMtMy4yLDM4LjFsMjAsMjguMSAgICBjLTUuNSwxMC41LTkuOSwyMS40LTEzLjMsMzIuN2wtMzMuMiw1LjZjLTE0LjMsMi40LTI0LjcsMTQuNy0yNC43LDI5LjJ2NDIuMWMwLDE0LjUsMTAuNCwyNi44LDI0LjcsMjkuMmwzNCw1LjggICAgYzMuNSwxMS4yLDguMSwyMi4xLDEzLjcsMzIuNWwtMTkuNywyNy40Yy04LjQsMTEuOC03LjEsMjcuOSwzLjIsMzguMWwyOS44LDI5LjhjNS42LDUuNiwxMyw4LjcsMjAuOSw4LjdjNi4yLDAsMTIuMS0xLjksMTcuMS01LjUgICAgbDI4LjEtMjBjMTAuMSw1LjMsMjAuNyw5LjYsMzEuNiwxM2w1LjYsMzMuNmMyLjQsMTQuMywxNC43LDI0LjcsMjkuMiwyNC43aDQyLjJjMTQuNSwwLDI2LjgtMTAuNCwyOS4yLTI0LjdsNS43LTMzLjYgICAgYzExLjMtMy41LDIyLjItOCwzMi42LTEzLjVsMjcuNywxOS44YzUsMy42LDExLDUuNSwxNy4yLDUuNWwwLDBjNy45LDAsMTUuMy0zLjEsMjAuOS04LjdsMjkuOC0yOS44YzEwLjItMTAuMiwxMS42LTI2LjMsMy4yLTM4LjEgICAgbC0xOS44LTI3LjhjNS41LTEwLjUsMTAuMS0yMS40LDEzLjUtMzIuNmwzMy42LTUuNmMxNC4zLTIuNCwyNC43LTE0LjcsMjQuNy0yOS4ydi00Mi4xICAgIEM0NzguOSwyMDMuODAxLDQ2OC41LDE5MS41MDEsNDU0LjIsMTg5LjEwMXogTTQ1MS45LDI2MC40MDFjMCwxLjMtMC45LDIuNC0yLjIsMi42bC00Miw3Yy01LjMsMC45LTkuNSw0LjgtMTAuOCw5LjkgICAgYy0zLjgsMTQuNy05LjYsMjguOC0xNy40LDQxLjljLTIuNyw0LjYtMi41LDEwLjMsMC42LDE0LjdsMjQuNywzNC44YzAuNywxLDAuNiwyLjUtMC4zLDMuNGwtMjkuOCwyOS44Yy0wLjcsMC43LTEuNCwwLjgtMS45LDAuOCAgICBjLTAuNiwwLTEuMS0wLjItMS41LTAuNWwtMzQuNy0yNC43Yy00LjMtMy4xLTEwLjEtMy4zLTE0LjctMC42Yy0xMy4xLDcuOC0yNy4yLDEzLjYtNDEuOSwxNy40Yy01LjIsMS4zLTkuMSw1LjYtOS45LDEwLjhsLTcuMSw0MiAgICBjLTAuMiwxLjMtMS4zLDIuMi0yLjYsMi4yaC00Mi4xYy0xLjMsMC0yLjQtMC45LTIuNi0yLjJsLTctNDJjLTAuOS01LjMtNC44LTkuNS05LjktMTAuOGMtMTQuMy0zLjctMjguMS05LjQtNDEtMTYuOCAgICBjLTIuMS0xLjItNC41LTEuOC02LjgtMS44Yy0yLjcsMC01LjUsMC44LTcuOCwyLjVsLTM1LDI0LjljLTAuNSwwLjMtMSwwLjUtMS41LDAuNWMtMC40LDAtMS4yLTAuMS0xLjktMC44bC0yOS44LTI5LjggICAgYy0wLjktMC45LTEtMi4zLTAuMy0zLjRsMjQuNi0zNC41YzMuMS00LjQsMy4zLTEwLjIsMC42LTE0LjhjLTcuOC0xMy0xMy44LTI3LjEtMTcuNi00MS44Yy0xLjQtNS4xLTUuNi05LTEwLjgtOS45bC00Mi4zLTcuMiAgICBjLTEuMy0wLjItMi4yLTEuMy0yLjItMi42di00Mi4xYzAtMS4zLDAuOS0yLjQsMi4yLTIuNmw0MS43LTdjNS4zLTAuOSw5LjYtNC44LDEwLjktMTBjMy43LTE0LjcsOS40LTI4LjksMTcuMS00MiAgICBjMi43LTQuNiwyLjQtMTAuMy0wLjctMTQuNmwtMjQuOS0zNWMtMC43LTEtMC42LTIuNSwwLjMtMy40bDI5LjgtMjkuOGMwLjctMC43LDEuNC0wLjgsMS45LTAuOGMwLjYsMCwxLjEsMC4yLDEuNSwwLjVsMzQuNSwyNC42ICAgIGM0LjQsMy4xLDEwLjIsMy4zLDE0LjgsMC42YzEzLTcuOCwyNy4xLTEzLjgsNDEuOC0xNy42YzUuMS0xLjQsOS01LjYsOS45LTEwLjhsNy4yLTQyLjNjMC4yLTEuMywxLjMtMi4yLDIuNi0yLjJoNDIuMSAgICBjMS4zLDAsMi40LDAuOSwyLjYsMi4ybDcsNDEuN2MwLjksNS4zLDQuOCw5LjYsMTAsMTAuOWMxNS4xLDMuOCwyOS41LDkuNyw0Mi45LDE3LjZjNC42LDIuNywxMC4zLDIuNSwxNC43LTAuNmwzNC41LTI0LjggICAgYzAuNS0wLjMsMS0wLjUsMS41LTAuNWMwLjQsMCwxLjIsMC4xLDEuOSwwLjhsMjkuOCwyOS44YzAuOSwwLjksMSwyLjMsMC4zLDMuNGwtMjQuNywzNC43Yy0zLjEsNC4zLTMuMywxMC4xLTAuNiwxNC43ICAgIGM3LjgsMTMuMSwxMy42LDI3LjIsMTcuNCw0MS45YzEuMyw1LjIsNS42LDkuMSwxMC44LDkuOWw0Miw3LjFjMS4zLDAuMiwyLjIsMS4zLDIuMiwyLjZ2NDIuMUg0NTEuOXoiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMjM5LjQsMTM2LjAwMWMtNTcsMC0xMDMuMyw0Ni4zLTEwMy4zLDEwMy4zczQ2LjMsMTAzLjMsMTAzLjMsMTAzLjNzMTAzLjMtNDYuMywxMDMuMy0xMDMuM1MyOTYuNCwxMzYuMDAxLDIzOS40LDEzNi4wMDEgICAgeiBNMjM5LjQsMzE1LjYwMWMtNDIuMSwwLTc2LjMtMzQuMi03Ni4zLTc2LjNzMzQuMi03Ni4zLDc2LjMtNzYuM3M3Ni4zLDM0LjIsNzYuMyw3Ni4zUzI4MS41LDMxNS42MDEsMjM5LjQsMzE1LjYwMXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div align='center'>
+			<table id="serviceResponse_table">
+				<tr align='right' bgcolor="#F2F2F2">
+					<td colspan="2">
+						<a style="font-size: 12px" id='status_code_p'></a>
+						&nbsp; &nbsp; &nbsp; &nbsp;
+						<a style="font-size: 12px;" id='responseTime_p'></a>
+						&nbsp; &nbsp; &nbsp; &nbsp;
+						<a style="font-size: 12px; padding-right: 20px" id='size_p'></a>
+					</td>
+				</tr>
+
+				<tr bgcolor="#ECF9FE">
+					<th width='50%' style="font-size: 10pt; text-align: center;">Response
+						Body</th>
+					<th width='50%' style="font-size: 10pt; text-align: center;">Response
+						Body Attributes Paths</th>
+				</tr>
+				<tr>
+					<td align="center"><textarea id="responseBody_txtArea" readonly spellcheck="false"
+							autocomplete="off" data-gramm="false"></textarea></td>
+					<td align="center"><textarea id="responseBodyPaths_txtArea" readonly spellcheck="false"
+							autocomplete="off" data-gramm="false"></textarea></td>
+				</tr>
+
+				<tr>
+					<td colspan="2"></td>
+				</tr>
+				<tr bgcolor="#ECF9FE">
+					<th width='50%' style="font-size: 10pt; text-align: center;">Response
+						Headers</th>
+					<th width='50%' style="font-size: 10pt; text-align: center;">Response
+						Headers Attributes Paths</th>
+				</tr>
+				<tr>
+					<td align="center"><textarea id="responseHeaders_txtArea" readonly spellcheck="false"
+							autocomplete="off" data-gramm="false"></textarea></td>
+					<td align="center"><textarea id="responseHeadersPaths_txtArea" readonly spellcheck="false"
+							autocomplete="off" data-gramm="false"></textarea></td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<p
+			style="font-size: 18px; color:#a4a4a8; text-decoration: underline; padding-left: 15px; font-family: Helvetica, Arial, sans-serif;">
+			Step
+			3: Add Assertion(s) to current Test Case</p>
+		<div align='center'>
+			<table id="testAssertion_table">
+				<tr bgcolor="#F2F2F2">
+					<th style="font-size: 18px; text-align: center; color: black" colspan="2">Response Assertions</th>
+				</tr>
+				<tr>
+					<td id='path_td'>Attribute Path *</td>
+					<td><input type='text' id='responsePathExpression_txt' placeholder='Path Expression'></td>
+				</tr>
+				<tr>
+					<td id='datatype_td'>Expression *</td>
+					<td style="padding-left: 20%;">
+						<div>
+							<table style="border: none; border-spacing:0;  border-collapse: collapse; ">
+								<tr style="width: 100%">
+									<td style="border: none">
+										Datatype
+									</td>
+									<td style="border: none">
+										<select id='responseExpectedDataType_select'
+											onchange="responseExpectedDataType_select_onChange(this)">
+											<option value="string">string</option>
+											<option value="number">number</option>
+											<option value="boolean">boolean</option>
+											<option value="object">object</option>
+											<option value="array">array</option>
+										</select>
+									</td>
+									<td style="border: none">
+										Operator
+									</td>
+									<td style="border: none">
+										<select id='assertionOperator_select'>
+										</select>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Nature
+					</td>
+					<td style="padding-left: 20%;">
+						<input type="checkbox" onclick='toggleExpectedValueFieldState(this)' id='isValueAgnostic_chk'
+							name="isValueAgnostic_chk">
+						Is Value Agnostic?
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="checkbox" id='isNullable_chk' name="isNullable_chk">
+						Is Nullable?
+					</td>
+				</tr>
+				<tr>
+					<td id='expectedValue_td'>Assertion Value(s)</td>
+					<td><input type='text' id='responseExpectedValue_input' placeholder='Assertion Value(s)'></td>
+				</tr>
+				<tr>
+					<td>Source *</td>
+					<td style="padding-left: 20%;"><input type="radio" name="assertionSource"
+							id='responseBody_radio_btn' value="Response Body">
+						Response Body
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="assertionSource" id='responseHeader_radio_btn'
+							value="Response Header">
+						Response Header</td>
+				</tr>
+				<tr>
+					<td>Save Value?
+						<input type="checkbox" onclick='saveValue_chk_onclick(this)' id='saveValue_chk'
+							name="saveValue_chk"><br>
+						<a id='showVariablesAnchor' onclick='showVariableAnchor_click()'>Show
+							Test-Plan Variables</a>
+					</td>
+					<td>
+						<input type='text' id='variableName_txt' placeholder='Not Applicable' disabled>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" align='center'>
+						<button class="button actionButton" type="button" onclick="testPath_btnClick()"
+							style="height: 30px;">Test Path
+						</button>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						<button class="button actionButton" type="button" onclick="addAssertion_btnClick()"
+							style="height: 30px;">Add Assertion
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div align='center'>
+			<table id="testAssertionsList_table">
+				<tr>
+					<th width='5%' style="font-size: 18px; text-align: center;"><input type="checkbox"
+							id='selectAssertions_chk' onclick='assertionsList_chk_OnClick(this)'
+							name="selectAssertions_chk"></th>
+					<th width='20%' style="font-size: 18px; text-align: center;">Attribute Path</th>
+					<th width='15%' style="font-size: 18px; text-align: center;">Expression</th>
+					<th width='15%' style="font-size: 18px; text-align: center;">Assertion Value(s)</th>
+					<th width='10%' style="font-size: 18px; text-align: center;">Source</th>
+					<th width='15%' style="font-size: 18px; text-align: center;">Is Value Agnostic?</th>
+					<th width='10%' style="font-size: 18px; text-align: center;">Is Nullable?</th>
+				</tr>
+				<tr>
+					<td colspan="8" align='right'>
+						<button class="button actionButton" onclick="deleteResponseAssertion_btnClick()" type="button"
+							style="height: 30px;">Remove Assertion
+						</button>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+		<br>
+		<div align='center'>
+			<button class="button save_test_case_btn" type="button" onclick='saveTestCase_btnClick()'
+				id='save_test_case_btn' style="height: 40px;">Save Test Case&nbsp;
+				<img style="vertical-align: middle;"
+					src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU1IDU1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1NSA1NTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIxNnB4IiBoZWlnaHQ9IjE2cHgiPgo8Zz4KCTxwYXRoIGQ9Ik00OSw4LjV2LThIMHY0N2g3djdoNDh2LTQ2SDQ5eiBNMiw0NS41di00M2g0NXY2SDd2MzdIMnogTTUzLDUyLjVIOXYtNXYtMzdoNDBoNFY1Mi41eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPHBhdGggZD0iTTQyLDMwLjVIMzJ2LTEwYzAtMC41NTMtMC40NDctMS0xLTFzLTEsMC40NDctMSwxdjEwSDIwYy0wLjU1MywwLTEsMC40NDctMSwxczAuNDQ3LDEsMSwxaDEwdjEwYzAsMC41NTMsMC40NDcsMSwxLDEgICBzMS0wLjQ0NywxLTF2LTEwaDEwYzAuNTUzLDAsMS0wLjQ0NywxLTFTNDIuNTUzLDMwLjUsNDIsMzAuNXoiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+			</button>
+		</div>
+		<br>
+		<hr>
+		<br>
+
+		<div align='center'>
+			<table id='testCasesList_table'>
+				<tr bgcolor="#000000">
+					<th style="font-size: 18px; text-align: center; color: white" colspan="4">Test Cases</th>
+				</tr>
+				<tr>
+					<th width='5%' style="font-size: 18px; text-align: center;"><input type="checkbox"
+							id='selectTests_chk' onclick='testsList_chk_OnClick(this)' name="selectTests_chk">
+					</th>
+					<th width='50%' style="font-size: 18px; text-align: center;">Test
+						Case</th>
+					<th width='25%' style="font-size: 18px; text-align: center;">Assertions
+						Count</th>
+					<th width='25%' style="font-size: 18px; text-align: center;">Test
+						Sequence</th>
+				</tr>
+				<tr>
+					<td colspan="4" align='center' width="50%" style="border-right: '1px solid white'">
+						<button class="button actionButton" type="button" onclick='editTestCase_btnClick()'
+							style="height: 30px;">Edit Test Case</button>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+						<button class="button actionButton" type="button" onclick='removeTestCase_btnClick()'
+							style="height: 30px;">Remove Test Case
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div id='actionItems_div' align='center'>
+			<table id='actionItems_table' style="width:'50%'">
+				<tr>
+					<td align='left'>
+						<button class="button actionButton" type="button" onclick='import_service_btnClick()'
+							style="height: 35px;">Import
+							Test Plan&nbsp;&nbsp;<img
+								src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUyLjc1NiA1Mi43NTciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUyLjc1NiA1Mi43NTc7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTI2LjEwOCwwTDE1LjU4NSwxMC41MjRjLTEuMDQ4LDEuMDI0LTAuODE1LDEuNzQ2LDAuNjQ5LDEuNzQ2aDUuODczbC0wLjAwMSwxMi43ODhjMCwyLjIwOCwxLjc5LDQsNCw0bDAsMCAgICAgYzIuMjA5LDAsNC0xLjc5MSw0LTRsMC4wMDEtMTIuNzg5aDUuODc2YzEuNDYyLDAuMDAxLDEuNjkzLTAuNzIzLDAuNjQ2LTEuNzQ3TDI2LjEwOCwweiIgZmlsbD0iIzAwMDAwMCIvPgoJCQk8cGF0aCBkPSJNNDkuMDI3LDI1Ljc3aC02LjA0OWMtMC41NTQsMC0xLDAuNDQ3LTEsMXYxNy45MzlIMTAuNzhWMjYuNzdjMC0wLjU1My0wLjQ0Ny0xLTEtMUgzLjczMWMtMC41NTMsMC0xLDAuNDQ3LTEsMXYyMC40NjQgICAgIGMwLDMuMDQ1LDIuNDc5LDUuNTIyLDUuNTI0LDUuNTIyaDM2LjI0OGMzLjA0NiwwLDUuNTIzLTIuNDc5LDUuNTIzLTUuNTIyVjI2Ljc3QzUwLjAyNywyNi4yMTcsNDkuNTgxLDI1Ljc3LDQ5LjAyNywyNS43N3oiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></button>
+					</td>
+
+					<td align='center'>
+						&nbsp;&nbsp;&nbsp;&nbsp;<button class="button executeButton" type="button"
+							onclick="executeTestPlan_btnClick()" style='height: 35px;' id='executeTestPlan_btn'>Execute
+							Test Plan&nbsp;
+							<img style="vertical-align: middle;"
+								src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3OC43MDMgNDc4LjcwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc4LjcwMyA0NzguNzAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1NC4yLDE4OS4xMDFsLTMzLjYtNS43Yy0zLjUtMTEuMy04LTIyLjItMTMuNS0zMi42bDE5LjgtMjcuN2M4LjQtMTEuOCw3LjEtMjcuOS0zLjItMzguMWwtMjkuOC0yOS44ICAgIGMtNS42LTUuNi0xMy04LjctMjAuOS04LjdjLTYuMiwwLTEyLjEsMS45LTE3LjEsNS41bC0yNy44LDE5LjhjLTEwLjgtNS43LTIyLjEtMTAuNC0zMy44LTEzLjlsLTUuNi0zMy4yICAgIGMtMi40LTE0LjMtMTQuNy0yNC43LTI5LjItMjQuN2gtNDIuMWMtMTQuNSwwLTI2LjgsMTAuNC0yOS4yLDI0LjdsLTUuOCwzNGMtMTEuMiwzLjUtMjIuMSw4LjEtMzIuNSwxMy43bC0yNy41LTE5LjggICAgYy01LTMuNi0xMS01LjUtMTcuMi01LjVjLTcuOSwwLTE1LjQsMy4xLTIwLjksOC43bC0yOS45LDI5LjhjLTEwLjIsMTAuMi0xMS42LDI2LjMtMy4yLDM4LjFsMjAsMjguMSAgICBjLTUuNSwxMC41LTkuOSwyMS40LTEzLjMsMzIuN2wtMzMuMiw1LjZjLTE0LjMsMi40LTI0LjcsMTQuNy0yNC43LDI5LjJ2NDIuMWMwLDE0LjUsMTAuNCwyNi44LDI0LjcsMjkuMmwzNCw1LjggICAgYzMuNSwxMS4yLDguMSwyMi4xLDEzLjcsMzIuNWwtMTkuNywyNy40Yy04LjQsMTEuOC03LjEsMjcuOSwzLjIsMzguMWwyOS44LDI5LjhjNS42LDUuNiwxMyw4LjcsMjAuOSw4LjdjNi4yLDAsMTIuMS0xLjksMTcuMS01LjUgICAgbDI4LjEtMjBjMTAuMSw1LjMsMjAuNyw5LjYsMzEuNiwxM2w1LjYsMzMuNmMyLjQsMTQuMywxNC43LDI0LjcsMjkuMiwyNC43aDQyLjJjMTQuNSwwLDI2LjgtMTAuNCwyOS4yLTI0LjdsNS43LTMzLjYgICAgYzExLjMtMy41LDIyLjItOCwzMi42LTEzLjVsMjcuNywxOS44YzUsMy42LDExLDUuNSwxNy4yLDUuNWwwLDBjNy45LDAsMTUuMy0zLjEsMjAuOS04LjdsMjkuOC0yOS44YzEwLjItMTAuMiwxMS42LTI2LjMsMy4yLTM4LjEgICAgbC0xOS44LTI3LjhjNS41LTEwLjUsMTAuMS0yMS40LDEzLjUtMzIuNmwzMy42LTUuNmMxNC4zLTIuNCwyNC43LTE0LjcsMjQuNy0yOS4ydi00Mi4xICAgIEM0NzguOSwyMDMuODAxLDQ2OC41LDE5MS41MDEsNDU0LjIsMTg5LjEwMXogTTQ1MS45LDI2MC40MDFjMCwxLjMtMC45LDIuNC0yLjIsMi42bC00Miw3Yy01LjMsMC45LTkuNSw0LjgtMTAuOCw5LjkgICAgYy0zLjgsMTQuNy05LjYsMjguOC0xNy40LDQxLjljLTIuNyw0LjYtMi41LDEwLjMsMC42LDE0LjdsMjQuNywzNC44YzAuNywxLDAuNiwyLjUtMC4zLDMuNGwtMjkuOCwyOS44Yy0wLjcsMC43LTEuNCwwLjgtMS45LDAuOCAgICBjLTAuNiwwLTEuMS0wLjItMS41LTAuNWwtMzQuNy0yNC43Yy00LjMtMy4xLTEwLjEtMy4zLTE0LjctMC42Yy0xMy4xLDcuOC0yNy4yLDEzLjYtNDEuOSwxNy40Yy01LjIsMS4zLTkuMSw1LjYtOS45LDEwLjhsLTcuMSw0MiAgICBjLTAuMiwxLjMtMS4zLDIuMi0yLjYsMi4yaC00Mi4xYy0xLjMsMC0yLjQtMC45LTIuNi0yLjJsLTctNDJjLTAuOS01LjMtNC44LTkuNS05LjktMTAuOGMtMTQuMy0zLjctMjguMS05LjQtNDEtMTYuOCAgICBjLTIuMS0xLjItNC41LTEuOC02LjgtMS44Yy0yLjcsMC01LjUsMC44LTcuOCwyLjVsLTM1LDI0LjljLTAuNSwwLjMtMSwwLjUtMS41LDAuNWMtMC40LDAtMS4yLTAuMS0xLjktMC44bC0yOS44LTI5LjggICAgYy0wLjktMC45LTEtMi4zLTAuMy0zLjRsMjQuNi0zNC41YzMuMS00LjQsMy4zLTEwLjIsMC42LTE0LjhjLTcuOC0xMy0xMy44LTI3LjEtMTcuNi00MS44Yy0xLjQtNS4xLTUuNi05LTEwLjgtOS45bC00Mi4zLTcuMiAgICBjLTEuMy0wLjItMi4yLTEuMy0yLjItMi42di00Mi4xYzAtMS4zLDAuOS0yLjQsMi4yLTIuNmw0MS43LTdjNS4zLTAuOSw5LjYtNC44LDEwLjktMTBjMy43LTE0LjcsOS40LTI4LjksMTcuMS00MiAgICBjMi43LTQuNiwyLjQtMTAuMy0wLjctMTQuNmwtMjQuOS0zNWMtMC43LTEtMC42LTIuNSwwLjMtMy40bDI5LjgtMjkuOGMwLjctMC43LDEuNC0wLjgsMS45LTAuOGMwLjYsMCwxLjEsMC4yLDEuNSwwLjVsMzQuNSwyNC42ICAgIGM0LjQsMy4xLDEwLjIsMy4zLDE0LjgsMC42YzEzLTcuOCwyNy4xLTEzLjgsNDEuOC0xNy42YzUuMS0xLjQsOS01LjYsOS45LTEwLjhsNy4yLTQyLjNjMC4yLTEuMywxLjMtMi4yLDIuNi0yLjJoNDIuMSAgICBjMS4zLDAsMi40LDAuOSwyLjYsMi4ybDcsNDEuN2MwLjksNS4zLDQuOCw5LjYsMTAsMTAuOWMxNS4xLDMuOCwyOS41LDkuNyw0Mi45LDE3LjZjNC42LDIuNywxMC4zLDIuNSwxNC43LTAuNmwzNC41LTI0LjggICAgYzAuNS0wLjMsMS0wLjUsMS41LTAuNWMwLjQsMCwxLjIsMC4xLDEuOSwwLjhsMjkuOCwyOS44YzAuOSwwLjksMSwyLjMsMC4zLDMuNGwtMjQuNywzNC43Yy0zLjEsNC4zLTMuMywxMC4xLTAuNiwxNC43ICAgIGM3LjgsMTMuMSwxMy42LDI3LjIsMTcuNCw0MS45YzEuMyw1LjIsNS42LDkuMSwxMC44LDkuOWw0Miw3LjFjMS4zLDAuMiwyLjIsMS4zLDIuMiwyLjZ2NDIuMUg0NTEuOXoiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMjM5LjQsMTM2LjAwMWMtNTcsMC0xMDMuMyw0Ni4zLTEwMy4zLDEwMy4zczQ2LjMsMTAzLjMsMTAzLjMsMTAzLjNzMTAzLjMtNDYuMywxMDMuMy0xMDMuM1MyOTYuNCwxMzYuMDAxLDIzOS40LDEzNi4wMDEgICAgeiBNMjM5LjQsMzE1LjYwMWMtNDIuMSwwLTc2LjMtMzQuMi03Ni4zLTc2LjNzMzQuMi03Ni4zLDc2LjMtNzYuM3M3Ni4zLDM0LjIsNzYuMyw3Ni4zUzI4MS41LDMxNS42MDEsMjM5LjQsMzE1LjYwMXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+						</button>
+					</td>
+
+					<td align='right'>
+						<button class="button actionButton" type="button" onclick='exportService_btnClick()'
+							style="height: 35px;">Export
+							Test Plan&nbsp;&nbsp;<img
+								src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI5Ljk3OCAyOS45NzgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5Ljk3OCAyOS45Nzg7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNMjUuNDYyLDE5LjEwNXY2Ljg0OEg0LjUxNXYtNi44NDhIMC40ODl2OC44NjFjMCwxLjExMSwwLjksMi4wMTIsMi4wMTYsMi4wMTJoMjQuOTY3YzEuMTE1LDAsMi4wMTYtMC45LDIuMDE2LTIuMDEyICAgdi04Ljg2MUgyNS40NjJ6IiBmaWxsPSIjMDAwMDAwIi8+Cgk8cGF0aCBkPSJNMTQuNjIsMTguNDI2bC01Ljc2NC02Ljk2NWMwLDAtMC44NzctMC44MjgsMC4wNzQtMC44MjhzMy4yNDgsMCwzLjI0OCwwczAtMC41NTcsMC0xLjQxNmMwLTIuNDQ5LDAtNi45MDYsMC04LjcyMyAgIGMwLDAtMC4xMjktMC40OTQsMC42MTUtMC40OTRjMC43NSwwLDQuMDM1LDAsNC41NzIsMGMwLjUzNiwwLDAuNTI0LDAuNDE2LDAuNTI0LDAuNDE2YzAsMS43NjIsMCw2LjM3MywwLDguNzQyICAgYzAsMC43NjgsMCwxLjI2NiwwLDEuMjY2czEuODQyLDAsMi45OTgsMGMxLjE1NCwwLDAuMjg1LDAuODY3LDAuMjg1LDAuODY3cy00LjkwNCw2LjUxLTUuNTg4LDcuMTkzICAgQzE1LjA5MiwxOC45NzksMTQuNjIsMTguNDI2LDE0LjYyLDE4LjQyNnoiIGZpbGw9IiMwMDAwMDAiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+	<br>
+</body>
+
+</html>

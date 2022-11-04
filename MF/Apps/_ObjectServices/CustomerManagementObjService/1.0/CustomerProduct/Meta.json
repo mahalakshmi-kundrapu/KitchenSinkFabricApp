@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "GetCustomerProducts" : "GetCustomerProductsMapping",
+    "GetAllProducts" : "GetAllProductsMapping",
+    "GetAccountSpecificAlerts" : "GetAccountSpecificAlertsMapping",
+    "updateEstatementStatus" : "updateEstatementStatusMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

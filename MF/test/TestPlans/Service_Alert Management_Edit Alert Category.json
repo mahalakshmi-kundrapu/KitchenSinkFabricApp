@@ -1,0 +1,197 @@
+{
+  "name" : "Edit Alert Category",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertcategory/editAlertCategory",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to Edit the Alert Category.",
+  "tests" : [ {
+    "id" : "3133631",
+    "name" : "Edit Alert Category",
+    "testSequence" : 1,
+    "requestBody" : "{\"categoryName\":\"Security Alerts Name\",\"categoryCode\":\"ALERT_CAT_SECURITY\",\"channels\":{\"CH_EMAIL\":false,\"CH_SMS\":true},\"containsAccountLevelAlerts\":true,\"statusID\":\"SID_ACTIVE\",\"addedDisplayPreferences\":[{\"languageCode\":\"en-US\",\"displayName\":\"Security Alerts\",\"description\":\"Description for Security Alerts\"},{\"languageCode\":\"fr-Fr\",\"displayName\":\"Security Alerts\",\"description\":\"Description des alertes de sécurité\"}],\"removedDisplayPreferences\":[\"en-GB\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "3390624",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "30367573",
+    "name" : "Edit Alert Category Channels",
+    "testSequence" : 2,
+    "requestBody" : "{\"categoryCode\":\"ALERT_CAT_SECURITY\",\"channels\":{\"CH_EMAIL\":false,\"CH_SMS\":true}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "53473530",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "22032127",
+    "name" : "Deactivate Alert Category",
+    "testSequence" : 3,
+    "requestBody" : "{\"categoryCode\":\"ALERT_CAT_SECURITY\",\"statusID\":\"SID_INACTIVE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "84938057",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "32150947",
+    "name" : "Activate Alert Category",
+    "testSequence" : 4,
+    "requestBody" : "{\"categoryCode\":\"ALERT_CAT_SECURITY\",\"statusID\":\"SID_ACTIVE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "78249468",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "17073245",
+    "name" : "Set Alert Category Display Preference",
+    "testSequence" : 5,
+    "requestBody" : "{\"categoryCode\":\"ALERT_CAT_SECURITY\",\"addedDisplayPreferences\":[{\"languageCode\":\"en-US\",\"displayName\":\"Security Alerts\",\"description\":\"Description for Security Alerts\"},{\"languageCode\":\"fr-Fr\",\"displayName\":\"Security Alerts\",\"description\":\"Description des alertes de sécurité\"}],\"removedDisplayPreferences\":[\"en-GB\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "97132662",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "categoryName",
+    "description" : "Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "categoryCode",
+    "description" : "Code the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CH_TYPE",
+    "description" : "TRUE if the type of the Channel is subscribed to the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "containsAccountLevelAlerts",
+    "description" : "TRUE if the Alert Category contains Account Level Alerts",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "statusID",
+    "description" : "Status ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "languageCode",
+    "description" : "Language Code of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "displayName",
+    "description" : "Display Name of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedDisplayPreferences",
+    "description" : "List of deleted Display Preferences",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Channel ID ",
+    "description" : "Channel Subscription status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Locale ",
+    "description" : "Display Preference Status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Operation Status",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

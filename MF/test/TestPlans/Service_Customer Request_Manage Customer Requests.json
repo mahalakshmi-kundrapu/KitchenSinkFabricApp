@@ -1,0 +1,441 @@
+{
+  "name" : "Manage Customer Requests",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerRequest/updateCustomerRequest",
+  "moduleName" : "Customer Request",
+  "httpMethod" : "POST",
+  "description" : "This service is to create a new customer request/message.",
+  "tests" : [ {
+    "id" : "60789603",
+    "name" : "New Request Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"requestcategory_id\":\"RCID_ACCOUNTS\",\"requestsubject\":\"Failed NEFT Transfer Ref:1101\",\"requeststatus\":\"SID_NEW\",\"priority\":\"HIGH\",\"recipientList\":\"[\\\"dbpolbuser\\\"]\",\"messagestatus\":\"SENT\",\"messagedescription\":\"SGkgQ3VzdG9tZXIsIFlvdXIgdHJhbnNhY3Rpb24gd2l0aCByZWZlcmVuY2UgMTEwMSBoYXMgZmFpbGVkLiBQbGVhc2UgcmV0cnkgdGhlIHRyYW5zYWN0aW9uLiAKVGhhbmsgeW91\",\"isAdminRequest\":\"TRUE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "49129859",
+      "path" : "$.dbpolbuser.requestMessage.statusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "53151823",
+      "path" : "$.dbpolbuser.customerRequest.requestId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "77634785",
+      "path" : "$.dbpolbuser.requestMessage.messageId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "9663916",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "54986079",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "46070079",
+    "name" : "Invalid Message Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"requestcategory_id\":\"RCID_ACCOUNTS\",\"requestsubject\":\"Account Upgrade Offer\",\"requeststatus\":\"SID_NEW\",\"priority\":\"MEDIUM\",\"recipientList\":\"[\\\"dbpolbuser\\\"]\",\"messagestatus\":\"SENT\",\"messagedescription\":\"\",\"isAdminRequest\":\"TRUE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "64641937",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "59645774",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "45059881",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20131",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "71967730",
+    "name" : "Soft Delete Check",
+    "testSequence" : 3,
+    "requestBody" : "{\"username\":\"dbpolbuser\",\"requestid\":\"REQ1424677730\",\"softdelete\":\"false\",\"modifiedby\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "92802862",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "60592183",
+    "name" : "Hard Delete Check",
+    "testSequence" : 4,
+    "requestBody" : "{\"username\":\"dbpolbuser\",\"requestid\":\"REQ1424677730\",\"harddelete\":\"true\",\"modifiedby\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "25117148",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "73092511",
+    "name" : "CSR Reply Message Check",
+    "testSequence" : 5,
+    "requestBody" : "{\"isAdminRequest\":true,\"username\":\"dbpolbuser\",\"requestid\":\"REQ1424677730\",\"messagedescription\":\"VGVzdA==\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "76255074",
+      "path" : "$.dbpolbuser.customerRequest.requestId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "REQ1424677730",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "4188183",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "89696806",
+    "name" : "Empty Payload Check",
+    "testSequence" : 6,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "44428",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "17209762",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "62273666",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "39401037",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20982",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "35749866",
+    "name" : "Draft Message Check",
+    "testSequence" : 7,
+    "requestBody" : "{\"isAdminRequest\":true,\"messagestatus\":\"DRAFT\",\"username\":\"dbpolbuser\",\"requestid\":\"REQ1424677730\",\"messagedescription\":\"VGVzdA==\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "40266010",
+      "path" : "$.dbpolbuser.customerRequest.requestId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "REQ1424677730",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "67686387",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "35948182",
+    "name" : "Customer Reply Message Check",
+    "testSequence" : 8,
+    "requestBody" : "{\"username\":\"dbpolbuser\",\"requestid\":\"REQ1424677730\",\"messagedescription\":\"VGVzdA==\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "17861029",
+      "path" : "$.dbpolbuser.customerRequest.requestId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "REQ1424677730",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "11094028",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "requestcategory_id",
+    "description" : "ID of the Request Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "messageid",
+    "description" : "ID of the message. To be used in an update-message request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isAdminRequest",
+    "description" : "Set to TRUE if the call is being sent from Admin Console",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "priority",
+    "description" : "Request priority",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "assignedto",
+    "description" : "Internal User ID to which the request is to be allocated",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isDiscardRequest",
+    "description" : "Set to TRUE to discard the request and the corresponding messages",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "accountid",
+    "description" : "Account ID of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requestsubject",
+    "description" : "Request Subject",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "messagedescription",
+    "description" : "Content of the message. Encode in base 64 format",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isNewRequest",
+    "description" : "Set to TRUE in case of a create new request scenario",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "file1",
+    "description" : "File Attachment 1",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "file 2",
+    "description" : "File Attachment 2",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "file 3",
+    "description" : "File Attachment 3",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "file 4",
+    "description" : "File Attachment 4",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "file 5",
+    "description" : "File Attachment 5",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requeststatus",
+    "description" : "Status ID of the Request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_id",
+    "description" : "ID of the customer.Can be used to create a request to a single recipient",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "messagestatus",
+    "description" : "Status of the message. Set as 'DRAFT' in case of a draft message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Username of the customer.Can be used to create a request to a single recipient",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "manageCustomerRequestRecord",
+    "description" : "Status and Response of Creating/Updating the Customer Request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "messageAttachmentsOperation",
+    "description" : "Status and Response of Uploading/Discarding the file attachments",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "manageRequestMessageRecord",
+    "description" : "Status and Response of Creating/Updating the Request Message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Backend HTTP call status code",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "RegisterCustomerDevice" : "RegisterCustomerDeviceMapping",
+    "GetCustomerDevices" : "GetCustomerDevicesMapping",
+    "CustomerUpdateDeviceInformation" : "CustomerUpdateDeviceInformationMapping",
+    "IsDeviceRegistered" : "IsDeviceRegisteredMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

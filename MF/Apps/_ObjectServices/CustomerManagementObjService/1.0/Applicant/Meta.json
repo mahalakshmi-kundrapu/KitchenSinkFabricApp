@@ -1,0 +1,18 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createApplicantAO" : "createApplicantAOMapping",
+    "getApplicantStatus" : "getApplicantStatusMapping",
+    "deleteApplicant" : "deleteApplicantMapping",
+    "createApplicantViaAssistedOnboarding" : "createApplicantViaAssistedOnboardingMapping",
+    "createApplicant" : "createApplicantMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

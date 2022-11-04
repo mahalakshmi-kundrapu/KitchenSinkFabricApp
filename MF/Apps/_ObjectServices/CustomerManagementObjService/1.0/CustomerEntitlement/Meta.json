@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "GetAllEntitlements" : "GetAllEntitlementsMapping",
+    "GetCustomerEntitlement" : "GetCustomerEntitlementMapping",
+    "GetIndirectEntitlements" : "GetIndirectEntitlementsMapping",
+    "EditCustomerEntitlement" : "EditCustomerEntitlementMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

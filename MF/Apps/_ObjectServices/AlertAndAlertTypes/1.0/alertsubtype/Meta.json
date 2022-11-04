@@ -1,0 +1,16 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createAlertSubType" : "createAlertSubTypeMapping",
+    "getAlertSubTypeDefinition" : "getAlertSubTypeDefinitionMapping",
+    "editAlertSubType" : "editAlertSubTypeMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

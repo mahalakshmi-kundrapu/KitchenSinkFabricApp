@@ -1,0 +1,34 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_customerprequalifypackage_create4315",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"request_in\" outputpath=\"request_out\"><set-param inputpath=\"Customer_id\" outputpath=\"Customer_id\"/><set-param inputpath=\"PrequalifyPackage_id\" outputpath=\"PrequalifyPackage_id\"/><set-param inputpath=\"id\" outputpath=\"id\"/></map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"customerprequalifypackage\" outputpath=\"CustomerPrequalifyPackage\"><set-param inputpath=\"Customer_id\" outputpath=\"Customer_id\"/><set-param inputpath=\"PrequalifyPackage_id\" outputpath=\"PrequalifyPackage_id\"/><set-param inputpath=\"id\" outputpath=\"id\"/></map></map></mapper>",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_customerprequalifypackage_create"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "CustomerPrequalifyPackage",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

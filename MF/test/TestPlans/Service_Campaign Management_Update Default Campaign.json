@@ -1,0 +1,38 @@
+{
+    "description": "This service is used to update default Campaign",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Update Default Campaign",
+    "url": "services/data/v1/CampaignManagementObjService/operations/defaultcampaign/updateDefaultCampaign",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "6770941",
+            "name": "Update Default Campaign Test",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"description\":\"Test Campaign description X\",\"specifications\":[{\"channelId\":\"MOBILE\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageIndex\":\"1\",\"imageResolution\":\"390x172\",\"imageURL\":\"https://google2.com\",\"destinationURL\":\"https://google2.com\"},{\"channelId\":\"WEB\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageIndex\":\"1\",\"imageResolution\":\"1170x516\",\"imageURL\":\"https://google3.com\",\"destinationURL\":\"https://google3.com\"},{\"channelId\":\"MOBILE\",\"screenId\":\"POST_LOGIN\",\"imageIndex\":\"1\",\"imageResolution\":\"686x396\",\"imageURL\":\"https://google4.com\",\"destinationURL\":\"https://google4.com\"},{\"channelId\":\"WEB\",\"screenId\":\"APPLY_FOR_NEW_ACCOUNT\",\"imageIndex\":\"1\",\"imageResolution\":\"780x344\",\"imageURL\":\"https://google5.com\",\"destinationURL\":\"https://google5.com\"}]}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "68698113",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

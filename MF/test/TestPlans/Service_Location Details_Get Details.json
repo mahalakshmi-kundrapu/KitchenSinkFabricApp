@@ -1,0 +1,91 @@
+{
+  "name" : "Get Details",
+  "url" : "services/data/v1/ServerManagementObjService/operations/maplocation/getDetails",
+  "moduleName" : "Location Details",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "54175587",
+    "name" : "Fetch Location Details",
+    "testSequence" : 1,
+    "requestBody" : "{\"api-key\":\"AIzaSyAJOkl-7hJ08jbE5sBZs9Da9qrHP_XhXro\",\"placeid\":\"ChIJTWpGptPJt4kRxjKl3fCvi8Q\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "79360584",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "32293507",
+      "path" : "$.result[*].formatted_address",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "11347025",
+      "path" : "$.result[*].latitude",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "96888162",
+      "path" : "$.result[*].address_components[*].types",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "19200102",
+      "path" : "$.result[*].address_components[*].short_name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "29682130",
+      "path" : "$.result[*].address_components[*].long_name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "63495992",
+      "path" : "$.result[*].longitude",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

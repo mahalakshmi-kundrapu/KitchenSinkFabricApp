@@ -1,0 +1,18 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createLead" : "createLeadMapping",
+    "fetchLeads" : "fetchLeadsMapping",
+    "assignLeads" : "assignLeadsMapping",
+    "updateLead" : "updateLeadMapping",
+    "closeLead" : "closeLeadMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

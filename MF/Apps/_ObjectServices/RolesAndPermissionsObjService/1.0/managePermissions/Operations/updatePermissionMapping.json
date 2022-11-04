@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "managePermission8225",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "RolesAndPermissionManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "managePermission"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "managePermissions",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "operationConfig" : {
+    "name" : "importLocations4486",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "LocationsUsingCSVService",
+      "serviceVersion" : "1.0",
+      "operationName" : "importLocations"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "LocationsUsingCSV",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

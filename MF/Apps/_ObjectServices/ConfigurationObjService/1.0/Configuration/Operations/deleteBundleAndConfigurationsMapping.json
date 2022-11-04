@@ -1,0 +1,28 @@
+{
+  "operationConfig" : {
+    "name" : "deleteBundleAndConfigurations7390",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConfigurationService",
+      "serviceVersion" : "1.0",
+      "operationName" : "deleteBundleAndConfigurations"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "Configuration",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

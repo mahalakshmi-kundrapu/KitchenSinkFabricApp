@@ -1,0 +1,164 @@
+{
+  "name" : "Get Group Entitlements",
+  "url" : "services/data/v1/CustomerGroupsAndEntitlObjSvc/operations/GroupEntitlements/getGroupEntitlements",
+  "moduleName" : "Groups",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch all the entitlements associated with a particular group.",
+  "tests" : [ {
+    "id" : "55322567",
+    "name" : "Fetch group Entitilements",
+    "testSequence" : 1,
+    "requestBody" : "{\"Group_id\":\"DEFAULT_GROUP\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : { },
+    "responseBodyAssertions" : [ {
+      "id" : "98894547",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "70646057",
+      "path" : "$.GroupEntitlements[*].Service_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "2332648",
+      "path" : "$.GroupEntitlements[*].MaxTransferLimit",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "8207353",
+      "path" : "$.GroupEntitlements[*].MinTransferLimit",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "32378127",
+      "path" : "$.GroupEntitlements[*].Group_id",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "DEFAULT_GROUP",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "11309173",
+      "path" : "$.GroupEntitlements[*].Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "38072780",
+      "path" : "$.GroupEntitlements[*].MaxDailyLimit",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "39245559",
+      "path" : "$.GroupEntitlements[*].TransactionFee_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "63605770",
+      "path" : "$.GroupEntitlements[*].TransactionLimit_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "6981133",
+      "path" : "$.GroupEntitlements[*].Code",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "40773069",
+      "path" : "$.GroupEntitlements[*].Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "58245182",
+      "path" : "$.GroupEntitlements[*].Type_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Group_id",
+    "description" : "Required ID of the Group Object",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Service_id",
+    "description" : "Entitlement ID of Group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Group_id",
+    "description" : "ID of Group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Group Description",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionFee_id",
+    "description" : "Transaction FEE ID of Group",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionLimit_id",
+    "description" : "Transaction Limit ID of Entitlement associated with the Group",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

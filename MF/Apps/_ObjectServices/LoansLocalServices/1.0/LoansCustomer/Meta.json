@@ -1,0 +1,23 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "updateCustomerDetails" : "updateCustomerDetailsMapping",
+    "getCustomerByDetails" : "getCustomerByDetailsMapping",
+    "GenerateOTP" : "GenerateOTPMapping",
+    "CreatePhoneNumberCommunication" : "CreatePhoneNumberCommunicationMapping",
+    "SendEmailService" : "SendEmailServiceMapping",
+    "getCustomerAddress" : "getCustomerAddressMapping",
+    "getEmployementDetails" : "getEmployementDetailsMapping",
+    "SetPassword" : "SetPasswordMapping",
+    "ValidateOTP" : "ValidateOTPMapping",
+    "CreateNewCustomer" : "CreateNewCustomerMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

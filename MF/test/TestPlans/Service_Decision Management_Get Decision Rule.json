@@ -1,0 +1,84 @@
+{
+    "description": "This service is used to fetch decision rules.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [
+        {
+            "name": "decisionId",
+            "description": "ID of the decision",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "decisionName",
+            "description": "Name of the Decision",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "description",
+            "description": "Description of the decision",
+            "isMandatory": true,
+            "range": ""
+        }
+    ],
+    "name": "Get Decision Rule",
+    "url": "services/DecisionRuleManagement/getDecisionRules",
+    "moduleName": "Decision Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "33601231",
+            "name": "Fetch Decision Rules",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "42196289",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "57841048",
+                    "path": "$.decisions[*].description",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "4664218",
+                    "path": "$.decisions[*].decisionId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "14258263",
+                    "path": "$.decisions[*].decisionName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

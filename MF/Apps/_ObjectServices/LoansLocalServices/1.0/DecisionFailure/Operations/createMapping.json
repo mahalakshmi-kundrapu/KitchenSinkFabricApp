@@ -1,0 +1,35 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_decisionfailure_create9451",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"request_in\" outputpath=\"request_out\">\n        <set-param inputpath=\"baseAttributeName\" outputpath=\"baseAttributeName\"/>\n        <set-param inputpath=\"baseAttributeValue\" outputpath=\"baseAttributeValue\"/>\n        <set-param inputpath=\"createdby\" outputpath=\"createdby\"/>\n        <set-param inputpath=\"decision_id\" outputpath=\"decision_id\"/>\n        <set-param inputpath=\"errmsg\" outputpath=\"errmsg\"/>\n        <set-param inputpath=\"exception\" outputpath=\"exception\"/>\n        <set-param inputpath=\"failureTriggerJob_id\" outputpath=\"failureTriggerJob_id\"/>\n        <set-param inputpath=\"job_id\" outputpath=\"job_id\"/>\n        <set-param inputpath=\"modifiedby\" outputpath=\"modifiedby\"/>\n        <set-param inputpath=\"resultAttributeName\" outputpath=\"resultAttributeName\"/>\n        <set-param inputpath=\"softdeleteflag\" outputpath=\"softdeleteflag\"/>\n    </map>\n</mapper>\n",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"decisionfailure\" outputpath=\"DecisionFailure\"><set-param inputpath=\"exception\" outputpath=\"exception\"/><set-param inputpath=\"lastmodifiedts\" outputpath=\"lastmodifiedts\"/><set-param inputpath=\"baseAttributeValue\" outputpath=\"baseAttributeValue\"/><set-param inputpath=\"errmsg\" outputpath=\"errmsg\"/><set-param inputpath=\"baseAttributeName\" outputpath=\"baseAttributeName\"/><set-param inputpath=\"createdts\" outputpath=\"createdts\"/><set-param inputpath=\"softdeleteflag\" outputpath=\"softdeleteflag\"/><set-param inputpath=\"decision_id\" outputpath=\"decision_id\"/><set-param inputpath=\"createdby\" outputpath=\"createdby\"/><set-param inputpath=\"job_id\" outputpath=\"job_id\"/><set-param inputpath=\"modifiedby\" outputpath=\"modifiedby\"/><set-param inputpath=\"id\" outputpath=\"id\"/><set-param inputpath=\"synctimestamp\" outputpath=\"synctimestamp\"/><set-param inputpath=\"resultAttributeName\" outputpath=\"resultAttributeName\"/><set-param inputpath=\"failureTriggerJob_id\" outputpath=\"failureTriggerJob_id\"/></map></map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"DecisionFailure\",\"xy\":\"354 66\",\"__gohashid\":27836},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"ConsumerLendingDB (1.0).dbxdb_decisionfailure_create\",\"xy\":\"770 100\",\"__gohashid\":27837}],\"linkDataArray\":[{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":33064,\"from\":\"source:DecisionFailure:baseAttributeName:\",\"to\":\"target:baseAttributeName:\",\"fromPort\":\"source:DecisionFailure:baseAttributeName:\",\"toPort\":\"target:baseAttributeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":33301,\"from\":\"source:DecisionFailure:baseAttributeValue:\",\"to\":\"target:baseAttributeValue:\",\"fromPort\":\"source:DecisionFailure:baseAttributeValue:\",\"toPort\":\"target:baseAttributeValue:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":33574,\"from\":\"source:DecisionFailure:createdby:\",\"to\":\"target:createdby:\",\"fromPort\":\"source:DecisionFailure:createdby:\",\"toPort\":\"target:createdby:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":33960,\"from\":\"source:DecisionFailure:decision_id:\",\"to\":\"target:decision_id:\",\"fromPort\":\"source:DecisionFailure:decision_id:\",\"toPort\":\"target:decision_id:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":34232,\"from\":\"source:DecisionFailure:errmsg:\",\"to\":\"target:errmsg:\",\"fromPort\":\"source:DecisionFailure:errmsg:\",\"toPort\":\"target:errmsg:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":34521,\"from\":\"source:DecisionFailure:exception:\",\"to\":\"target:exception:\",\"fromPort\":\"source:DecisionFailure:exception:\",\"toPort\":\"target:exception:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":34851,\"from\":\"source:DecisionFailure:failureTriggerJob_id:\",\"to\":\"target:failureTriggerJob_id:\",\"fromPort\":\"source:DecisionFailure:failureTriggerJob_id:\",\"toPort\":\"target:failureTriggerJob_id:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":35213,\"from\":\"source:DecisionFailure:job_id:\",\"to\":\"target:job_id:\",\"fromPort\":\"source:DecisionFailure:job_id:\",\"toPort\":\"target:job_id:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":35516,\"from\":\"source:DecisionFailure:modifiedby:\",\"to\":\"target:modifiedby:\",\"fromPort\":\"source:DecisionFailure:modifiedby:\",\"toPort\":\"target:modifiedby:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":35798,\"from\":\"source:DecisionFailure:resultAttributeName:\",\"to\":\"target:resultAttributeName:\",\"fromPort\":\"source:DecisionFailure:resultAttributeName:\",\"toPort\":\"target:resultAttributeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":41187,\"from\":\"source:DecisionFailure:softdeleteflag:\",\"to\":\"target:softdeleteflag:\",\"fromPort\":\"source:DecisionFailure:softdeleteflag:\",\"toPort\":\"target:softdeleteflag:\"}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":false}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_decisionfailure_create"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "DecisionFailure",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

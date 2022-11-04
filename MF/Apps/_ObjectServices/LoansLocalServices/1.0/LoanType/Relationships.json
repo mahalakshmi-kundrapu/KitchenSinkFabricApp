@@ -1,0 +1,13 @@
+[ {
+  "sourceObject" : "LoanType",
+  "targetObject" : "LoanProduct",
+  "relationshipKeys" : [ {
+    "sourceField" : "id",
+    "targetField" : "LoanType_id",
+    "etag" : "946a67df-4689-4b59-b9f5-afb8afdbe3a9"
+  } ],
+  "name" : "LoanType_LoanProduct",
+  "type" : "OneToMany",
+  "custom" : false,
+  "cascadeDelete" : false
+} ]

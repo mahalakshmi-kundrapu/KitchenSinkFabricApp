@@ -1,0 +1,81 @@
+{
+  "name" : "Get Id Types",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/IdType/getIdTypes",
+  "moduleName" : "Applicant Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to get ID types.",
+  "tests" : [ {
+    "id" : "63215289",
+    "name" : "Status Check ",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "34818815",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "40871085",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "lastmodifiedts",
+    "description" : "last modified date and time",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IDName",
+    "description" : "String value describing the name of the ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IDTYPE",
+    "description" : "Type of the ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "synctimestamp",
+    "description" : "timestamp of the synced data",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdts",
+    "description" : "date and time of creating the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "soft delete status of the record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

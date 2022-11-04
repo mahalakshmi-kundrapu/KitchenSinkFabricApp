@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="dbxdb_customer_search_proc" passwordencrypted="false" security="authorized_app_user" type="dataAdapterConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="preprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="postprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="endpointUrl" value=""/>
+        <config-param api-version="" appid="" name="opcode" value="service"/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="entitymetadata" value="{&quot;catalogName&quot;:&quot;dbxdb&quot;,&quot;serviceInput&quot;:[{&quot;name&quot;:&quot;_searchType&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:2,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_id&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:3,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_name&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:4,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_SSN&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:5,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_username&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:6,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_phone&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:7,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_email&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:8,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_IsStaffMember&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:9,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_cardorAccountnumber&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:10,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_TIN&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:11,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_group&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:12,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_IDType&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:13,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_IDValue&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:14,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_companyId&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:15,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_requestID&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:16,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_branchIDS&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:17,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_productIDS&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:18,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_cityIDS&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:19,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_entitlementIDS&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:20,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_groupIDS&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:21,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_customerStatus&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:22,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_before&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:23,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_after&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:24,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_sortVariable&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:25,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_sortDirection&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:12,&quot;ordinalPosition&quot;:26,&quot;typeName&quot;:&quot;VARCHAR&quot;},{&quot;name&quot;:&quot;_pageOffset&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:-5,&quot;ordinalPosition&quot;:27,&quot;typeName&quot;:&quot;BIGINT&quot;},{&quot;name&quot;:&quot;_pageSize&quot;,&quot;inoutType&quot;:1,&quot;sqlDataType&quot;:-5,&quot;ordinalPosition&quot;:28,&quot;typeName&quot;:&quot;BIGINT&quot;}],&quot;serviceOutput&quot;:[],&quot;name&quot;:&quot;customer_search_proc&quot;,&quot;schemaName&quot;:&quot;dbxdb&quot;,&quot;serviceType&quot;:&quot;com.kony.rdbms.metadata.model.StoredProcMetadata&quot;}"/>
+        <config-param api-version="" appid="" name="metadataformatterobject" value="{&quot;catalogName&quot;:&quot;dbxdb&quot;,&quot;serviceType&quot;:&quot;com.kony.rdbms.metadata.model.StoredProcMetadata&quot;,&quot;serviceOutput&quot;:[],&quot;displayName&quot;:&quot;customer_search_proc&quot;,&quot;qualifiedName&quot;:&quot;dbxdb.customer_search_proc&quot;,&quot;serviceInput&quot;:[],&quot;name&quot;:&quot;customer_search_proc&quot;,&quot;description&quot;:&quot;&quot;,&quot;schemaName&quot;:&quot;dbxdb&quot;}"/>
+        <config-param api-version="" appid="" name="password" value="Kony123#"/>
+        <config-param api-version="" appid="" name="http_auth_mode" value="none"/>
+        <config-param api-version="" appid="" name="advancedSettings" value="{softdeleteflag:'fictitiousColumn'}"/>
+        <config-param api-version="" appid="" name="jdbcUrl" value="jdbc:mysql://localhost:3306"/>
+        <config-param api-version="" appid="" name="jdbcClass" value="com.mysql.jdbc.Driver"/>
+        <config-param api-version="" appid="" name="userId" value="dbclient"/>
+        <config-param api-version="" appid="" name="maxPoolSize" value=""/>
+        <config-param api-version="" appid="" name="connectionTimeout" value=""/>
+        <config-param api-version="" appid="" name="authservicetype" value="IdentityProvider"/>
+        <config-param api-version="" appid="" name="adaptertype" value="CUSTOM"/>
+        <config-param api-version="" appid="" name="basepackage" value="com.kony.rdbms"/>
+        <config-param api-version="" appid="" name="urlprovider" value=""/>
+        <config-param api-version="" appid="" name="identityProviderType" value=""/>
+        <config-param api-version="" appid="" name="identityProvider" value=""/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false"/>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_searchType" order="" paramOrder="1" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_id" order="" paramOrder="2" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_name" order="" paramOrder="3" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_SSN" order="" paramOrder="4" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_username" order="" paramOrder="5" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_phone" order="" paramOrder="6" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_email" order="" paramOrder="7" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_IsStaffMember" order="" paramOrder="8" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_cardorAccountnumber" order="" paramOrder="9" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_TIN" order="" paramOrder="10" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_group" order="" paramOrder="11" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_IDType" order="" paramOrder="12" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_IDValue" order="" paramOrder="13" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_companyId" order="" paramOrder="14" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_requestID" order="" paramOrder="15" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_branchIDS" order="" paramOrder="16" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_productIDS" order="" paramOrder="17" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_cityIDS" order="" paramOrder="18" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_entitlementIDS" order="" paramOrder="19" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_groupIDS" order="" paramOrder="20" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_customerStatus" order="" paramOrder="21" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_before" order="" paramOrder="22" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_after" order="" paramOrder="23" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_sortVariable" order="" paramOrder="24" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_sortDirection" order="" paramOrder="25" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_pageOffset" order="" paramOrder="26" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="_pageSize" order="" paramOrder="27" parentOrder="-1" passnull="true" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="" description="" encode="false" format="" formatvalue="" name="criteria" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="">
+            <accessType></accessType>
+        </template-param>
+    </service-input>
+    <service-output passthrough="false"/>
+</service>

@@ -1,0 +1,314 @@
+{
+  "name" : "Get Transaction Logs",
+  "url" : "services/data/v1/AuditLogsObjSvc/operations/TransactionAndAuditLogs/getTransactionLogs",
+  "moduleName" : "Activity Logs",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "8674697",
+    "name" : "Fetch transaction Logs",
+    "testSequence" : 1,
+    "requestBody" : "{\"FilterData\":\"{'StartDate':'11/23/2001','EndDate':'11/25/2019','NoOfRecords':2}\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "76750334",
+      "path" : "$.count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "16604185",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "31053325",
+      "path" : "$.logs[*].logType",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "3215700",
+      "path" : "$.logs[*].toAccount",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "46675899",
+      "path" : "$.logs[*].amount",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "49252844",
+      "path" : "$.logs[*].module",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "33558266",
+      "path" : "$.logs[*].fromAccount",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "90280185",
+      "path" : "$.logs[*].channel",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "78338880",
+      "path" : "$.logs[*].ipAddress",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "14769972",
+      "path" : "$.logs[*].serviceName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "72848956",
+      "path" : "$.logs[*].operatingSystem",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "19082018",
+      "path" : "$.logs[*].deviceId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "22155413",
+      "path" : "$.logs[*].transactionId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "80280731",
+      "path" : "$.logs[*].referenceNumber",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "17044817",
+      "path" : "$.logs[*].customerId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "48916014",
+      "path" : "$.logs[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "93409917",
+      "path" : "$.logs[*].device",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "84766678",
+      "path" : "$.logs[*].username",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "50886902",
+      "path" : "$.logs[*].status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "sortDirection",
+    "description" : "desc:Sorts logs in ascending direction",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "endDate",
+    "description" : "End Date upto which logs are to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "NoOfRecords",
+    "description" : "Number of records to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "FilterData",
+    "description" : "Details about the applied filter",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "startDate",
+    "description" : "Start Date from which logs are to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "logType",
+    "description" : "Type of log",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "toAccount",
+    "description" : "Recipient Account",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "amount",
+    "description" : "Transferred Amount",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "module",
+    "description" : "Module on which the transaction has been performed",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "fromAccount",
+    "description" : "Sender's Account",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channel",
+    "description" : "Channel ID of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ipAddress",
+    "description" : "IP address of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "serviceName",
+    "description" : "Name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "transactionDate",
+    "description" : "Date of Transaction",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdOn",
+    "description" : "DateTime at which the event was created",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operatingSystem",
+    "description" : "Operating System of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "deviceId",
+    "description" : "Id of customer's device",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "transactionId",
+    "description" : "Transaction ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "referenceNumber",
+    "description" : "Reference Number of the transaction",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerId",
+    "description" : "ID of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the Log Event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Customer's Username",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Status of the event",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

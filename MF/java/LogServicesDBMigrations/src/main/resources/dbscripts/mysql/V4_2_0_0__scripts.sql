@@ -1,0 +1,1 @@
+ALTER TABLE `transactionlog` ADD COLUMN `ibanNumber` VARCHAR(50) NULL DEFAULT NULL AFTER `internationalRoutingCode`;

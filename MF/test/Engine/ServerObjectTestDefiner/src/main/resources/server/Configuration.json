@@ -1,0 +1,373 @@
+{
+    "instances": [{
+            "name": "DBX C360 Dev",
+            "hostURL": "https://dbxc360dev.konycloud.com",
+            "authServiceURL": "https://100026481.auth.konycloud.com/login",
+            "applications": [{
+                    "name": "KonyBankingAdminConsole",
+                    "appKey": "80ea10b6c18e5ef0520a0c51d4f5d4d0",
+                    "appSecret": "60329d1c1d85dcb134964e36510c0410",
+                    "identityServices": [{
+                            "providerName": "KonyBankingAdminConsoleIdentityService",
+                            "requestHeaders": {},
+                            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                            "requestHeaders": {
+                                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                            },
+                            "requestBody": "{}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "81cd61022b9b1aa85ed4134bc7b3a760",
+                    "appSecret": "dfb29ed9df6e0476cf105a872f8e810e",
+                    "identityServices": [{
+                            "providerName": "DbxUserLogin",
+                            "requestHeaders": {
+                                "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                            },
+                            "requestBody": "{\"UserName\":\"dbpolbuser\",\"Password\":\"Kony@1234\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "NUOApplicantLogin",
+                            "requestHeaders": {},
+                            "requestBody": "{\"username\":\"konyUser\",\"password\":\"Kony@1234\"}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "DBX QA",
+            "hostURL": "https://dbxqa.konycloud.com",
+            "authServiceURL": "https://100026483.auth.konycloud.com/login",
+            "applications": [{
+                    "name": "KonyBankingAdminConsole",
+                    "appKey": "d229b9c8bf3e784bb4c203a5fee2416b",
+                    "appSecret": "77f8f8fd93eef5af2d637be03f26b8da",
+                    "identityServices": [{
+                            "providerName": "KonyBankingAdminConsoleIdentityService",
+                            "requestHeaders": {},
+                            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                            "requestHeaders": {
+                                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                            },
+                            "requestBody": "{}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "a252d740182c3a647d1a4ad3399ef5d0",
+                    "appSecret": "25328993d8f4edb857b7b2d48187d039",
+                    "identityServices": [{
+                            "providerName": "DbxUserLogin",
+                            "requestHeaders": {
+                                "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                            },
+                            "requestBody": "{\"UserName\":\"dbxolbuser\",\"Password\":\"kony@1234\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "NUOApplicantLogin",
+                            "requestHeaders": {},
+                            "requestBody": "{\"username\":\"konyUser\",\"password\":\"Kony@1234\"}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Apps Admin Console",
+            "hostURL": "https://appsadminconsole.konylabs.net:8443",
+            "authServiceURL": "https://appsadminconsole.konylabs.net:8443/authService/100000002/login",
+            "applications": [{
+                "name": "KonyBankingAdminConsole",
+                "appKey": "d229b9c8bf3e784bb4c203a5fee2416b",
+                "appSecret": "77f8f8fd93eef5af2d637be03f26b8da",
+                "identityServices": [{
+                        "providerName": "KonyBankingAdminConsoleIdentityService",
+                        "requestHeaders": {},
+                        "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                        "authTokenValidityInSeconds": 1200
+                    },
+                    {
+                        "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                        "requestHeaders": {
+                            "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                        },
+                        "requestBody": "{}",
+                        "authTokenValidityInSeconds": 1200
+                    }
+                ]
+            }]
+        },
+        {
+            "name": "DBX Lending Dev",
+            "hostURL": "https://dbxlendingdev.konycloud.com",
+            "authServiceURL": "https://100026479.auth.konycloud.com/login",
+            "applications": [{
+                "name": "LoansServices",
+                "appKey": "e7eb3b880ed9acefd202e4b629304be",
+                "appSecret": "7acde8621537a230e35956f4b83cc265",
+                "identityServices": [{
+                    "providerName": "DBXLoginLoans",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"aid\": \"ConsumerLending\",\"aname\": \"ConsumerLending\",\"did\": \"123456\"}"
+                    },
+                    "requestBody": "{\"UserName\": \"dbpolbuser\",\"Password\": \"Kony@1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX Dev",
+            "hostURL": "https://dbxdev.konycloud.com",
+            "authServiceURL": "https://100026480.auth.konycloud.com/login",
+            "applications": [{
+                "name": "LoansServices",
+                "appKey": "b601c5576df5a22d19e22578c186fd53",
+                "appSecret": "c871794d2ce477cf062f3bf2889b3eb6",
+                "identityServices": [{
+                    "providerName": "DBXLoginLoans",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"aid\": \"ConsumerLending\",\"aname\": \"ConsumerLending\",\"did\": \"123456\"}"
+                    },
+                    "requestBody": "{\"UserName\": \"dbpolbuser\",\"Password\": \"Kony@1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX Int1",
+            "hostURL": "https://dbxint1.konylabs.net:8443",
+            "authServiceURL": "https://dbxint1.konylabs.net:8443/authService/100000002/login",
+            "applications": [{
+                "name": "DbpLocalServices",
+                "appKey": "57e163d370540ae81709cfdef525e65",
+                "appSecret": "d46e917d76f49bd83b318abf4ba81f64",
+                "identityServices": [{
+                    "providerName": "DbxUserLogin",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                    },
+                    "requestBody": "{\"UserName\":\"TEST12673\",\"Password\":\"TEST1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX Int2",
+            "hostURL": "https://dbxint2.konylabs.net:8443",
+            "authServiceURL": "https://dbxint2.konylabs.net:8443/authService/100000002/login",
+            "applications": [{
+                "name": "DbpLocalServices",
+                "appKey": "3a3c15f43e9b3968bc7a37dc38bd55ae",
+                "appSecret": "1eae9bd1f6e24daa9d8cfc8dcfd44890",
+                "identityServices": [{
+                    "providerName": "DbxUserLogin",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                    },
+                    "requestBody": "{\"UserName\":\"dbpolbuser\",\"Password\":\"Kony@1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX Int3",
+            "hostURL": "https://dbxint3.konylabs.net:8443",
+            "authServiceURL": "https://dbxint3.konylabs.net:8443/authService/100000002/login",
+            "applications": [{
+                "name": "DbpLocalServices",
+                "appKey": "80867e3c0e7d994b7b98b7bc3369014e",
+                "appSecret": "6254c21dff3cc4a823f42eb6e40e08a8",
+                "identityServices": [{
+                    "providerName": "DbxUserLogin",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                    },
+                    "requestBody": "{\"UserName\":\"TEST12673\",\"Password\":\"TEST1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX Int4",
+            "hostURL": "https://dbxint4.konylabs.net:8443",
+            "authServiceURL": "https://dbxint4.konylabs.net:8443/authService/100000002/login",
+            "applications": [{
+                "name": "DbpLocalServices",
+                "appKey": "a7a3189078fff3edfe024f23297b12c9 ",
+                "appSecret": "9eab6fef9f2926c5d9f9ee7d75475690",
+                "identityServices": [{
+                    "providerName": "DbxUserLogin",
+                    "requestHeaders": {
+                        "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                    },
+                    "requestBody": "{\"UserName\":\"TEST12673\",\"Password\":\"TEST1234\"}",
+                    "authTokenValidityInSeconds": 1200
+                }]
+            }]
+        },
+        {
+            "name": "DBX DBP Dev",
+            "hostURL": "https://dbxdbpdev.konycloud.com",
+            "authServiceURL": "https://100026481.auth.konycloud.com/login",
+            "applications": [{
+                    "name": "dbpEventManager",
+                    "appKey": "9fbfdbcd6e6bdee4e7d83864b3d3445d",
+                    "appSecret": "603646e9d0e1784c4291da17f00ffcbd",
+                    "identityServices": [{
+                        "providerName": "userstore",
+                        "requestBody": "{\"userid\":\"externaluser@external.com\",\"password\":\"Kony@123\"}",
+                        "authTokenValidityInSeconds": 1200
+                    }]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "16e4675c8c5fbeea83e3c8af1da084f4 ",
+                    "appSecret": "fadcecc888d7efe1c057bad398fb20ba",
+                    "identityServices": [{
+                        "providerName": "DbxUserLogin",
+                        "requestHeaders": {
+                            "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                        },
+                        "requestBody": "{\"UserName\":\"TEST12673\",\"Password\":\"TEST1234\"}",
+                        "authTokenValidityInSeconds": 1200
+                    }]
+                }
+            ]
+        },
+        {
+            "name": "Retail Banking 1",
+            "hostURL": "https://retailbanking1.konycloud.com",
+            "authServiceURL": "https://100017816.auth.konycloud.com/login",
+            "applications": [{
+                    "name": "KonyBankingAdminConsole",
+                    "appKey": "5ea2447dc158c175cd663df8ebebc6ea",
+                    "appSecret": "68e150f3183958da782163e5d9f3a6d3",
+                    "identityServices": [{
+                            "providerName": "KonyBankingAdminConsoleIdentityService",
+                            "requestHeaders": {},
+                            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                            "requestHeaders": {
+                                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                            },
+                            "requestBody": "{}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "b6864bc656810cf7e8f26b450275acc7",
+                    "appSecret": "96b6f87b5fd95fe877a1b7a6456f72ea",
+                    "identityServices": [{
+                        "providerName": "DbxUserLogin",
+                        "requestHeaders": {
+                            "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                        },
+                        "requestBody": "{\"UserName\":\"dbpolbuser\",\"Password\":\"Kony@1234\"}",
+                        "authTokenValidityInSeconds": 1200
+                    }]
+                }
+            ]
+        },
+        {
+            "name": "Retail Banking 2",
+            "hostURL": "https://retailbanking2.konycloud.com",
+            "authServiceURL": "https://100017817.auth.konycloud.com/login",
+            "applications": [{
+                    "name": "KonyBankingAdminConsole",
+                    "appKey": "20c3f9244d9dfb1e4a42de35821bd315",
+                    "appSecret": "9eb7c094578cebd7dcef2a978f0c81fc",
+                    "identityServices": [{
+                            "providerName": "KonyBankingAdminConsoleIdentityService",
+                            "requestHeaders": {},
+                            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                            "requestHeaders": {
+                                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                            },
+                            "requestBody": "{}",
+                            "authTokenValidityInSeconds": 1200
+                        }
+                    ]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "16e4675c8c5fbeea83e3c8af1da084f4",
+                    "appSecret": "fadcecc888d7efe1c057bad398fb20ba",
+                    "identityServices": [{
+                        "providerName": "DbxUserLogin",
+                        "requestHeaders": {
+                            "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                        },
+                        "requestBody": "{\"UserName\":\"dbpolbuser\",\"Password\":\"Kony@1234\"}",
+                        "authTokenValidityInSeconds": 1200
+                    }]
+                }
+            ]
+        },
+		{
+            "name": "DBX Lending UAT",
+            "hostURL": "https://dbxlendinguat.konycloud.com",
+            "authServiceURL": "https://100026484.auth.konycloud.com/appconfig",
+            "applications": [{
+                    "name": "KonyBankingAdminConsole",
+                    "appKey": "1ea17e506a8c9c9ee0dd433b17a4d12b",
+                    "appSecret": "a74a2ebdf4ac4f396e990a50c1ff34eb",
+                    "identityServices": [{
+                            "providerName": "KonyBankingAdminConsoleIdentityService",
+                            "requestHeaders": {},
+                            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+                            "authTokenValidityInSeconds": 1200
+                        },
+                        {
+                            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+                            "requestHeaders": {
+                                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+                            },
+                            "requestBody": "{}",
+                            "authTokenValidityInSeconds": 1200
+                        }]
+                },
+                {
+                    "name": "DbpLocalServices",
+                    "appKey": "46fd62354ebb8a7763f53ddacb42fa73 ",
+                    "appSecret": "1f0af83b7a9ba73391c3d894ad6ea437",
+                    "identityServices": [{
+                        "providerName": "DbxUserLogin",
+                        "requestHeaders": {
+                            "X-Kony-ReportingParams": "{\"os\":\"71\",\"dm\":\"\",\"did\":\"1544592656431-5e10-a1f1-7b6f\",\"ua\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36\",\"aid\":\"KonyOLB\",\"aname\":\"Customer360\",\"chnl\":\"Mobile\",\"plat\":\"windows\",\"aver\":\"1.0.0\",\"atype\":\"spa\",\"stype\":\"b2c\",\"kuid\":\"admin2\",\"mfaid\":\"61cffb74-340f-497f-b637-ff553e93dae5\",\"mfbaseid\":\"92b54bcc-e43e-4a62-bbd9-f7d1ca009391\",\"mfaname\":\"KonyBankingAdminConsole\",\"sdkversion\":\"8.3.5\",\"sdktype\":\"js\",\"fid\":\"frmLogin\",\"rsid\":\"1544972285376-6808-1496-9004\",\"svcid\":\"login_KonyBankingAdminConsoleIdentityService\"}"
+                        },
+                        "requestBody": "{\"UserName\":\"dbpolbuser\",\"Password\":\"Kony@1234\"}",
+                        "authTokenValidityInSeconds": 1200
+                    }]
+                }
+            ]
+        }
+    ]
+}

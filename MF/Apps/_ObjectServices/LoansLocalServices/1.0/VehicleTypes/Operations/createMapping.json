@@ -1,0 +1,35 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_vehicletypes_create7624",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<mapper xmlns=\"http://www.kony.com/ns/mapper\">\n    <map inputpath=\"request_in\" outputpath=\"request_out\">\n        <set-param inputpath=\"ParentVehicleTypeName\" outputpath=\"ParentVehicleTypeName\"/>\n        <set-param inputpath=\"VehicleTypeId\" outputpath=\"VehicleTypeId\"/>\n        <set-param inputpath=\"VehicleTypeName\" outputpath=\"VehicleTypeName\"/>\n    </map>\n</mapper>\n",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"vehicletypes\" outputpath=\"VehicleTypes\"><set-param inputpath=\"VehicleTypeId\" outputpath=\"VehicleTypeId\"/><set-param inputpath=\"ParentVehicleTypeName\" outputpath=\"ParentVehicleTypeName\"/><set-param inputpath=\"VehicleTypeName\" outputpath=\"VehicleTypeName\"/></map></map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"VehicleTypes\",\"xy\":\"268 82\",\"__gohashid\":211},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"ConsumerLendingDB (1.0).dbxdb_vehicletypes_create\",\"xy\":\"770 100\",\"__gohashid\":212}],\"linkDataArray\":[{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":4403,\"from\":\"source:VehicleTypes:ParentVehicleTypeName:\",\"to\":\"target:ParentVehicleTypeName:\",\"fromPort\":\"source:VehicleTypes:ParentVehicleTypeName:\",\"toPort\":\"target:ParentVehicleTypeName:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5379,\"from\":\"source:VehicleTypes:VehicleTypeId:\",\"to\":\"target:VehicleTypeId:\",\"fromPort\":\"source:VehicleTypes:VehicleTypeId:\",\"toPort\":\"target:VehicleTypeId:\"},{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5715,\"from\":\"source:VehicleTypes:VehicleTypeName:\",\"to\":\"target:VehicleTypeName:\",\"fromPort\":\"source:VehicleTypes:VehicleTypeName:\",\"toPort\":\"target:VehicleTypeName:\"}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":false}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_vehicletypes_create"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "VehicleTypes",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

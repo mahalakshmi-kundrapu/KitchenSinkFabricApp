@@ -1,0 +1,20 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createOutageMessage" : "createOutageMessageMapping",
+    "getOutageMessage" : "getOutageMessageMapping",
+    "updateOutageMessage" : "updateOutageMessageMapping",
+    "create" : "createMapping",
+    "bulkUpdateOutageMessage" : "bulkUpdateOutageMessageMapping",
+    "getOutageMessageOfInactiveServices" : "getOutageMessageOfInactiveServicesMapping",
+    "deleteOutageMessage" : "deleteOutageMessageMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

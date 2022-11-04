@@ -1,0 +1,357 @@
+{
+  "name" : "Get Alert Type Definition",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertType/getAlertTypeDefinition",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the Definition of Alert Type.",
+  "tests" : [ {
+    "id" : "47907095",
+    "name" : "Get Definition",
+    "testSequence" : 1,
+    "requestBody" : "{\"AlertTypeId\":\"TRANSFER_RECIPIENT\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "Accept-Language" : "en-US"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "91332305",
+      "path" : "$.alertTypeDefinition.alertCode",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "TRANSFER_RECIPIENT",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "74383698",
+      "path" : "$.alertTypeDefinition.displayName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "35625328",
+      "path" : "$.alertTypeDefinition.typeStatus",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "7572562",
+      "path" : "$.alertTypeDefinition.name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "23125806",
+      "path" : "$.alertTypeDefinition.typeDescription",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "46912900",
+      "path" : "$.alertTypeDefinition.languageCode",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "en-US",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "59451885",
+      "path" : "$.alertSubTypes[*].code",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "70320236",
+      "path" : "$.alertSubTypes[*].name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "54163555",
+      "path" : "$.alertSubTypes[*].description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "91599180",
+      "path" : "$.accountTypes[*].accountTypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "93674044",
+      "path" : "$.accountTypes[*].accountTypeName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "60350661",
+      "path" : "$.accountTypes[*].isSupported",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "32371610",
+      "path" : "$.userTypes[*].userTypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "6002591",
+      "path" : "$.userTypes[*].alertTypeId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "TRANSFER_RECIPIENT",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "56882306",
+      "path" : "$.accountTypes[*].alertTypeId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "TRANSFER_RECIPIENT",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "34091997",
+      "path" : "$.userTypes[*].userTypeName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "33001110",
+      "path" : "$.userTypes[*].isSupported",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "87534061",
+      "path" : "$.appTypes[*].alertTypeId",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "TRANSFER_RECIPIENT",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "98823444",
+      "path" : "$.appTypes[*].alertTypeName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "94738647",
+      "path" : "$.appTypes[*].appName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "33268815",
+      "path" : "$.appTypes[*].appId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "17917738",
+      "path" : "$.appTypes[*].isSupported",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "77923394",
+    "name" : "Invalid Payload - Missing Type ID",
+    "testSequence" : 2,
+    "requestBody" : "{}",
+    "testPriority" : "P1",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "50918614",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "AlertTypeId",
+    "description" : "ID of the Alert Type - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "code",
+    "description" : "Code of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "name",
+    "description" : "Name of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertTypeId",
+    "description" : "ID of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertTypeName",
+    "description" : "Name of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "accountTypeId",
+    "description" : "ID of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "accountTypeDescription",
+    "description" : "Description of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "accountTypeName",
+    "description" : "Name of the Account Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isSupported",
+    "description" : "TRUE if the app is subscribed for the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "LanguageCode",
+    "description" : "Language Code of the Description ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Description in the given language code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DisplayName",
+    "description" : "Name of the Alert that should be displayed",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userTypeId",
+    "description" : "ID of the User ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userTypeName",
+    "description" : "Name of the User Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertCode",
+    "description" : "Code of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "typeStatus",
+    "description" : "Status of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "languageCode",
+    "description" : "Code of the Description language ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "appName",
+    "description" : "Name of the app",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "appId",
+    "description" : "ID of the app",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "app_Description",
+    "description" : " Description of the app",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

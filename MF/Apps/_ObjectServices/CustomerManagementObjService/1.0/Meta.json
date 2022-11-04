@@ -1,0 +1,7 @@
+{
+  "config" : {
+    "metadataSecurity" : "authorized_app_user",
+    "uploadCache" : false,
+    "conflict_policy" : "none"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "insertSecurityImages7412",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "SecurityImagesManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "insertSecurityImages"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "manageSecurityImages",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

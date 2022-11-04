@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="" groupType="" id="sendEmail" passwordencrypted="" security="authorized_app" type="CompositeConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="exec_type" value="Sequential"/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="1.0" appid="AuthKMSService" name="service" value="authenticate"/>
+        <config-param api-version="1.0" appid="EmailKMSJavaService" name="service" value="sendEmail"/>
+    </service-config>
+    <service-input passthrough="false"/>
+    <service-output passthrough="false"/>
+</service>

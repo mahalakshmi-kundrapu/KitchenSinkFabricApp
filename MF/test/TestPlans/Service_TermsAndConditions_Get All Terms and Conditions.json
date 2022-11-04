@@ -1,0 +1,39 @@
+{
+    "description": "",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Get All Terms and Conditions",
+    "url": "services/data/v1/TermsAndConditionsObjService/operations/termsandconditions/getAllTermsAndConditions",
+    "moduleName": "TermsAndConditions",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "19508943",
+            "name": "Empty_Payload",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "": ""
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "74128636",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        }
+    ]
+}

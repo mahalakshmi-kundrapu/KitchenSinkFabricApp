@@ -1,0 +1,10 @@
+{
+  "serviceType" : "integration",
+  "jars" : [ {
+    "name" : "AdminConsoleServices.jar",
+    "type" : "servicejar"
+  }, {
+    "name" : "Event-Dispatcher.jar",
+    "type" : "jar"
+  } ]
+}

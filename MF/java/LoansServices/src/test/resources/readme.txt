@@ -1,0 +1,1 @@
+Resources to be utilized by java unit tests should be defined in this package.

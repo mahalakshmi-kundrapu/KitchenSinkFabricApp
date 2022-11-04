@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "editCustomer" : "editCustomerMapping",
+    "getCustomerAccounts" : "getCustomerAccountsMapping",
+    "createCustomer" : "createCustomerMapping",
+    "upgradeUser" : "upgradeUserMapping",
+    "verifyUsername" : "verifyUsernameMapping",
+    "upgradeRolesAndEntiltlements" : "upgradeRolesAndEntiltlementsMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

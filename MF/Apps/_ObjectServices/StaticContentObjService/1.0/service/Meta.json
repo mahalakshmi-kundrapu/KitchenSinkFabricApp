@@ -1,0 +1,22 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createService" : "createServiceMapping",
+    "updateService" : "updateServiceMapping",
+    "getServicesForLogs" : "getServicesForLogsMapping",
+    "downloadServicesList" : "downloadServicesListMapping",
+    "getCategory" : "getCategoryMapping",
+    "getServiceTypes" : "getServiceTypesMapping",
+    "manageServiceStatus" : "manageServiceStatusMapping",
+    "getService" : "getServiceMapping",
+    "getServiceChannels" : "getServiceChannelsMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

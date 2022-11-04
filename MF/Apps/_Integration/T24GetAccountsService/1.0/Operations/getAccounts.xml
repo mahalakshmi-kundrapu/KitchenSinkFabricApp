@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="getAccounts" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="preprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="postprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="http://tmnsinffo2.southindia.cloudapp.azure.com:9089/infinity-retail-api/api/v1.0.0/holdings/customers/$accountId/holdings"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="GET"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="jsonpath" value="true"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false">
+            <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Authorization" order="" paramOrder="0" parentOrder="0" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="" targetdatatype="" testvalue="eyJraWQiOiJLT05ZIiwiYWxnIjoiUlMyNTYifQ.eyJhdWQiOiJJUklTIiwic3ViIjoiZGJwb2xidXNlciIsInJvbGVJZCI6IklORklOSVRZLlJFVEFJTCIsImlzcyI6IkZhYnJpYyIsImRieFVzZXJJZCI6IjEwMjY1NDAiLCJleHAiOjE1NzcwOTIzNDUsImlhdCI6MTU3NzA5MDU0NSwidXNlcklkIjoiZGJwb2xidXNlciIsImp0aSI6IjJhYzgyZGY2LWUzMjEtNGU5OS1hMzcxLWZiZjY5ODRlMGM4MiJ9.fOvxGdOLVRYginD2NvRqGbGQ7yotsL5JCnZ8ErBWMxGy7IDuXznpDHOgQbV1Q3VpIK-NUjwXD_Lj51Mos6ksB0hs36VdVj9Tc06LQCTYb4kcxLrTq-nTSX-L-o_xM4-_6R1CgQ8dU6LrYJEwBP0g7V6K93Om_xVazoRyTHCkMHDRPw1whk3mjZQxx9H2nuY2hXf_QKprWWMt2eUv0XfxQc76o70YKRFEhh4GkLOKXCiUiN4ION1I-6NHc6BsU42K4SGpKZPIvKcLgwpaniOqgZmvV0ZODfFr0VOdoNnRSUsaM5uX79UL0eAfjo569dUC5VBboHYkwZabEQCoRawInw" value="">
+                <accessType></accessType>
+            </param>
+        </header>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="accountId" order="" paramOrder="1" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="100404" value="">
+            <accessType></accessType>
+        </param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="false"/>
+</service>

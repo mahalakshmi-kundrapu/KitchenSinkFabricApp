@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "insertSecurityImages" : "insertSecurityImagesMapping",
+    "updateSecurityImages" : "updateSecurityImagesMapping",
+    "getSecurityImages" : "getSecurityImagesMapping",
+    "deleteSecurityImages" : "deleteSecurityImagesMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

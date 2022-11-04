@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.kony.adminconsole</groupId>
+		<artifactId>AdminConsoleAggregator</artifactId>
+		<version>4.2.6.116</version>
+	</parent>
+
+	<artifactId>AdminConsoleDBMigrations</artifactId>
+	<name>Kony Admin Console Database Migrations Module</name>
+	<description>This modules supports database migrations of Kony Admin Console Application using Flyway.</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.kony.dbp</groupId>
+				<artifactId>db-migrations-unifier-maven-plugin</artifactId>
+				<version>${project.version}</version>
+				<executions>
+					<execution>
+						<id>unify-db-migrations</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>unify-db-migrations</goal>
+						</goals>
+						<configuration>
+							<scriptsDir>src/main/resources/dbscripts</scriptsDir>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>create-adminconsole-db-migrations-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>${project.basedir}/assembly/db-migrations-jar-assembly.xml</descriptor>
+							</descriptors>
+							<archive>
+								<manifest>
+									<mainClass>com.kony.adminconsole.migration.DatabaseMigrator</mainClass>
+								</manifest>
+								<manifestEntries>
+									<Bundle-Release-Version>${project.version}</Bundle-Release-Version>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

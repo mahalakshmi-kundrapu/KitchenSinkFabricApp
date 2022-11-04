@@ -1,0 +1,129 @@
+{
+  "name" : "Verify Customer Security Questions",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerSecurityQuestions/verifyCustomerSecurityQuestions",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "The service is used to verify the answers to a customer security question",
+  "tests" : [ {
+    "id" : "49211235",
+    "name" : "Verify Security Questions",
+    "testSequence" : 1,
+    "requestBody" : "{\"userName\":\"dbpolbuser\",\"securityQuestions\":[{\"customerAnswer\":\"abc\",\"questionId\":\"SEC_QUES_ID_4\"},{\"customerAnswer\":\"abc\",\"questionId\":\"SEC_QUES_ID_5\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "38130955",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "87849323",
+      "path" : "$.verifyStatus",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "50701065",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "52146207",
+      "path" : "$.numberOfQuestionsVerified",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "98271525",
+    "name" : "Empty Username Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "27878793",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "68893226",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "78786448",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "securityQuestions",
+    "description" : "Required. List of JSON objects which contains question and answer. Eg. [{ \"questionId\": \"SEC_QUES_ID_1\", \"customerAnswer\": \"K V\" }, { \"questionId\": \"SEC_QUES_ID_2\", \"customerAnswer\": \"Hyd\" }]",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userName",
+    "description" : "Required. Username of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "verifyStatus",
+    "description" : "Returns 'true' if all are verified or 'false'",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "numberOfQuestionsVerified",
+    "description" : "Number of questions verified",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

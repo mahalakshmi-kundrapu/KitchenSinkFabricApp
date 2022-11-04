@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="" groupType="" id="login" passwordencrypted="" security="public" type="CompositeConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value="com.kony.adminconsole.postprocessor.IdentityEndpointPostProcessor"/>
+        <config-param api-version="" appid="" name="exec_type" value="Sequential"/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="1.0" appid="UserAuthentication" name="service" value="authenticateUser"/>
+        <config-param api-version="1.0" appid="C360Identity" name="service" value="fetchProfileAttributes"/>
+    </service-config>
+    <service-input passthrough="false"/>
+    <service-output passthrough="false"/>
+</service>

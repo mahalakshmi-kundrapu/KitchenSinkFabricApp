@@ -1,0 +1,73 @@
+{
+  "operationConfig" : {
+    "name" : "get_userrole9604",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">      <map inputpath=\"response_in\" outputpath=\"response_out\">            <map inputpath=\"userrole\" outputpath=\"userRole\">                  <set-param inputpath=\"createdby\" outputpath=\"createdby\"/>                  <set-param inputpath=\"hasSuperAdminPrivilages\" outputpath=\"hasSuperAdminPrivilages\"/>                  <set-param inputpath=\"modifiedby\" outputpath=\"modifiedby\"/>                  <set-param inputpath=\"User_id\" outputpath=\"User_id\"/>                  <set-param inputpath=\"Role_id\" outputpath=\"Role_id\"/>                  <set-param inputpath=\"softdeleteflag\" outputpath=\"softdeleteflag\"/>            </map>      </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"userRole\",\"xy\":\"770 100\",\"__gohashid\":805},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"CommonGetDataService (1.0).get_userrole\",\"xy\":\"150 100\",\"__gohashid\":806}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:userRole\",\"fromPort\":\"target\",\"toPort\":\"target:userRole\",\"visible\":true,\"common\":false,\"__gohashid\":1618},{\"from\":\"target:userRole\",\"to\":\"target:userRole:fields\",\"fromPort\":\"target:userRole\",\"toPort\":\"target:userRole:fields\",\"visible\":true,\"common\":false,\"__gohashid\":1619},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:createdby:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":1620},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:createdts:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":1621},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:hasSuperAdminPrivilages:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:hasSuperAdminPrivilages:\",\"visible\":true,\"common\":false,\"__gohashid\":1622},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:lastmodifiedts:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":1623},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:modifiedby:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":1624},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:Role_id:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:Role_id:\",\"visible\":true,\"common\":false,\"__gohashid\":1625},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:softdeleteflag:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":1626},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:synctimestamp:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":1627},{\"from\":\"target:userRole:fields\",\"to\":\"target:userRole:User_id:\",\"fromPort\":\"target:userRole:fields\",\"toPort\":\"target:userRole:User_id:\",\"visible\":true,\"common\":false,\"__gohashid\":1628}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "CommonGetDataService",
+      "serviceVersion" : "1.0",
+      "operationName" : "get_userrole"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "userRole",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name" : "Update FAQs",
+  "url" : "services/data/v1/StaticContentObjService/operations/frequentlyAskedQuestions/updateFAQs",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update FAQs",
+  "tests" : [ {
+    "id" : "81624988",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"user_ID\": \"UID1\", \"listOfFAQs\": [ { \"id\": \"FAQ_ID1\", \"QuestionCode\": \"Q04_Code\", \"Question\": \"Question 04 New\", \"Answer\": \"Question 04 New Answer\", \"Channel_id\": \"CH_ID_MOB_INT\", \"Status_id\": \"SID_ACTIVE\" } ]}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "78246005",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "61471388",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "13317286",
+    "name" : "Update FAQs Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"user_ID\":\"UID1\",\"listOfFAQs\":[{\"id\":\"FAQ_ID1\",\"QuestionCode\":\"Q04_Code\",\"Question\":\"Question 04 New\",\"Answer\":\"Question 04 New Answer\",\"Channel_id\":\"CH_ID_MOB_INT\",\"Status_id\":\"SID_ACTIVE\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "78798194",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "39950873",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "user_ID",
+    "description" : "Id of the user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "listOfFAQs",
+    "description" : "List of FAQ's tp be added",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}
