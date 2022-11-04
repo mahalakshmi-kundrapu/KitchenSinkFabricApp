@@ -1,0 +1,75 @@
+{
+  "operationConfig" : {
+    "name" : "getQueryQuestions9382",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">  <map inputpath=\"request_in\" outputpath=\"request_out\">    <set-param inputpath=\"id\" outputpath=\"id\"/>    <set-param inputpath=\"Parent_id\" outputpath=\"Parent_id\"/>  </map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">          <set-param inputpath=\"dbpErrCode\" outputpath=\"dbpErrCode\" />                                                  <set-param inputpath=\"dbpErrMsg\" outputpath=\"dbpErrMsg\" />      <map inputpath=\"response_in\" outputpath=\"response_out\">                                                                        <map inputpath=\"records\" outputpath=\"QueryDefinition\">                                                                                                             <set-param inputpath=\"QueryDefinition_id\" outputpath=\"QueryDefinition_id\" />     \t                                                                                            <set-param inputpath=\"QueryDefinition_Name\" outputpath=\"QueryDefinition_Name\" />\t                                                                 <set-param inputpath=\"QuerySectionQuestion_id\" outputpath=\"QuerySectionQuestion_id\" />                        <set-param inputpath=\"ParentQuerySectionQuestion_id\" outputpath=\"ParentQuerySectionQuestion_id\" />\t                                                                                            <set-param inputpath=\"ParentQuestionOptionValue\" outputpath=\"ParentQuestionOptionValue\" />\t                                                                                            <set-param inputpath=\"QuerySectionQuestion_Sequence\" outputpath=\"QuerySectionQuestion_Sequence\" />\t                                                                                            <set-param inputpath=\"QuerySectionQuestion_IsRequired\" outputpath=\"QuerySectionQuestion_IsRequired\" />\t                                                                                            <set-param inputpath=\"QuerySection_id\" outputpath=\"QuerySection_id\" />\t                                    <set-param inputpath=\"QuerySection_Parent_id\" outputpath=\"QuerySection_Parent_id\" />\t                                    <set-param inputpath=\"QuerySection_Sequence\" outputpath=\"QuerySection_Sequence\" />\t                              <set-param inputpath=\"QuerySection_Name\" outputpath=\"QuerySection_Name\" />\t                  <set-param inputpath=\"QuerySection_ApplicantAllowedTo\" outputpath=\"QuerySection_ApplicantAllowedTo\" />                  <set-param inputpath=\"QuerySection_IndCoApplicantAllowedTo\" outputpath=\"QuerySection_IndCoApplicantAllowedTo\" />                  <set-param inputpath=\"QuerySection_JointCoApplicantAllowedTo\" outputpath=\"QuerySection_JointCoApplicantAllowedTo\" />                  <set-param inputpath=\"QuestionDefinition_Name\" outputpath=\"QuestionDefinition_Name\" />\t                                                                                            <set-param inputpath=\"QuestionDefinition_id\" outputpath=\"QuestionDefinition_id\" />                                                      <set-param inputpath=\"QuestionDefinition_Label\" outputpath=\"QuestionDefinition_Label\" />                                                      <set-param inputpath=\"QuestionDefinition_OtherLabel\" outputpath=\"QuestionDefinition_OtherLabel\" />                                                      <set-param inputpath=\"OptionGroup_Name\" outputpath=\"OptionGroup_Name\" />\t                                                                                            <set-param inputpath=\"OptionGroup_id\" outputpath=\"OptionGroup_id\" />\t                                                                                            <set-param inputpath=\"Optionitem_id\" outputpath=\"Optionitem_id\" />\t                                                                                            <set-param inputpath=\"Optionitem_DefaultValue\" outputpath=\"Optionitem_DefaultValue\" />                                                                </map>                                    </map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"QueryDefinition\",\"xy\":\"150 100\",\"__gohashid\":2401},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"dbpLoansLocalServicesJava (1.0).getQueryQuestionsjava\",\"xy\":\"770 100\",\"__gohashid\":2402}],\"linkDataArray\":[{\"category\":\"Mapping\",\"visible\":true,\"__gohashid\":5516,\"from\":\"source:QueryDefinition:id:\",\"to\":\"target:id:\",\"fromPort\":\"source:QueryDefinition:id:\",\"toPort\":\"target:id:\"},{\"from\":\"source\",\"to\":\"source:QueryDefinition\",\"fromPort\":\"source\",\"toPort\":\"source:QueryDefinition\",\"visible\":true,\"common\":false,\"__gohashid\":2422},{\"from\":\"source:QueryDefinition\",\"to\":\"source:QueryDefinition:fields\",\"fromPort\":\"source:QueryDefinition\",\"toPort\":\"source:QueryDefinition:fields\",\"visible\":true,\"common\":false,\"__gohashid\":2423},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:id:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:id:\",\"visible\":true,\"common\":false,\"__gohashid\":2424},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:QueryType_id:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:QueryType_id:\",\"visible\":true,\"common\":false,\"__gohashid\":2425},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:Name:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:Name:\",\"visible\":true,\"common\":false,\"__gohashid\":2426},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:Code:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:Code:\",\"visible\":true,\"common\":false,\"__gohashid\":2427},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:Status_id:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:Status_id:\",\"visible\":true,\"common\":false,\"__gohashid\":2428},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:StartDate:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:StartDate:\",\"visible\":true,\"common\":false,\"__gohashid\":2429},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:EndDate:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:EndDate:\",\"visible\":true,\"common\":false,\"__gohashid\":2430},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:createdby:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":2431},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:modifiedby:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":2432},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:createdts:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":2433},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:lastmodifiedts:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":2434},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:synctimestamp:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":2435},{\"from\":\"source:QueryDefinition:fields\",\"to\":\"source:QueryDefinition:softdeleteflag:\",\"fromPort\":\"source:QueryDefinition:fields\",\"toPort\":\"source:QueryDefinition:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":2436},{\"from\":\"target\",\"to\":\"target:parameters\",\"fromPort\":\"target\",\"toPort\":\"target:parameters\",\"visible\":true,\"common\":false,\"__gohashid\":2437},{\"from\":\"target:parameters\",\"to\":\"target:id:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:id:\",\"visible\":true,\"common\":false,\"__gohashid\":2438},{\"from\":\"target:parameters\",\"to\":\"target:Parent_id:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:Parent_id:\",\"visible\":true,\"common\":false,\"__gohashid\":2439}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"QueryDefinition\",\"xy\":\"770 100\",\"__gohashid\":3207},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"dbpLoansLocalServicesJava (1.0).getQueryQuestionsjava\",\"xy\":\"150 100\",\"__gohashid\":3208}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:QueryDefinition\",\"fromPort\":\"target\",\"toPort\":\"target:QueryDefinition\",\"visible\":true,\"common\":false,\"__gohashid\":289},{\"from\":\"target:QueryDefinition\",\"to\":\"target:QueryDefinition:fields\",\"fromPort\":\"target:QueryDefinition\",\"toPort\":\"target:QueryDefinition:fields\",\"visible\":true,\"common\":false,\"__gohashid\":290},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:id:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:id:\",\"visible\":true,\"common\":false,\"__gohashid\":291},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:QueryType_id:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:QueryType_id:\",\"visible\":true,\"common\":false,\"__gohashid\":292},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:Name:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:Name:\",\"visible\":true,\"common\":false,\"__gohashid\":293},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:Code:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:Code:\",\"visible\":true,\"common\":false,\"__gohashid\":294},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:Status_id:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:Status_id:\",\"visible\":true,\"common\":false,\"__gohashid\":295},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:StartDate:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:StartDate:\",\"visible\":true,\"common\":false,\"__gohashid\":296},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:EndDate:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:EndDate:\",\"visible\":true,\"common\":false,\"__gohashid\":297},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:createdby:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":298},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:modifiedby:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":299},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:createdts:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":300},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:lastmodifiedts:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":301},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:synctimestamp:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":302},{\"from\":\"target:QueryDefinition:fields\",\"to\":\"target:QueryDefinition:softdeleteflag:\",\"fromPort\":\"target:QueryDefinition:fields\",\"toPort\":\"target:QueryDefinition:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":303}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "getQueryQuestionsjava"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "QueryDefinition",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

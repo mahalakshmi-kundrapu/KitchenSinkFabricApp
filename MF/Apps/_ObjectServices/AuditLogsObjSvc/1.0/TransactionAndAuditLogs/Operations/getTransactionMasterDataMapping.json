@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "getTransactionMasterData5224",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "AuditLogs",
+      "serviceVersion" : "1.0",
+      "operationName" : "getTransactionMasterData"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

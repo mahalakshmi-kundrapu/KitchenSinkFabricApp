@@ -1,0 +1,166 @@
+{
+  "name" : "Edit Customer Group",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerGroup/EditCustomerGroup",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "CustomerGroup-EditCustomerGroup service will update groups assigned to a customer.<br>\nThis service will update the groups attached to a customer, where added and removed groups are given as a list to the service.<br>",
+  "tests" : [ {
+    "id" : "34720395",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"Customer_id\": \"1\", \"ModifiedByID\": \"UID11\", \"ModifiedByName\": \"UID11\", \"listOfAddedGroups\": [ \"GID_LOAN_CUSTOMERS\" ], \"listOfRemovedGroups\": [ \"GROUP_ADMINISTRATOR\" ]}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "72967325",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "66334812",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "85674184",
+    "name" : "Edit Customer Group",
+    "testSequence" : 2,
+    "requestBody" : "{\"Customer_id\":\"4\",\"ModifiedByID\":\"UID11\",\"ModifiedByName\":\"UID11\",\"listOfAddedGroups\":[\"GID_LOAN_CUSTOMERS\"],\"listOfRemovedGroups\":[\"GROUP_ADMINISTRATOR\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "59977235",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "3200331",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "73929157",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "59413698",
+    "name" : "Empty payload Check",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "51139431",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20565",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "35149289",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "88295546",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "3459963",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "listOfRemovedGroups",
+    "description" : "Required. List of removed groups",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ModifiedByName",
+    "description" : "Required. Name of the user who modified the details",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "listOfAddedGroups",
+    "description" : "Required. List of added groups",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Customer_id",
+    "description" : "Required. ID of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation is successful or not.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

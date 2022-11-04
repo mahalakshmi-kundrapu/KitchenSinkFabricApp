@@ -1,0 +1,73 @@
+{
+  "operationConfig" : {
+    "name" : "get_privacypolicy6478",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">      <map inputpath=\"response_in\" outputpath=\"response_out\">            <map inputpath=\"privacypolicy\" outputpath=\"privacyPolicy\">                  <set-param inputpath=\"Description\" outputpath=\"Description\"/>                  <set-param inputpath=\"Status_id\" outputpath=\"Status_id\"/>                  <set-param inputpath=\"createdby\" outputpath=\"createdby\"/>                  <set-param inputpath=\"modifiedby\" outputpath=\"modifiedby\"/>                  <set-param inputpath=\"id\" outputpath=\"id\"/>                  <set-param inputpath=\"Channel_id\" outputpath=\"Channel_id\"/>                  <set-param inputpath=\"softdeleteflag\" outputpath=\"softdeleteflag\"/>            </map>      </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"privacyPolicy\",\"xy\":\"770 100\",\"__gohashid\":1827},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"CommonGetDataService (1.0).get_privacypolicy\",\"xy\":\"150 100\",\"__gohashid\":1828}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:privacyPolicy\",\"fromPort\":\"target\",\"toPort\":\"target:privacyPolicy\",\"visible\":true,\"common\":false,\"__gohashid\":1844},{\"from\":\"target:privacyPolicy\",\"to\":\"target:privacyPolicy:fields\",\"fromPort\":\"target:privacyPolicy\",\"toPort\":\"target:privacyPolicy:fields\",\"visible\":true,\"common\":false,\"__gohashid\":1845},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:Channel_id:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:Channel_id:\",\"visible\":true,\"common\":false,\"__gohashid\":1846},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:createdby:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":1847},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:createdts:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":1848},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:Description:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:Description:\",\"visible\":true,\"common\":false,\"__gohashid\":1849},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:id:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:id:\",\"visible\":true,\"common\":false,\"__gohashid\":1850},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:lastmodifiedts:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":1851},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:modifiedby:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":1852},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:softdeleteflag:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":1853},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:Status_id:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:Status_id:\",\"visible\":true,\"common\":false,\"__gohashid\":1854},{\"from\":\"target:privacyPolicy:fields\",\"to\":\"target:privacyPolicy:synctimestamp:\",\"fromPort\":\"target:privacyPolicy:fields\",\"toPort\":\"target:privacyPolicy:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":1855}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "CommonGetDataService",
+      "serviceVersion" : "1.0",
+      "operationName" : "get_privacypolicy"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "privacyPolicy",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

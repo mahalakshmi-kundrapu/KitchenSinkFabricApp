@@ -1,0 +1,133 @@
+{
+  "name" : "Get Customer Products",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerProduct/GetCustomerProducts",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the products that the bank has to offer to a customer",
+  "tests" : [ {
+    "id" : "52140394",
+    "name" : "Fetch Customer products",
+    "testSequence" : 1,
+    "requestBody" : "{\"CustomerUsername\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "58323956",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "18053390",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "91321825",
+      "path" : "$.Accounts[*].supportBillPay",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "83671500",
+      "path" : "$.Accounts[*].bondInterestLastYear",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "98546848",
+      "path" : "$.Accounts[*].accountID",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "3048661",
+      "path" : "$.Accounts[*].accountHolder",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "76932601",
+      "path" : "$.Accounts[*].principalValue",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "91257420",
+      "path" : "$.Accounts[*].creditLimit",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "20150425",
+      "path" : "$.Accounts[*].paymentDue",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "48659071",
+      "path" : "$.Accounts[*].bankName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "CustomerUsername",
+    "description" : "Required. Username of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Accounts",
+    "description" : "JSON array of accounts of a customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "manageBankProduct9877",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ProductManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "manageBankProduct"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "product",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

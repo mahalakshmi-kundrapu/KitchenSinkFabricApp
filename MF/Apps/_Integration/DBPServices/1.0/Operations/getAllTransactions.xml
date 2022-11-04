@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="getAllTransactions" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://_$_AC_DBP_SERVICES_URL_$_/services/data/v1/RBObjects/operations/Transactions/getAllTransactionsForAdmin"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="POST"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="urlprovider" value="com.kony.adminconsole.commons.handler.ServiceURLProvider"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false">
+            <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="X-Kony-Authorization" order="" paramOrder="0" parentOrder="0" sms-name="" src="expression" sourcevalue="$Request.backendToken" srcformatvalue="" target="" targetdatatype="" testvalue="eyAidHlwIjogImp3dCIsICJhbGciOiAiUlMyNTYiIH0.eyAiX3ZlciI6ICJ2MS4xIiwgImlzcyI6ICJodHRwczovLzEwMDAxNzgxNy5hdXRoLmtvbnljbG91ZC5jb20iLCAiX3Njb3BlIjogImciLCAiX2lzc21ldGEiOiAiL21ldGFkYXRhL3RQUE15U1RCU3dJdmh4bmxHRW5HWFE9PSIsICJfYXBwIjogIjRhMWFhODYzLWY1ZWItNDI5My1hNDM1LTg2ZDAyMDc2OTQ0YSIsICJfc2Vzc2lvbl9pZCI6ICJmMjYxZjdlNC03M2ZmLTRjZWYtYmJkYy1lOTc5ZWI3OTZhZGYiLCAiX3B1aWQiOiAxMDg4NzA1OTk1NzMyNDA3NjA1LCAiX2F1dGh6IjogImV5SndaWEp0YVhOemFXOXVjeUk2ZTMwc0luSnZiR1Z6SWpwYlhYMCIsICJfaWRwIjogIkN1c3RvbUxvZ2luIiwgImV4cCI6IDE1MzYxMjY2NTAsICJpYXQiOiAxNTM2MTI1NDUwLCAiX3Nlc3Npb25fdGlkIjogIjEwMDAxNzgxNyIsICJfcHJvdl91c2VyaWQiOiAiMzAyNCIsICJqdGkiOiAiMzBhMjFlMmItOTFkNS00MGQ3LTlkYjAtN2Q1OTRjNGU0YzFjIiwgIl9hY3MiOiAiMTAwMDE3ODE3IiwgIl9wcm92aWRlcnMiOiBbICJDdXN0b21Mb2dpbiIgXSB9.PWHGQNmlKFRmbOfYk_xlFsdr6U0ISlxRZw814Myc4XH6oPqVF9y4uhWTmOvhvA2Z79ywTSCI_MwlnJJNpTDsnrIwc-5Bt5MRrWqlACFA0sc9H0Sbf_p7s-grVJlLfwcz_SrewCUmjN7XQpo3P0opRwctHaV2GYXI8AX_WLnsVeZak0mUWMJ2Gm8oAm0_P3ha7Vvy1IqJbv5oxv-ujarWs1IAK8LihW3bWqVkKkZTOEqip1Yrw-lMgR9SwdbQ7sxHZ2Au0q6LK1elp9EVcsb7nV4IbLZ7biPaKQ0DOMEd8fmKUiFTwzzxvuzl7LvpQtRC6kXKu4RFL3c_nlm6Nlh1Zg" value="">
+                <accessType></accessType>
+            </param>
+        </header>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="accountNumber" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="searchStartDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="searchEndDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="{&#xA;    &quot;accountNumber&quot;: &quot;$accountNumber&quot;,&#xA;    &quot;searchStartDate&quot;: &quot;$searchStartDate&quot;,&#xA;    &quot;searchEndDate&quot;: &quot;$searchEndDate&quot;&#xA;}" description="" encode="false" format="" formatvalue="" name="message" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="{&#xA;    &quot;accountNumber&quot;: &quot;$accountNumber&quot;,&#xA;    &quot;searchStartDate&quot;: &quot;$searchStartDate&quot;,&#xA;    &quot;searchEndDate&quot;: &quot;$searchEndDate&quot;&#xA;}">
+            <accessType></accessType>
+        </template-param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="false">
+        <dataset id="Transactions" order="" paramOrder="0" parentOrder="0" src="Transactions">
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="amount" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="amount" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="description" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="description" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="fromAccountBalance" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="fromAccountBalance" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="fromAccountName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="fromAccountName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="fromAccountNumber" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="fromAccountNumber" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="hasDepositImage" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="hasDepositImage" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactionId" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionId" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="isScheduled" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="isScheduled" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="toAccountName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="toAccountName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="toAccountNumber" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="toAccountNumber" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactiontype" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionType" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactionDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionDate" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="payeeNickName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="payeeNickName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="scheduledDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="scheduledDate" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="fromAccountType" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="fromAccountType" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactionsNotes" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionsNotes" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="statusDescription" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="statusDescription" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactionComments" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionComments" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="toAccountType" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="toAccountType" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="ExternalAccountNumber" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="ExternalAccountNumber" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="payPersonName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="payPersonName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="payPersonPhone" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="payPersonPhone" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="payPersonEmail" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="payPersonEmail" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="payeeId" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="payeeId" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="frequencyType" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="frequencyType" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="numberOfRecurrences" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="numberOfRecurrences" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="frequencyStartDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="frequencyStartDate" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="fromNickName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="fromNickName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessMode" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessMode" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessPersonName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessPersonName" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashWithdrawalTransactionStatus" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashWithdrawalTransactionStatus" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessSecurityCode" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessSecurityCode" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessEmail" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessEmail" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessPhone" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessPhone" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessOTP" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessOTP" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="cashlessOTPValidDate" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="cashlessOTPValidDate" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="category" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="category" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="recurrenceDesc" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="recurrenceDesc" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="transactionCurrency" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="transactionCurrency" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="baseCurrency" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="baseCurrency" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+            <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="convertedAmount" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="convertedAmount" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+        </dataset>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="errmsg" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="errmsg" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="success" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="success" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="referenceId" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="referenceId" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="personId" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="personId" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="opstatus" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="opstatus" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="httpStatusCode" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="httpStatusCode" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+    </service-output>
+</service>

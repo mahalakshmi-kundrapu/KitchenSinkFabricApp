@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="" groupType="" id="VehicleLoan" passwordencrypted="" security="authorized_app_user" type="CompositeConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="exec_type" value="Sequential"/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="1.0" appid="dbpLoansLocalServicesJava" name="service" value="LOSLoanSubmission"/>
+        <config-param api-version="1.0" appid="dbpLoansLocalServicesJava" name="service" value="updateVehicleLoan"/>
+    </service-config>
+    <service-input passthrough="false"/>
+    <service-output passthrough="true"/>
+</service>

@@ -1,0 +1,28 @@
+{
+  "operationConfig" : {
+    "name" : "getBranchDetails4659",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "LocationManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "getBranchDetails"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "LocationObject",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

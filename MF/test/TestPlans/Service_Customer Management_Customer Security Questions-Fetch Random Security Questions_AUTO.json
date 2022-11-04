@@ -1,0 +1,119 @@
+{
+  "name" : "Customer Security Questions-Fetch Random Security Questions_AUTO",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerSecurityQuestions/fetchRandomSecurityQuestions",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "The service is used to get all the security questions associated with the given customer username<br>",
+  "tests" : [ {
+    "id" : "92750610",
+    "name" : "Fetch random Security Questions Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"userName\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "11191549",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "34222410",
+      "path" : "$.records[*].SecurityQuestion_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "34206705",
+      "path" : "$.records[*].Question",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "83792494",
+      "path" : "$.records[*].QuestionStatus_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "31366569",
+    "name" : "Empty Username Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "35719654",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "73081277",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "55294150",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "userName",
+    "description" : "Required. Username of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "records",
+    "description" : "List of security questions",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

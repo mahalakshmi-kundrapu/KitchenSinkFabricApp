@@ -1,0 +1,66 @@
+{
+  "name" : "Get Alert Channels",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertchannels/getAlertChannels",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch Alert Channels.",
+  "tests" : [ {
+    "id" : "86325935",
+    "name" : "Fetch alert Channels Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "60970620",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "9506814",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "channel_status_id",
+    "description" : "Status ID of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channeltext_LanguageCode",
+    "description" : "Language Code of the text in the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channeltext_Description",
+    "description" : "Description of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channel_id",
+    "description" : "ID of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

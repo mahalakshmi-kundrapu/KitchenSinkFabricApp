@@ -1,0 +1,14 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getSuggestions" : "getSuggestionsMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

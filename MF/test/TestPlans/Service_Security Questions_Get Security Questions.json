@@ -1,0 +1,114 @@
+{
+  "name" : "Get Security Questions",
+  "url" : "services/data/v1/SecurityOpsObjService/operations/manageSecurityQuestions/getSecurityQuestions",
+  "moduleName" : "Security Questions",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch security questions",
+  "tests" : [ {
+    "id" : "68783000",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/x-www-form-urlencoded"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "51674800",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "90388172",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "81515809",
+    "name" : "Get Security Questions Check ",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "97248085",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "99154716",
+      "path" : "$.records[*].SecurityQuestion",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "38297074",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "SecurityQuestion_Status",
+    "description" : "Status of the security question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "UserCount",
+    "description" : "No. of users who opted for the current security question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "SecurityQuestion_id",
+    "description" : "Unique Identifier of Security Question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "Boolean value which indicates whether the security question is deleted",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "SecurityQuestion",
+    "description" : "Contents of the Security Question",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

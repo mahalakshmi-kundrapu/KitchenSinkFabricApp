@@ -1,0 +1,15 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getSystemConfiguration" : "getSystemConfigurationMapping",
+    "updateSystemConfiguration" : "updateSystemConfigurationMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

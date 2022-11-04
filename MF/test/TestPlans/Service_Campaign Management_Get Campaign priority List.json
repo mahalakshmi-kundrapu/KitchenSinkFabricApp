@@ -1,0 +1,56 @@
+{
+    "description": "This service is used to fetch campaigns and their priorities.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Get Campaign priority List",
+    "url": "services/data/v1/CampaignManagementObjService/operations/campaign/getCampaignPriorityList",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "20008311",
+            "name": "Fetch campaign priority Test",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "95819200",
+                    "path": "$.campaignPriorityList[*].name",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "36386098",
+                    "path": "$.campaignPriorityList[*].priority",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "32200015",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

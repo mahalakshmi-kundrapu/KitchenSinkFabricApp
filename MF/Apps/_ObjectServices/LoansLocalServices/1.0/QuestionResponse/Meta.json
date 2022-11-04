@@ -1,0 +1,15 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getQuestionResponse" : "getQuestionResponseMapping",
+    "getQuestionResponseTemp" : "getQuestionResponseTempMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

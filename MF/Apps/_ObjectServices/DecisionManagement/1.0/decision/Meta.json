@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createDecisionRule" : "createDecisionRuleMapping",
+    "GetAllFilesofDecisionRule" : "GetAllFilesofDecisionRuleMapping",
+    "getDecisionRules" : "getDecisionRulesMapping",
+    "editDecisionRule" : "editDecisionRuleMapping",
+    "UploadRulesFile" : "UploadRulesFileMapping",
+    "DownloadRulesFile" : "DownloadRulesFileMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

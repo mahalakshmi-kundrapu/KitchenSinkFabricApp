@@ -1,0 +1,110 @@
+{
+    "description": "This service is used to fetch campaign specifications and groups.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Get Campaign Specifications and Groups",
+    "url": "services/data/v1/CampaignManagementObjService/operations/campaign/getCampaignSpecificationsAndGroups",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "45559804",
+            "name": "Fetch Campaign spec and groups test",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"campaignId\":\"b89e2414-1a04-4965-bb26-e6028e525b50\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "11687934",
+                    "path": "$.campaignSpecifications.WEB.ACCOUNT_DASHBOARD[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "61717706",
+                    "path": "$.campaignSpecifications.WEB.ACCOUNT_DASHBOARD[*].destinationURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "11159297",
+                    "path": "$.campaignSpecifications.WEB.ACCOUNT_DASHBOARD[*].imageResolution",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "86855059",
+                    "path": "$.campaignSpecifications.MOBILE.ACCOUNT_DASHBOARD[*].imageURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "53138594",
+                    "path": "$.campaignSpecifications.MOBILE.ACCOUNT_DASHBOARD[*].destinationURL",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "55819868",
+                    "path": "$.campaignSpecifications.MOBILE.ACCOUNT_DASHBOARD[*].imageResolution",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "90864408",
+                    "path": "$.campaignGroups[*].groupName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "28819385",
+                    "path": "$.campaignGroups[*].groupId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "81918722",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

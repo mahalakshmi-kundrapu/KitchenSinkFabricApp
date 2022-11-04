@@ -1,0 +1,203 @@
+{
+  "name" : "Customer Search",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/CustomerSearch",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to search for customers.\n",
+  "tests" : [ {
+    "id" : "41924567",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"_searchType\":\"CUSTOMER_SEARCH\",\"_id\":\"190207094741339\",\"_name\":null,\"_username\":null,\"_phone\":null,\"_email\":null,\"_group\":null,\"_requestID\":null,\"_SSN\":null,\"_pageOffset\":\"0\",\"_pageSize\":20,\"_sortVariable\":\"name\",\"_sortDirection\":\"ASC\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "42922475",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "77381482",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "98867878",
+    "name" : "Records Status Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"_searchType\":\"CUSTOMER_SEARCH\",\"_id\":\"190207094741339\",\"_name\":null,\"_username\":null,\"_phone\":null,\"_email\":null,\"_group\":null,\"_requestID\":null,\"_SSN\":null,\"_pageOffset\":\"0\",\"_pageSize\":20,\"_sortVariable\":\"name\",\"_sortDirection\":\"ASC\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "87766799",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "49509048",
+      "path" : "$.PageSize",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "30578230",
+      "path" : "$.SortDirection",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "58414043",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "_email",
+    "description" : "Email id of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_SSN",
+    "description" : "SSN of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_customerStatus",
+    "description" : "Status of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_sortDirection",
+    "description" : "Sort direction (ASC | DESC)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_searchType",
+    "description" : "Type of the search (CUSTOMER_SEARCH | GROUP_SEARCH | APPLICANT_SEARCH) - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_name",
+    "description" : "name of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_groupIDS",
+    "description" : "Group ids",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_entitlementIDS",
+    "description" : "Entitlement ids",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_cityIDS",
+    "description" : "City ids",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_pageSize",
+    "description" : "Page size",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_productIDS",
+    "description" : "Product ids",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_before",
+    "description" : "The Upper limit date for created customer date",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_sortVariable",
+    "description" : "Sort variable",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_phone",
+    "description" : "Phone number of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_branchIDS",
+    "description" : "Branch ids. Eg. \"'LID1','LID2'\"",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_pageOffset",
+    "description" : "Page offset",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_id",
+    "description" : "ID of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_group",
+    "description" : "Group of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "_after",
+    "description" : "The lower limit date for created customer date",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "records",
+    "description" : "List of customers",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

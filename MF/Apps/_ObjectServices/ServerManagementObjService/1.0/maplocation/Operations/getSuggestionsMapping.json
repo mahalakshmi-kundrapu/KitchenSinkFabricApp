@@ -1,0 +1,32 @@
+{
+  "operationConfig" : {
+    "name" : "getSuggestions4238",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">   <map inputpath=\"request_in\" outputpath=\"request_out\">       <set-param inputpath=\"api_key\" outputpath=\"api_key\"/>       <set-param inputpath=\"input\" outputpath=\"input\"/>   </map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">          <map inputpath=\"response_in\" outputpath=\"response_out\">                   <map inputpath=\"predictions\" outputpath=\"predictions\">                             <set-param inputpath=\"place_id\" outputpath=\"place_id\"/>                             <set-param inputpath=\"description\" outputpath=\"description\"/>                   </map>         </map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"maplocation\",\"xy\":\"150 100\",\"__gohashid\":211},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"LocationDetails (1.0).getSuggestions\",\"xy\":\"770 100\",\"__gohashid\":212}],\"linkDataArray\":[{\"from\":\"source\",\"to\":\"source:maplocation\",\"fromPort\":\"source\",\"toPort\":\"source:maplocation\",\"visible\":true,\"common\":false,\"__gohashid\":221},{\"from\":\"source:maplocation\",\"to\":\"source:maplocation:fields\",\"fromPort\":\"source:maplocation\",\"toPort\":\"source:maplocation:fields\",\"visible\":true,\"common\":false,\"__gohashid\":222},{\"from\":\"target\",\"to\":\"target:parameters\",\"fromPort\":\"target\",\"toPort\":\"target:parameters\",\"visible\":true,\"common\":false,\"__gohashid\":223},{\"from\":\"target:parameters\",\"to\":\"target:api_key:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:api_key:\",\"visible\":true,\"common\":false,\"__gohashid\":224},{\"from\":\"target:parameters\",\"to\":\"target:input:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:input:\",\"visible\":true,\"common\":false,\"__gohashid\":225}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"maplocation\",\"xy\":\"770 100\",\"__gohashid\":3094},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"LocationDetails (1.0).getSuggestions\",\"xy\":\"150 100\",\"__gohashid\":3095}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:maplocation\",\"fromPort\":\"target\",\"toPort\":\"target:maplocation\",\"visible\":true,\"common\":false,\"__gohashid\":3105},{\"from\":\"target:maplocation\",\"to\":\"target:maplocation:fields\",\"fromPort\":\"target:maplocation\",\"toPort\":\"target:maplocation:fields\",\"visible\":true,\"common\":false,\"__gohashid\":3106},{\"from\":\"source\",\"to\":\"source:predictions\",\"fromPort\":\"source\",\"toPort\":\"source:predictions\",\"visible\":true,\"common\":false,\"__gohashid\":3107},{\"from\":\"source:predictions\",\"to\":\"source:predictions:parameters\",\"fromPort\":\"source:predictions\",\"toPort\":\"source:predictions:parameters\",\"visible\":true,\"common\":false,\"__gohashid\":3108},{\"from\":\"source:predictions:parameters\",\"to\":\"source:predictions:description:\",\"fromPort\":\"source:predictions:parameters\",\"toPort\":\"source:predictions:description:\",\"visible\":true,\"common\":false,\"__gohashid\":3109},{\"from\":\"source:predictions:parameters\",\"to\":\"source:predictions:place_id:\",\"fromPort\":\"source:predictions:parameters\",\"toPort\":\"source:predictions:place_id:\",\"visible\":true,\"common\":false,\"__gohashid\":3110}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "LocationDetails",
+      "serviceVersion" : "1.0",
+      "operationName" : "getSuggestions"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "maplocation",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getBranchDetails" : "getBranchDetailsMapping",
+    "getLocations" : "getLocationsMapping",
+    "downloadLocationsList" : "downloadLocationsListMapping",
+    "getATMDetails" : "getATMDetailsMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

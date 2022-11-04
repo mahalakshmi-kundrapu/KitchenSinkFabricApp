@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "getUserProfile3307",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "UserManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "getUserProfile"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "internalUserProfile_view",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

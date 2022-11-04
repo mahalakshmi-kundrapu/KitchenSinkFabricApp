@@ -1,0 +1,94 @@
+{
+  "name" : "Get Request Summary Count",
+  "url" : "services/data/v1/DashboardObjService/operations/CustomerRequestSummary/getRequestSummaryCount",
+  "moduleName" : "Admin Dashboard",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "72598535",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "47380801",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "39708670",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "70117462",
+    "name" : "Fetch Request Summary Count",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "90567658",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "74000838",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "91028663",
+      "path" : "$.categorySummary[*].requestcategory_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "csrID",
+    "description" : "ID of the Internal User. This parameter is optional. If not provided, the request summary of the current logged in user is returned",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

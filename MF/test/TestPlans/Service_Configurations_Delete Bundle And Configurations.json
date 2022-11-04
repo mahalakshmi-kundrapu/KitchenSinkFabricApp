@@ -1,0 +1,115 @@
+{
+  "name" : "Delete Bundle And Configurations",
+  "url" : "services/data/v1/ConfigurationObjService/operations/Configuration/deleteBundleAndConfigurations",
+  "moduleName" : "Configurations",
+  "httpMethod" : "POST",
+  "description" : "This service is used to delete bundles & configurations at the backend.",
+  "tests" : [ {
+    "id" : "53653496",
+    "name" : "Delete Bundle And Configurations",
+    "testSequence" : 1,
+    "requestBody" : "{\"bundleId\":\"DBP_CONFIG_BUNDLE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "55653311",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "69112374",
+    "name" : "Invalid Bundle ID",
+    "testSequence" : 2,
+    "requestBody" : "{\"bundleId\":\"42dd6f69-8464-4556-b778-f956734d206545\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "52840918",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20484",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "56137270",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "98894501",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "bundleId / configurationId",
+    "description" : "Id of the bundle or the configuration to be removed",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "errorMessage",
+    "description" : "Returned only when service fails. Error message corresponding to service. Generic to service.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status code returned by middleware",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "errmsg",
+    "description" : "Returned only when service fails. Contains exact reason of service failure (Eg. missing mandatory parameter)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "errorCode",
+    "description" : "Returned only when service fails. Error code corresponding to service. Generic to service.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "HTTP status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Success or failure. Used to display appropriate toast message.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

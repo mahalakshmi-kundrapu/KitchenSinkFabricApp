@@ -1,0 +1,153 @@
+{
+  "name" : "Get Alert Sub Type Definition",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertsubtype/getAlertSubTypeDefinition",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the Definition of the Alert Sub Type.",
+  "tests" : [ {
+    "id" : "92690514",
+    "name" : "Fetch Alert Sub Type Definition Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"SubAlertId\":\"PASSWORD_CHANGE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "92133436",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "98455050",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "44405885",
+      "path" : "$.subAlertDefinition.description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "41778467",
+    "name" : "Empty Payload Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "88209059",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20910",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "91193079",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "94863665",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "SubAlertId",
+    "description" : "ID of the Alert Sub Type - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "statusId",
+    "description" : "Status ID of the Event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channelDisplayName",
+    "description" : "Display name of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "templateName",
+    "description" : "Name of the Template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "templateId",
+    "description" : "ID of the Template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "languageCode",
+    "description" : "Language Code of the event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channelId",
+    "description" : "ID of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "content",
+    "description" : "Content of the Event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "code",
+    "description" : "Code of the Alert sub type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "name",
+    "description" : "Name of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

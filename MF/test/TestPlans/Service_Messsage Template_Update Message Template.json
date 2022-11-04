@@ -1,0 +1,186 @@
+{
+  "name" : "Update Message Template",
+  "url" : "services/data/v1/CustServiceObjService/operations/messageTemplate/updateMessageTemplate",
+  "moduleName" : "Messsage Template",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create customer service records and their corresponding communication records",
+  "tests" : [ {
+    "id" : "83231159",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"templateID\":\"MSG_TEMPLATE_ID_01\", \"templateName\":\"Thank You Template\", \"templateBody\":\" NEW Dear customer, Kony Bank conveys a humble note of thanks for your feedback.\", \"additionalNote\":\" NEW Template to be used for conveying a thank you note to a customer upon submitting a feedback.\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "48443589",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "46169614",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "7635787",
+    "name" : "Update Template ",
+    "testSequence" : 2,
+    "requestBody" : "{\"templateID\":\"MSG_TEMPLATE_ID_01\",\"templateName\":\"Thank You Template\",\"templateBody\":\" NEW Dear customer, Kony Bank conveys a humble note of thanks for your feedback.\",\"additionalNote\":\" NEW Template to be used for conveying a thank you note to a customer upon submitting a feedback.\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "97116413",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "75487768",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "24454726",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "6464483",
+    "name" : "Invalid Payload",
+    "testSequence" : 3,
+    "requestBody" : "{\"templateID\":\"\",\"templateName\":\"Thank You Template\",\"templateBody\":\" NEW Dear customer, Kony Bank conveys a humble note of thanks for your feedback.\",\"additionalNote\":\" NEW Template to be used for conveying a thank you note to a customer upon submitting a feedback.\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "92941736",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20140",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "15508448",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "92642584",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "21737242",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "templateName",
+    "description" : "Name of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "additionalNote",
+    "description" : "Additional information about the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "templateBody",
+    "description" : "Body of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "templateID",
+    "description" : "Id of the template",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "operationStatusParam",
+    "description" : "Status of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operationStatusCodeParam",
+    "description" : "Status code of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of the service execution",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operationRecord",
+    "description" : "The output record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status codes in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

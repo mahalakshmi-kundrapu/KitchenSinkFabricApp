@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="editDecisionRule" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://_$_AC_DBP_SERVICES_URL_$_/services/data/v1/DbxRules/operations/FileManagement/editDecision"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="POST"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="urlprovider" value="com.kony.adminconsole.commons.handler.ServiceURLProvider"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false"/>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="decisionId" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="DMN69954ada-5207-499f-8656-74e08fa932aa" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="decisionName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="PricingSimulation" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="description" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Pricing Simulation" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="isActive" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="isSoftDeleted" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="{&#xA;    &quot;decisionId&quot;: &quot;$decisionId&quot;,&#xA;    &quot;decisionName&quot;: &quot;$decisionName&quot;,&#xA;    &quot;description&quot;: &quot;$description&quot;,&#xA;    &quot;isActive&quot;: &quot;$isActive&quot;,&#xA;      &quot;isSoftDeleted&quot;:&quot;$isSoftDeleted&quot;&#xA;}" description="" encode="false" format="" formatvalue="" name="message" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="{&#xA;    &quot;decisionId&quot;: &quot;$decisionId&quot;,&#xA;    &quot;decisionName&quot;: &quot;$decisionName&quot;,&#xA;    &quot;description&quot;: &quot;$description&quot;,&#xA;    &quot;isActive&quot;: &quot;$isActive&quot;,&#xA;      &quot;isSoftDeleted&quot;:&quot;$isSoftDeleted&quot;&#xA;}">
+            <accessType></accessType>
+        </template-param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="false">
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="status" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="status" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="dbpErrCode" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="dbpErrCode" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="dbpErrMsg" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="dbpErrMsg" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="opstatus" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="opstatus" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+    </service-output>
+</service>

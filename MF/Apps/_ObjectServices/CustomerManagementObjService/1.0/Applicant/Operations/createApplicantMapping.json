@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "createApplicant9796",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ApplicantManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "createApplicant"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

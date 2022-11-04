@@ -1,0 +1,83 @@
+{
+    "description": "This service is used to create Campaign",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Create Campaign",
+    "url": "services/data/v1/CampaignManagementObjService/operations/campaign/createCampaign",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "43764283",
+            "name": "Create Campaign Test",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"name\":\"Cool Campaign W1\",\"priority\":100,\"description\":\"Cool Campaign description W1\",\"startDateTime\":\"09/01/2019\",\"endDateTime\":\"09/30/2019\",\"specifications\":[{\"channelId\":\"MOBILE\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageResolution\":\"343x198\",\"imageURL\":\"https://googleW1.com\",\"destinationURL\":\"https://googleW1.com\"},{\"channelId\":\"WEB\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageResolution\":\"1170x516\",\"imageURL\":\"https://googleW1.com\",\"destinationURL\":\"https://googleW1.com\"}],\"groupsToBeAdded\":[{\"groupId\":\"GROUP_PLATINUM\"},{\"groupId\":\"GID_HNW_CUSTOMERS\"}]}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "49213487",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "67949109",
+            "name": "Empty Payload",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "59069206",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "21710",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "45261382",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "58341914",
+                    "path": "$.dbpErrMsg",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

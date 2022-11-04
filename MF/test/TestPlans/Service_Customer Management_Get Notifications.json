@@ -1,0 +1,83 @@
+{
+  "name" : "Get Notifications",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerNotification/GetNotifications",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "The service is used to fetch the notifications that have been sent to a customer<br>",
+  "tests" : [ {
+    "id" : "85510173",
+    "name" : "Fetch Customer Notifications Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"$filter\":\"customer_Id eq 1\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "22537186",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "29963672",
+      "path" : "$.customernotifications_view[*].Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "28023177",
+      "path" : "$.customernotifications_view[*].Status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "29253260",
+      "path" : "$.customernotifications_view[*].Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "43106919",
+      "path" : "$.customernotifications_view[*].customer_Id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "$filter",
+    "description" : "Required. ODATA query to filter the customer notifications. Eg. {\"$filter\":\"customer_Id eq 1\"} where 1 is the customer_id",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "customernotifications_view",
+    "description" : "JSON array of customer notifications",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

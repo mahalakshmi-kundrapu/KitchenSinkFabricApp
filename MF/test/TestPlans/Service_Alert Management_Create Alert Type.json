@@ -1,0 +1,202 @@
+{
+  "name" : "Create Alert Type",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertType/createAlertType",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create Alert Type.",
+  "tests" : [ {
+    "id" : "38687181",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"alertCategoryCode\":\"ALERT_CAT_TRANSACTIONAL\",\"alertCode\":\"ABCDEFG\",\"alertName\":\"Daily Fund NEW\",\"statusId\":\"SID_ACTIVE\",\"isGlobalAlert\":\"FALSE\",\"appPreferences\":{\"BUSINESS_BANKING\":true,\"CONSUMER_LENDING\":true},\"userTypePreferences\":{\"TYPE_ID_MICRO_BUSINESS\":true,\"TYPE_ID_RETAIL\":true},\"attributeId\":\"ALERT_ATTRIBUTE_AMOUNT\",\"conditionId\":\"EQUALS_TO\",\"value1\":\"200\",\"value2\":\"220\",\"addedDisplayPreferences\":[{\"languageCode\":\"en-US\",\"displayName\":\"Fund Transfer Limit Exceeded\",\"description\":\"Fund Transfer Limit Exceeded\"},{\"languageCode\":\"fr-FR\",\"displayName\":\"Transfert de fonds arrêté\",\"description\":\"Description des Transfert de fonds arrêté\"}],\"removedDisplayPreferences\":[\"en-GB\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "94806910",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "13316475",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "43312942",
+    "name" : "Empty Payload",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "86604603",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "32687878",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "95144517",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "11202488",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "failure",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "64959017",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "alertCategoryCode",
+    "description" : "Code of the Alert Category - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertCode",
+    "description" : "Code of the Alert - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertName",
+    "description" : "Name of the Alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "statusId",
+    "description" : "Status ID of the Alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isGlobalAlert",
+    "description" : "TRUE to enable the Alert globally",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "APP_ID",
+    "description" : "TRUE to enable a Alert for the given App",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TYPE_ID",
+    "description" : "TRUE to enable the Alert to the User",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "attributeId",
+    "description" : "ID of the Alert Attribute",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "conditionId",
+    "description" : "ID of the Alert Condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "value1",
+    "description" : "Value 1 of the condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "value2",
+    "description" : "Value 2 of the condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "valueN",
+    "description" : "Value N of the Condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "languageCode",
+    "description" : "Language Code of the Alert type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "displayName",
+    "description" : "Display Name of the Alert type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedDisplayPreferences",
+    "description" : "List of the Display Preferences to be deleted",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "TYPE_ID",
+    "description" : "TRUE if the app is subscribed to the alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "language code",
+    "description" : "List of language codes that is added/removed to/from display preferences",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertTypeDefinition",
+    "description" : "TRUE if the alert has definition",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

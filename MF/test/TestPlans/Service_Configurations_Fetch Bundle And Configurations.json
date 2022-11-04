@@ -1,0 +1,173 @@
+{
+  "name" : "Fetch Bundle And Configurations",
+  "url" : "services/ConfigurationService/fetchBundleAndConfigurations",
+  "moduleName" : "Configurations",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch bundle & configuration information from the backend based on App Id or Bundle Name. This service will be invoked by the SDK at the time of app login.",
+  "tests" : [ {
+    "id" : "37833462",
+    "name" : "Fetch Bundle and Configurations",
+    "testSequence" : 1,
+    "requestBody" : "{\"id1\":\"app_id:DBP\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "12680578",
+      "path" : "$.output.finalBundles.bundles",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "DBP_CONFIG_BUNDLE",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "63594954",
+      "path" : "$.output.finalBundles.downloadServerKeys",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "10347696",
+      "path" : "$.output.updatedConfigurations.DBP_CONFIG_BUNDLE[*].description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "73941720",
+      "path" : "$.output.updatedConfigurations.DBP_CONFIG_BUNDLE[*].type",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "47474693",
+      "path" : "$.output.updatedConfigurations.DBP_CONFIG_BUNDLE[*].value",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "27052850",
+      "path" : "$.output.updatedConfigurations.DBP_CONFIG_BUNDLE[*].key",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "45631424",
+      "path" : "$.output.updatedConfigurations.DBP_CONFIG_BUNDLE[*].target",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "21659447",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "38879992",
+    "name" : "Empty Payload",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "56475847",
+      "path" : "$.output.finalBundles.bundles",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "49175579",
+      "path" : "$.output.finalBundles.downloadServerKeys",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "55294400",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "app_id / bundle_name",
+    "description" : "App id or the bundle name of the bundle to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "timeStamp",
+    "description" : "Contains the timestamp of the last time the configuration bundles entries were changed",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status code returned by middleware",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "finalBundles",
+    "description" : "Contains the names of all bundles",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "HTTP status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "updatedConfigurations",
+    "description" : "Contains all bundles and their configurations",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

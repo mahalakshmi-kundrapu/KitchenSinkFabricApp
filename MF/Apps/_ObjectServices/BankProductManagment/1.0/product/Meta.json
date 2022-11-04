@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "importProduct" : "importProductMapping",
+    "create" : "createMapping",
+    "update" : "updateMapping",
+    "manageProductStatus" : "manageProductStatusMapping",
+    "getProductList" : "getProductListMapping",
+    "FetchBankDetailsBasedOnRoutingNumber" : "FetchBankDetailsBasedOnRoutingNumberMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

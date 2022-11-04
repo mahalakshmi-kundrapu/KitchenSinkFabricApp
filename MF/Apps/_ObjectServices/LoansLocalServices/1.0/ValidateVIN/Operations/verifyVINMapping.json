@@ -1,0 +1,31 @@
+{
+  "operationConfig" : {
+    "name" : "DecodeVinNumber1722",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"request_in\" outputpath=\"request_out\"><set-param inputpath=\"VIN\" outputpath=\"VIN\"/></map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">              <map inputpath=\"response_in\" outputpath=\"response_out\">                            <map inputpath=\"dbpErrMsg\" outputpath=\"dbpErrMsg\" />                                      <map inputpath=\"dbpErrCode\" outputpath=\"dbpErrCode\" />                  <map inputpath=\"Results\" outputpath=\"vehicleDetails\">                                          <set-param inputpath=\"Trim\" outputpath=\"trim\"/>                                          <set-param inputpath=\"VehicleType\" outputpath=\"type\"/>                                          <set-param inputpath=\"ModelYear\" outputpath=\"year\"/>                                          <set-param inputpath=\"Make\" outputpath=\"make\"/>                                          <set-param inputpath=\"Model\" outputpath=\"model\"/>                            </map>              </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"ValidateVIN\",\"xy\":\"770 100\",\"__gohashid\":9267},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"dbpLoansLocalServicesJava (1.0).DecodeVinNumber\",\"xy\":\"150 100\",\"__gohashid\":9268}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:ValidateVIN\",\"fromPort\":\"target\",\"toPort\":\"target:ValidateVIN\",\"visible\":true,\"common\":false,\"__gohashid\":12568},{\"from\":\"target:ValidateVIN\",\"to\":\"target:ValidateVIN:fields\",\"fromPort\":\"target:ValidateVIN\",\"toPort\":\"target:ValidateVIN:fields\",\"visible\":true,\"common\":false,\"__gohashid\":12569},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:VIN:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:VIN:\",\"visible\":true,\"common\":false,\"__gohashid\":12570},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:trim:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:trim:\",\"visible\":true,\"common\":false,\"__gohashid\":12571},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:type:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:type:\",\"visible\":true,\"common\":false,\"__gohashid\":12572},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:year:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:year:\",\"visible\":true,\"common\":false,\"__gohashid\":12573},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:make:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:make:\",\"visible\":true,\"common\":false,\"__gohashid\":12574},{\"from\":\"target:ValidateVIN:fields\",\"to\":\"target:ValidateVIN:model:\",\"fromPort\":\"target:ValidateVIN:fields\",\"toPort\":\"target:ValidateVIN:model:\",\"visible\":true,\"common\":false,\"__gohashid\":12575}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "DecodeVinNumber"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "ValidateVIN",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

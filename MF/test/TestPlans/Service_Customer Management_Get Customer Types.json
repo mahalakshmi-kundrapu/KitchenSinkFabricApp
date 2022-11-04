@@ -1,0 +1,70 @@
+{
+  "name" : "Get Customer Types",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/getCustomerTypes",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the customer types",
+  "tests" : [ {
+    "id" : "69273660",
+    "name" : "Fetch Customer types Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "79102761",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "7480359",
+      "path" : "$.CustomerTypeRecords[*].Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "92793943",
+      "path" : "$.CustomerTypeRecords[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "59131616",
+      "path" : "$.CustomerTypeRecords[*].Name",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "CustomerTypeRecords",
+    "description" : "Customer types array",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

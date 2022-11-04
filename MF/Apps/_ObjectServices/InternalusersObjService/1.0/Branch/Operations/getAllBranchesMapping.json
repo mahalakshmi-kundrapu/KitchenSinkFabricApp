@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "get_branch_view7806",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CommonGetDataService",
+      "serviceVersion" : "1.0",
+      "operationName" : "get_branch_view"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

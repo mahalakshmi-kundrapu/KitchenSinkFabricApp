@@ -1,0 +1,26 @@
+{
+    "hostURL": "https://dbxauto1.konycloud.com",
+    "authServiceURL": "https://100026485.auth.konycloud.com/login",
+    "appName": "KonyBankingAdminConsole",
+    "appVersion": "1.0",
+    "appKey": "c7aa642c1d83af066fd7cfd938165c04",
+    "appSecret": "33a718b98e02746afed104f6cf18ca86",
+    "identityServices": [{
+            "providerName": "KonyBankingAdminConsoleIdentityService",
+            "requestHeaders": {},
+            "requestBody": "{\"inputUsername\":\"admin1\",\"inputPassword\":\"Konyadmin@1\"}",
+            "authTokenValidityInSeconds": 1200
+        },
+        {
+            "providerName": "KonyBankingAdminConsoleAPIIdentityService",
+            "requestHeaders": {
+                "X-Kony-AC-API-Access-Token": "yKegmTtA28hciLeMryqd"
+            },
+            "requestBody": "{}",
+            "authTokenValidityInSeconds": 1800
+        }
+    ],
+    "testPlansExecutionOrder": ["Create Customer Request", "Update Customer Request"],
+    "testPriorities": ["P0", "P1", "P2", "P3"],
+    "testNames": []
+}

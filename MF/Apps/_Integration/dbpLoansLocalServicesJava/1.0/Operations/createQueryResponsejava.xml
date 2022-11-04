@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="createQueryResponsejava" passwordencrypted="false" security="authorized_app_user" type="javaConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="className" value="com.kony.adminconsole.loans.service.SimulationQueryResponseCreate"/>
+        <config-param api-version="" appid="" name="methodName" value="createQueryResponsejava"/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+    </service-config>
+    <service-input passthrough="false">
+        <param datatype="string" defaultvalue="NULL" description="" encode="true" format="None" formatvalue="" name="QueryDefinition_id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="NULL">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="Customer_id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="Status_id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="1" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="QuestionResponse" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="yes" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="OverallPercentageCompletion" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="CustomerQuerySectionStatus" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="NULL" description="" encode="true" format="None" formatvalue="" name="LoanProduct_id" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="NULL">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="QueryCoBorrower" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+    </service-input>
+    <service-output passthrough="false"/>
+</service>

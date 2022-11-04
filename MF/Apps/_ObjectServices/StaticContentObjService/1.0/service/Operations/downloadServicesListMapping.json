@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "downloadServicesList9069",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "StaticContentManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "downloadServicesList"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

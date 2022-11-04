@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<endpoint name="default" type="JSON" url="http://tmnsinffo2.southindia.cloudapp.azure.com:9089/infinity-retail-api/api/v1.0.0/holdings" encryptSecureInfo="false">
+    <config>
+        <entry>
+            <key>ignorehttpproxy</key>
+            <value>true</value>
+        </entry>
+    </config>
+    <apiThrottling/>
+    <jsonpath>true</jsonpath>
+</endpoint>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="SendEmailJava" passwordencrypted="false" security="public" type="javaConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="className" value="com.kony.adminconsole.loans.service.messaging.SendEmail"/>
+        <config-param api-version="" appid="" name="methodName" value="SendEmailJava"/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+    </service-config>
+    <service-input passthrough="false">
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="copyToEmails" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="logeswaran.rathinasamy@kony.com" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="sendToEmails" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="kkoti@softserveinc.com" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="senderEmail" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="logeswaran.rathinasamy@kony.com" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="senderName" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Logesh" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="subject" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Test Subject" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="content" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="Test Content" value="">
+            <accessType></accessType>
+        </param>
+    </service-input>
+    <service-output passthrough="false"/>
+</service>

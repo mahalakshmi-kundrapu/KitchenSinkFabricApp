@@ -1,0 +1,180 @@
+{
+  "name" : "Get MFAMode",
+  "url" : "services/data/v1/MFAObjService/operations/mfaconfigandscenarios/getMFAMode",
+  "moduleName" : "Multifactor Authentication",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "27173149",
+    "name" : "Fetch MFA Mode",
+    "testSequence" : 1,
+    "requestBody" : "{\"appId\":\"KonyMobileBankin\",\"actionId\":\"SERVICE_ID_2\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "46818464",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "26373488",
+      "path" : "$.isMFARequired",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "8817153",
+      "path" : "$.frequencyValue",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "67361689",
+      "path" : "$.secondaryMFATypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "54861441",
+      "path" : "$.mfaTypes[*].mfaTypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "29090081",
+      "path" : "$.mfaTypes[*].mfaConfigurations[*].mfaValue",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "57267114",
+      "path" : "$.mfaTypes[*].mfaConfigurations[*].mfaKey",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "35571379",
+      "path" : "$.mfaTypes[*].statusId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "92745843",
+      "path" : "$.mfaTypes[*].mfaTypeName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "98880831",
+      "path" : "$.frequencyTypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "15230838",
+      "path" : "$.primaryMFATypeId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "29426959",
+    "name" : "Empty App ID",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "55804415",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "21318",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "13394054",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "95431094",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "75325562",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

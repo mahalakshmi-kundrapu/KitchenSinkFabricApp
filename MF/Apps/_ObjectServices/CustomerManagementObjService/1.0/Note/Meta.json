@@ -1,0 +1,16 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "GetNotes" : "GetNotesMapping",
+    "CreateNote" : "CreateNoteMapping",
+    "GetApplicantNotes" : "GetApplicantNotesMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

@@ -1,0 +1,83 @@
+{
+    "description": "This service is used to fetch Channels and screens Information.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Get Channels and Screens Information",
+    "url": "services/data/v1/CampaignManagementObjService/operations/channelandscreen/getChannelsAndScreensInformation",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "88101273",
+            "name": "Fetch Channels and Screens Info ",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "53563317",
+                    "path": "$.channels[*].screens[*].screenId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "66262941",
+                    "path": "$.channels[*].screens[*].resolutions[*].imageSize",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "63992399",
+                    "path": "$.channels[*].screens[*].resolutions[*].imageResolution",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "637151",
+                    "path": "$.channels[*].screens[*].resolutions[*].imageScale",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "17634912",
+                    "path": "$.channels[*].channelId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "18865110",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

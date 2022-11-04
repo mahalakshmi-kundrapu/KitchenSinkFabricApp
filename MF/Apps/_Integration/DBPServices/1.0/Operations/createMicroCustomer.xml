@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="createMicroCustomer" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value=""/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="preprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="postprocessorRules" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="https://_$_AC_DBP_SERVICES_URL_$_/services/data/v1/RBObjects/operations/DbxUser/CreateMicroOrganizationEmployee"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="POST"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="urlprovider" value="com.kony.adminconsole.commons.handler.ServiceURLProvider"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false">
+            <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="X-Kony-Authorization" order="" paramOrder="0" parentOrder="0" sms-name="" src="expression" sourcevalue="$Request.backendToken" srcformatvalue="" target="" targetdatatype="" testvalue="" value="">
+                <accessType></accessType>
+            </param>
+        </header>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Organization_id" order="" paramOrder="1" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Email" order="" paramOrder="2" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Ssn" order="" paramOrder="3" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Phone" order="" paramOrder="4" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="FirstName" order="" paramOrder="5" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="MiddleName" order="" paramOrder="6" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="LastName" order="" paramOrder="7" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="DateOfBirth" order="" paramOrder="8" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="UserName" order="" paramOrder="9" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="accounts" order="" paramOrder="10" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="Role_id" order="" paramOrder="11" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="DrivingLicenseNumber" order="" paramOrder="12" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="collection" defaultvalue="" description="" encode="false" format="None" formatvalue="" name="services" order="" paramOrder="13" parentOrder="-1" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <template-param datatype="" defaultvalue="{&#xA;    &quot;Organization_id&quot;: &quot;$Organization_id&quot;,&#xA;    &quot;Email&quot;: &quot;$Email&quot;,&#xA;    &quot;Ssn&quot;: &quot;$Ssn&quot;,&#xA;    &quot;Phone&quot;: &quot;$Phone&quot;,&#xA;    &quot;FirstName&quot;: &quot;$FirstName&quot;,&#xA;    &quot;MiddleName&quot;: &quot;$MiddleName&quot;,&#xA;    &quot;LastName&quot;: &quot;$LastName&quot;,&#xA;    &quot;DateOfBirth&quot;: &quot;$DateOfBirth&quot;,&#xA;    &quot;UserName&quot;: &quot;$UserName&quot;,&#xA;    #set ($accountsString = &quot;[&quot;)&#xA;    #set ($comma = ',')&#xA;    #foreach $accounts&#xA;      #if($velocityCount!=1)&#xA;      &#x9;#set ($accountsString = &quot;${accountsString} ${comma}&quot;)&#xA;      #end&#xA;      #set ($record = &quot;{\&quot;id\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${id}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;,\&quot;Account_Name\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${Account_Name}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;}&quot;)&#xA;      #set ($accountsString = &quot;${accountsString}  ${record}&quot;)&#xA;    #end&#xA;    #set ($accountsString = &quot;${accountsString}  ]&quot;)&#xA;&#x9;&quot;accounts&quot;:&quot;$accountsString&quot;,&#xA;    &quot;Role_id&quot;: &quot;$Role_id&quot;,&#xA;&#x9;&#xA;&#x9;#set ($servicesString = &quot;[&quot;)&#xA;    #foreach $services&#xA;      #if($velocityCount!=1)&#xA;      &#x9;#set ($servicesString = &quot;${servicesString} ${comma}&quot;)&#xA;      #end&#xA;      #set ($record = &quot;{\&quot;Service_id\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${Service_id}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;,\&quot;MaxDailyLimit\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${MaxDailyLimit}&quot;)&#xA;&#x9;  #set ($record = &quot;${record}\&quot;,\&quot;MaxTransactionLimit\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${MaxTransactionLimit}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;}&quot;)&#xA;      #set ($servicesString = &quot;${servicesString}  ${record}&quot;)&#xA;    #end&#xA;    #set ($servicesString = &quot;${servicesString}  ]&quot;)&#xA;&#x9;&#xA;&#x9;&quot;services&quot;:&quot;$servicesString&quot;,&#xA;    &quot;DrivingLicenseNumber&quot;: &quot;$DrivingLicenseNumber&quot;&#xA;}" description="" encode="false" format="" formatvalue="" name="message" order="" paramOrder="0" parentOrder="0" sms-name="" src="" sourcevalue="" srcformatvalue="" target="" targetdatatype="" value="{&#xA;    &quot;Organization_id&quot;: &quot;$Organization_id&quot;,&#xA;    &quot;Email&quot;: &quot;$Email&quot;,&#xA;    &quot;Ssn&quot;: &quot;$Ssn&quot;,&#xA;    &quot;Phone&quot;: &quot;$Phone&quot;,&#xA;    &quot;FirstName&quot;: &quot;$FirstName&quot;,&#xA;    &quot;MiddleName&quot;: &quot;$MiddleName&quot;,&#xA;    &quot;LastName&quot;: &quot;$LastName&quot;,&#xA;    &quot;DateOfBirth&quot;: &quot;$DateOfBirth&quot;,&#xA;    &quot;UserName&quot;: &quot;$UserName&quot;,&#xA;    #set ($accountsString = &quot;[&quot;)&#xA;    #set ($comma = ',')&#xA;    #foreach $accounts&#xA;      #if($velocityCount!=1)&#xA;      &#x9;#set ($accountsString = &quot;${accountsString} ${comma}&quot;)&#xA;      #end&#xA;      #set ($record = &quot;{\&quot;id\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${id}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;,\&quot;Account_Name\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${Account_Name}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;}&quot;)&#xA;      #set ($accountsString = &quot;${accountsString}  ${record}&quot;)&#xA;    #end&#xA;    #set ($accountsString = &quot;${accountsString}  ]&quot;)&#xA;&#x9;&quot;accounts&quot;:&quot;$accountsString&quot;,&#xA;    &quot;Role_id&quot;: &quot;$Role_id&quot;,&#xA;&#x9;&#xA;&#x9;#set ($servicesString = &quot;[&quot;)&#xA;    #foreach $services&#xA;      #if($velocityCount!=1)&#xA;      &#x9;#set ($servicesString = &quot;${servicesString} ${comma}&quot;)&#xA;      #end&#xA;      #set ($record = &quot;{\&quot;Service_id\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${Service_id}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;,\&quot;MaxDailyLimit\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${MaxDailyLimit}&quot;)&#xA;&#x9;  #set ($record = &quot;${record}\&quot;,\&quot;MaxTransactionLimit\&quot;: \&quot;&quot;)&#xA;      #set ($record = &quot;${record}${MaxTransactionLimit}&quot;)&#xA;      #set ($record = &quot;${record}\&quot;}&quot;)&#xA;      #set ($servicesString = &quot;${servicesString}  ${record}&quot;)&#xA;    #end&#xA;    #set ($servicesString = &quot;${servicesString}  ]&quot;)&#xA;&#x9;&#xA;&#x9;&quot;services&quot;:&quot;$servicesString&quot;,&#xA;    &quot;DrivingLicenseNumber&quot;: &quot;$DrivingLicenseNumber&quot;&#xA;}">
+            <accessType></accessType>
+        </template-param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="true"/>
+</service>

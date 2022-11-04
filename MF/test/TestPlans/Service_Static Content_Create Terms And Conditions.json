@@ -1,0 +1,119 @@
+{
+  "name" : "Create Terms And Conditions",
+  "url" : "services/data/v1/StaticContentObjService/operations/termsAndConditions/createTermsAndConditions",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create the Terms and Conditions",
+  "tests" : [ {
+    "id" : "59367523",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"user_ID\": \"UID1\", \"TermsAndConditionsData\": { \"Channel_id\":\"CH_ID_MOB_INT\", \"Description\":\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. N\", \"Status_id\":\"SID_ACTIVE\" }}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "18372324",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "62445323",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "91689587",
+    "name" : "Create Terms and Conditions Check ",
+    "testSequence" : 2,
+    "requestBody" : "{\"user_ID\":\"UID1\",\"TermsAndConditionsData\":{\"Channel_id\":\"CH_ID_MOB_INT\",\"Description\":\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. N\",\"Status_id\":\"SID_ACTIVE\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "87085062",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "76351861",
+      "path" : "$.TermsAndConditionsCreateStatus",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "92482376",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "TermsAndConditionsData.Description",
+    "description" : "Content of Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status ID of the Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TermsAndConditionsData.Channel_id",
+    "description" : "Channel ID of the Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "TermsAndConditionsEditStatus",
+    "description" : "Status of creating the T&C",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Operation Status Code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "HTTP Status Code of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

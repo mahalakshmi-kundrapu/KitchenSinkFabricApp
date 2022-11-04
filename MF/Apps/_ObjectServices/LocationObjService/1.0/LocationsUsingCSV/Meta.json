@@ -1,0 +1,16 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "importLocations" : "importLocationsMapping",
+    "getImportLocationsStatus" : "getImportLocationsStatusMapping",
+    "downloadLocationsCSV" : "downloadLocationsCSVMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

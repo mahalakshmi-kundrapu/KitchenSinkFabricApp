@@ -1,0 +1,363 @@
+{
+  "name" : "Fetch Customer Requests",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerRequest/getCustomerRequests",
+  "moduleName" : "Customer Request",
+  "httpMethod" : "POST",
+  "description" : "This service returns the list of Customer Requests based on the search and pagination filters.\n",
+  "tests" : [ {
+    "id" : "41620159",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"csrRepID\":\"UID10\",\"searchKey\":\"\",\"requestAssignedTo\":\"\",\"requestCategory\":\"\",\"messageRepliedBy\":\"\",\"dateInitialPoint\":\"\",\"dateFinalPoint\":\"\",\"requestStatusID\":\"SID_INPROGRESS\",\"currPageIndex\":\"1\",\"sortCriteria\":\"\",\"recordsPerPage\":\"20\",\"sortOrder\":\"\",\"queryType\":\"\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "{\n    \"inputUsername\": \"admin1\",\n    \"inputPassword\": \"Konyadmin@1\"\n}",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "54171841",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "84737235",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "67932268",
+    "name" : "Request Summary Check",
+    "testSequence" : 3,
+    "requestBody" : "{\"csrRepID\":\"UID10\",\"searchKey\":\"\",\"requestAssignedTo\":\"\",\"requestCategory\":\"\",\"messageRepliedBy\":\"\",\"dateInitialPoint\":\"\",\"dateFinalPoint\":\"\",\"requestStatusID\":\"\",\"currPageIndex\":\"1\",\"sortCriteria\":\"\",\"recordsPerPage\":\"20\",\"sortOrder\":\"\",\"queryType\":\"\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "{\n    \"inputUsername\": \"admin1\",\n    \"inputPassword\": \"Konyadmin@1\"\n}",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "27922294",
+      "path" : "$.requestsSummary.SID_ONHOLD",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "15265605",
+      "path" : "$.requestsSummary.MY_QUEUE",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "86979475",
+      "path" : "$.requestsSummary.FILTERED_REQUESTS",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "48809698",
+      "path" : "$.requestsSummary.SID_DELETED",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "16827772",
+      "path" : "$.requestsSummary.SID_OPEN",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "15362838",
+      "path" : "$.requestsSummary.SID_INPROGRESS",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "78956569",
+      "path" : "$.requestsSummary.SID_CANCELLED",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "36284057",
+      "path" : "$.requestsSummary.SID_ARCHIVED",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "62463455",
+      "path" : "$.requestsSummary.SID_RESOLVED",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "8978518",
+    "name" : "Multiple Request Status Filter Check",
+    "testSequence" : 4,
+    "requestBody" : "{\"csrRepID\":\"UID10\",\"searchKey\":\"\",\"requestAssignedTo\":\"\",\"requestCategory\":\"\",\"messageRepliedBy\":\"\",\"dateInitialPoint\":\"\",\"dateFinalPoint\":\"\",\"requestStatusID\":\"SID_OPEN,SID_INPROGRESS\",\"currPageIndex\":\"1\",\"sortCriteria\":\"\",\"recordsPerPage\":\"20\",\"sortOrder\":\"\",\"queryType\":\"\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "{\n    \"inputUsername\": \"admin1\",\n    \"inputPassword\": \"Konyadmin@1\"\n}",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "96657702",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "64768057",
+    "name" : "Request Date Filter Check",
+    "testSequence" : 5,
+    "requestBody" : "{\"csrRepID\":\"UID10\",\"searchKey\":\"\",\"requestAssignedTo\":\"\",\"requestCategory\":\"\",\"messageRepliedBy\":\"\",\"dateInitialPoint\":\"2019-02-20 00:00:00.0\",\"dateFinalPoint\":\"2019-02-30 00:00:00.0\",\"requestStatusID\":\"\",\"currPageIndex\":\"1\",\"sortCriteria\":\"\",\"recordsPerPage\":\"5\",\"sortOrder\":\"\",\"queryType\":\"\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "{\n    \"inputUsername\": \"admin1\",\n    \"inputPassword\": \"Konyadmin@1\"\n}",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "55453680",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "currPageIndex",
+    "description" : "Current Page Number",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "dateFinalPoint",
+    "description" : "End Date-Search on last modified date of the request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "dateInitialPoint",
+    "description" : "Start Date-Search on last modified date of the request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requestStatusID",
+    "description" : "Status of the request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requestCategory",
+    "description" : "Request Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "csrRepID",
+    "description" : "Internal User ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requestAssignedTo",
+    "description" : "Internal User ID to whom the request has been assigned",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "recordsPerPage",
+    "description" : "Number of records to be returned in a call",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "searchKey",
+    "description" : "Search on RequestID,Customer Username and Customer ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "messageRepliedBy",
+    "description" : "Internal User ID by whom the request/message has been replied",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "sortCriteria",
+    "description" : "Criteria in which the requests should be sorted. asc: Ascending desc: Descending",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "customer_MiddleName",
+    "description" : "Customer's MiddleName. Request createdby or addressed to the stated customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Username",
+    "description" : "Customer's Username",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_RequestSubject",
+    "description" : "Request Subject",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_FirstName",
+    "description" : "Customer's FirstName. Request createdby or addressed to the stated customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_Customer_id",
+    "description" : "Customer ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Type_id",
+    "description" : "Type ID of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_lastmodifiedts",
+    "description" : "Last Modified Timestamp value of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_AssignedTo",
+    "description" : "ID of the internal user to whom the request has been assigned",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_hasDraftMessage",
+    "description" : "Flag which indicates if there is a draft message in this request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_LastName",
+    "description" : "Customer's LastName. Request createdby or addressed to the stated customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_id",
+    "description" : "ID of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "requestcategory_Name",
+    "description" : "Display Name of the request Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customer_Salutation",
+    "description" : "Customer's Salutation. Request createdby or addressed to the stated customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_createdby",
+    "description" : "Details of the user/customer by whom the request has been created",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_Priority",
+    "description" : "Priority of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_modifiedby",
+    "description" : "Details of the user/customer by whom the request has been modified",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_RequestCategory_id",
+    "description" : "ID of the category of which the request is a part of",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_lastupdatedbycustomer",
+    "description" : "Flag which indicates if the request was last updated/replied by the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_Accountid",
+    "description" : "Account Id of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_createdts",
+    "description" : "Created Timestamp value of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_synctimestamp",
+    "description" : "Sync Timestamp value of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_softdeleteflag",
+    "description" : "Soft delete flag value of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "customerrequest_Status_id",
+    "description" : "Status ID of the customer request",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

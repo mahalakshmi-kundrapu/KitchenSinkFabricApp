@@ -1,0 +1,207 @@
+{
+  "name" : "Create Privacy Policy",
+  "url" : "services/data/v1/StaticContentObjService/operations/privacyPolicy/createPrivacyPolicy",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create privacy policy",
+  "tests" : [ {
+    "id" : "79991253",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"user_ID\": \"UID2\", \"PrivacyPolicyData\": { \"Channel_id\":\"CH_ID_MOB_INT\", \"Description\":\"<TEST>\", \"Status_id\":\"SID_ACTIVE\" }}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "50597094",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "31478378",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "36245699",
+    "name" : "Create Privacy Policy Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"user_ID\":\"UID2\",\"PrivacyPolicyData\":{\"Channel_id\":\"CH_ID_MOB_INT\",\"Description\":\"<TEST>\",\"Status_id\":\"SID_ACTIVE\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "6045975",
+      "path" : "$.PrivacyPolicyCreateStatus",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "40456126",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "28938296",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "75889558",
+    "name" : "Empty Channel ID",
+    "testSequence" : 3,
+    "requestBody" : "{\"user_ID\":\"UID2\",\"PrivacyPolicyData\":{\"Channel_id\":\"\",\"Description\":\"<TEST>\",\"Status_id\":\"SID_ACTIVE\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "1591729",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20201",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "1568251",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "10694732",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Description",
+    "description" : "Description of the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "user_ID",
+    "description" : "Id of the user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status Id of the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Channel_id",
+    "description" : "Id of the channel",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "lastmodifiedts",
+    "description" : "last modified date and time",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Description of the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdby",
+    "description" : "Name of the user who created policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Id of the status of the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "modifiedby",
+    "description" : "Name of the modified user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "Id of the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "synctimestamp",
+    "description" : "timestamp of the synced data",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdts",
+    "description" : "date and time of creating the policy",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "flag to status of the record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

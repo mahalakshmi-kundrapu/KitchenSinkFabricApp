@@ -1,0 +1,87 @@
+{
+  "name" : "Reorder Alert Type",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertType/reorderAlertType",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to Reorder the Alert Type.",
+  "tests" : [ {
+    "id" : "19752806",
+    "name" : "Set Alert Type Order",
+    "testSequence" : 1,
+    "requestBody" : "{\"typeOrder\":{\"TRANSFER_RECIPIENT\":1,\"BILL_PAYEE\":2,\"P2P_RECiPIENT\":3,\"MAKE_TRANSFER\":4},\"alertCategoryCode\":\"ALERT_CAT_TRANSACTIONAL\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "64591744",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "equalsIgnoreCase",
+      "value" : "success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "50737650",
+    "name" : "Invalid Payload - Missing Category ID",
+    "testSequence" : 2,
+    "requestBody" : "{\"typeOrder\":{\"TRANSFER_RECIPIENT\":1,\"BILL_PAYEE\":2,\"P2P_RECiPIENT\":3,\"MAKE_TRANSFER\":4}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "9541398",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "CATEGORY_CODE_1",
+    "description" : "Sequence of the Category Code 1",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CATEGORY_CODE_2",
+    "description" : "Sequence of the Category Code 2",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CATEGORY_CODE_N",
+    "description" : "Sequence of the Category Code N",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertCategoryCode",
+    "description" : "Code of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "status",
+    "description" : "Operation Status",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

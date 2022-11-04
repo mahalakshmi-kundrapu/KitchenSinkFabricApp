@@ -1,0 +1,72 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_loansconfigurationmasters_get3940",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"loansconfigurationmasters\" outputpath=\"LoansConfigurationMasters\"><set-param inputpath=\"role\" outputpath=\"role\"/><set-param inputpath=\"channels\" outputpath=\"channels\"/><set-param inputpath=\"device_id\" outputpath=\"device_id\"/><set-param inputpath=\"app_version\" outputpath=\"app_version\"/><set-param inputpath=\"user_id\" outputpath=\"user_id\"/><set-param inputpath=\"bundle_id\" outputpath=\"bundle_id\"/><set-param inputpath=\"app_id\" outputpath=\"app_id\"/></map></map></mapper>",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_loansconfigurationmasters_get"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "LoansConfigurationMasters",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

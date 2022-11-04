@@ -1,0 +1,225 @@
+{
+  "name" : "Fetch Customer Details For Olb",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/fetchCustomerDetailsForOlb",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the customer info (addresses, emails and phone numbers) along with the isSecurityQuestionConfigured flag. The isSecurityQuestionConfigured flag is true if some security questions are mapped to a customer in Admin Console and false if otherwise",
+  "tests" : [ {
+    "id" : "99703703",
+    "name" : "Fetch Customer Details",
+    "testSequence" : 1,
+    "requestBody" : "{\"userName\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "25454594",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "54542417",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "60951786",
+      "path" : "$.Addresses[*].RegionCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "26167063",
+      "path" : "$.Addresses[*].CountryName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "81504287",
+      "path" : "$.Addresses[*].Region_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "3904541",
+      "path" : "$.Addresses[*].City_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "28610690",
+      "path" : "$.Addresses[*].ZipCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "5879478",
+      "path" : "$.Addresses[*].Address_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "32930805",
+      "path" : "$.Addresses[*].Country_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "64791978",
+      "path" : "$.Addresses[*].CityName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "38852687",
+      "path" : "$.Addresses[*].RegionName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "4897128",
+      "path" : "$.Addresses[*].CountryCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "92242603",
+    "name" : "Empty Username",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "65290139",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "52282926",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "45672576",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "54724890",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "userName",
+    "description" : "Required. Username of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Addresses",
+    "description" : "List of addresses the customer has",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "EmailIds",
+    "description" : "List of email addresses",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ContactNumbers",
+    "description" : "List of contact numbers",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isSecurityQuestionConfigured",
+    "description" : "Returns 'true' if configured",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "PreferredTime&Method",
+    "description" : "Preferred time and method of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

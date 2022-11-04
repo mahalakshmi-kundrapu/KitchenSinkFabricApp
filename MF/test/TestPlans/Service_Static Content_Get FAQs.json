@@ -1,0 +1,138 @@
+{
+  "name" : "Get FAQs",
+  "url" : "services/data/v1/StaticContentObjService/operations/frequentlyAskedQuestions/getFAQs",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service fetches all FAQs",
+  "tests" : [ {
+    "id" : "44864930",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"$top\":5,\"$skip\":1}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "58683570",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "99951655",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "87244624",
+    "name" : "Fetch FAQs Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "12810739",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "18363878",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "63880273",
+      "path" : "$.records[*].CategoryId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "87035803",
+      "path" : "$.records[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "CategoryId",
+    "description" : "Category Id of FAQ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Answer",
+    "description" : "Answer for the particular question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "QuestionCode",
+    "description" : "Code of the FAQ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status of the question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CategoryName",
+    "description" : "Category of the question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Question",
+    "description" : "Frequently asked question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Channel_id",
+    "description" : "Id of the channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "Id of the question",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

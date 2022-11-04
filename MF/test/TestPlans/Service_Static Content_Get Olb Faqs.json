@@ -1,0 +1,99 @@
+{
+  "name" : "Get Olb Faqs",
+  "url" : "services/data/v1/StaticContentObjService/operations/frequentlyAskedQuestions/getOlbFaqs",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "36202917",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "61439897",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "66339626",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "35321608",
+    "name" : "Fetch OLB FAQs Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "olb"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "76986796",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "35623750",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "81621382",
+      "path" : "$.categories[*].faqs[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "92416185",
+      "path" : "$.categories[*].categoryId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

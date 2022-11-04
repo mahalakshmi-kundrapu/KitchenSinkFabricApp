@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "downloadGroupsList" : "downloadGroupsListMapping",
+    "createGroup" : "createGroupMapping",
+    "CustomerAssignRole" : "CustomerAssignRoleMapping",
+    "editGroup" : "editGroupMapping",
+    "FetchEntityStatus" : "FetchEntityStatusMapping",
+    "manageStatus" : "manageStatusMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

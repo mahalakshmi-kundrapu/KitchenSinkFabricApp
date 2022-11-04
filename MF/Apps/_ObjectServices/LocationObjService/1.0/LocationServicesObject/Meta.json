@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "deleteLocation" : "deleteLocationMapping",
+    "updateLocationAndLocationServices" : "updateLocationAndLocationServicesMapping",
+    "getLocationAndLocationServices" : "getLocationAndLocationServicesMapping",
+    "createLocationAndAssignServices" : "createLocationAndAssignServicesMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

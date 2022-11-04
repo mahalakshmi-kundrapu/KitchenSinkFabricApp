@@ -1,0 +1,113 @@
+{
+  "name" : "Get Account Specific Alerts",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerProduct/GetAccountSpecificAlerts",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the account specific alerts",
+  "tests" : [ {
+    "id" : "44747348",
+    "name" : "Fetch Account Specific Alerts",
+    "testSequence" : 1,
+    "requestBody" : "{\"customerUsername\":\"konyolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "15481752",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "52435546",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Successful",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "96517776",
+    "name" : "Empty Customer name ",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "27895031",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Failure",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "81887730",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20653",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "34268168",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "56888908",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "CustomerUsername",
+    "description" : "Required. Username of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Accounts",
+    "description" : "JSON array of accounts of a customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

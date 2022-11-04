@@ -1,0 +1,172 @@
+{
+  "name" : "Create Message Template",
+  "url" : "services/data/v1/CustServiceObjService/operations/messageTemplate/createMessageTemplate",
+  "moduleName" : "Messsage Template",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch customer records service and their corresponding communication records",
+  "tests" : [ {
+    "id" : "36358241",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"templateName\":\"Thank You Template\", \"templateBody\":\"Dear customer, Kony Bank conveys a humble note of thanks for your feedback.\", \"additionalNote\":\"Template to be used for conveying a thank you note to a customer upon submitting a feedback.\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "52761747",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "91411004",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "59773112",
+    "name" : "Create Message Template",
+    "testSequence" : 2,
+    "requestBody" : "{\"templateName\":\"Thank You Template\",\"templateBody\":\"Dear customer, Kony Bank conveys a humble note of thanks for your feedback.\",\"additionalNote\":\"Template to be used for conveying a thank you note to a customer upon submitting a feedback.\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "45167605",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "26736597",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "46035126",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "72092088",
+    "name" : "Empty Payload",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "12637352",
+      "path" : "$.validationError",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "21091944",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "33611888",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20140",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "templateName",
+    "description" : "Name of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "additionalNote",
+    "description" : "Additional information about the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "templateBody",
+    "description" : "Body of the template",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "operationStatusParam",
+    "description" : "Status of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operationStatusCodeParam",
+    "description" : "Status code of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of the service execution",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operationRecord",
+    "description" : "The output record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status codes in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,85 @@
+{
+  "name" : "Update Terms And Conditions",
+  "url" : "services/data/v1/StaticContentObjService/operations/termsAndConditions/updateTermsAndConditions",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update the Terms and Conditions",
+  "tests" : [ {
+    "id" : "31348986",
+    "name" : "Update Terms and Conditions Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"TermsAndConditionsData\":{\"Channel_id\":\"TER_CON_ID1\",\"Description\":\"New Terms And Conditions\",\"Status_id\":\"SID_ACTIVE\"}}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "87043440",
+      "path" : "$.TermsAndConditionsEditStatus",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "67972276",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "49957086",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "TermsAndConditionsData.Description",
+    "description" : "Content of Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status ID of the Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TermsAndConditionsData.Channel_id",
+    "description" : "Channel ID of the Terms And Conditions",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "TermsAndConditionsEditStatus",
+    "description" : "Status of updating the T&C",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Operation Status Code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "HTTP Status Code of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

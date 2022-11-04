@@ -1,0 +1,184 @@
+{
+  "name" : "Insert Security Questions",
+  "url" : "services/data/v1/SecurityOpsObjService/operations/manageSecurityQuestions/insertSecurityQuestions",
+  "moduleName" : "Security Questions",
+  "httpMethod" : "POST",
+  "description" : "This service is used to insert security questions",
+  "tests" : [ {
+    "id" : "20925285",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"user_ID\":\"UID1\", \"SecurityQuestionsList\": [ { \"Question\": \"In which city did you attend your senior ABC schooling?\", \"createdby\": \"Kony User\", \"Status_id\": \"SID_ACTIVE\" }, { \"Question\": \"In which city did you first start ABC working?\", \"createdby\": \"Kony User\", \"Status_id\": \"SID_INACTIVE\" } ]}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "48270576",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "42540767",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "6462244",
+    "name" : "Insert Security Questions Check ",
+    "testSequence" : 2,
+    "requestBody" : "{\"user_ID\":\"UID1\",\"SecurityQuestionsList\":[{\"Question\":\"In which city did you attend your senior ABC schooling?\",\"createdby\":\"Kony User\",\"Status_id\":\"SID_ACTIVE\"},{\"Question\":\"In which city did you first start ABC working?\",\"createdby\":\"Kony User\",\"Status_id\":\"SID_INACTIVE\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "49705643",
+      "path" : "$.Failed Insert Count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "74433471",
+      "path" : "$.Successful Insert Count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "34174819",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "70073943",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "62238124",
+    "name" : "Invalid Input Payload Check",
+    "testSequence" : 3,
+    "requestBody" : "{\"user_ID\":\"UID1\",\"SecurityQuestionsList\":[{},{\"Question\":\"In which city did you first start ABC working?\",\"createdby\":\"Kony User\",\"Status_id\":\"SID_INACTIVE\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "52515215",
+      "path" : "$.Failed Insert Count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "91000635",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20241",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "99818237",
+      "path" : "$.Successful Insert Count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "24435475",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "24294842",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "createdby",
+    "description" : "ID of the User who created the Security Question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status of the Security Question",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Question",
+    "description" : "Required Contents of Security Question",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Failed Insert Count",
+    "description" : "No. of questions whose creation failed",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Successful Insert Count",
+    "description" : "No. of questions which were successfully created",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

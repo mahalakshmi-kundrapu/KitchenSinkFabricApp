@@ -1,0 +1,17 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getEligibilityCriteria" : "getEligibilityCriteriaMapping",
+    "addEligibilityCriteria" : "addEligibilityCriteriaMapping",
+    "editEligibilityCriteria" : "editEligibilityCriteriaMapping",
+    "deleteEligibilityCriteria" : "deleteEligibilityCriteriaMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

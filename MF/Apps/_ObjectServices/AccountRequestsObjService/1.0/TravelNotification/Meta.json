@@ -1,0 +1,19 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "deleteTravelNotification" : "deleteTravelNotificationMapping",
+    "cancelTravelNotification" : "cancelTravelNotificationMapping",
+    "getTravelNotification" : "getTravelNotificationMapping",
+    "createTravelNotification" : "createTravelNotificationMapping",
+    "updateTravelNotification" : "updateTravelNotificationMapping",
+    "getTravelNotificationStatus" : "getTravelNotificationStatusMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

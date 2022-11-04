@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.kony.api.test</groupId>
+		<artifactId>ServerObjectTestAggregator</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ServerObjectTestArtifactsManager</artifactId>
+	<name>Server Object Test Artifacts Manager</name>
+	<description>This module manages all the artifacts that are needed by Server Object Test Platform.</description>
+	<packaging>pom</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.kony.api.test</groupId>
+			<artifactId>ServerObjectTest</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kony.api.test</groupId>
+			<artifactId>ServerObjectTestDefiner</artifactId>
+			<type>war</type>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<project.repo.dir>${project.basedir}/../../../..</project.repo.dir>
+		<project.dist.folder.name>dist</project.dist.folder.name>
+		<project.dist.dir>${project.repo.dir}/MF/test/${project.dist.folder.name}</project.dist.dir>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${project.dist.dir}</directory>
+							<followSymlinks>false</followSymlinks>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>package-release-artifacts</id>
+						<phase>install</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<outputDirectory>${project.dist.dir}</outputDirectory>
+							<attach>false</attach>
+							<descriptors>
+								<descriptor>${project.basedir}/assembly/copy-release-aritfacts.xml</descriptor>
+							</descriptors>
+							<finalName>${file.separator}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -1,0 +1,191 @@
+{
+  "name" : "Customer Update Device Information",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerDevice/CustomerUpdateDeviceInformation",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update customer device information",
+  "tests" : [ {
+    "id" : "23241621",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"Device_id\":\"1234514998859\",\"username\":\"dbpolbuser\",\"Status_id\":\"SID_DEVICE_DE-REGISTERED\",\"LastUsedIp\":\"10.11.121.212\",\"LastLoginTime\":\"2018-05-14T10:31:24\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "74889828",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "79586972",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "95438009",
+    "name" : "Update Customer Device ",
+    "testSequence" : 2,
+    "requestBody" : "{\"Device_id\":\"1234514998858\",\"username\":\"dbpolbuser\",\"Status_id\":\"SID_DEVICE_DE-REGISTERED\",\"LastUsedIp\":\"10.11.121.212\",\"LastLoginTime\":\"2018-05-14T10:31:24\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "39584774",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "69772942",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "27789397",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "77327255",
+    "name" : "Empty Payload Check",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "9949413",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "33297572",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20613",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "89893123",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "13673039",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "38205477",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "LastLoginTime",
+    "description" : "Last login time eg. 2018-05-14T18:31:24+05:30",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Device_id",
+    "description" : "Required.Device id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Customer_id",
+    "description" : "Required.Customer id (Used by Admin Console application)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Required.username of the customer (Used by OLB application)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "LastUsedIp",
+    "description" : "Last used Ip",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation is successful or not.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "UpdateResponse",
+    "description" : "Backend response",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

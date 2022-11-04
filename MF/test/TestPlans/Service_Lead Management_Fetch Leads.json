@@ -1,0 +1,421 @@
+{
+    "description": "This service is used to fetch leads based on a search criteria. This service accepts a set of parameters on which the search is performed.",
+    "inputFieldsDocument": [
+        {
+            "name": "statusIds",
+            "description": "List of status Ids",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "productId",
+            "description": "Product ID",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "leadType",
+            "description": "Leads can be customers or non-customers",
+            "isMandatory": false,
+            "range": "Leads can be customers or non-customers"
+        },
+        {
+            "name": "assignedTo",
+            "description": "ID of the CSR agent to whom the lead has been assigned",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "phoneNumber",
+            "description": "Phone number of the lead. This value is used to determine if the lead is an existing customer",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "emailAddress",
+            "description": "Email address of the lead. This value is used to determine if the lead is an existing customer",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "pageNumber",
+            "description": "Page Number being displayed",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "recordsPerPage",
+            "description": "Number of records being displayed per page",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "modifiedStartDate",
+            "description": "Lower limit of the date on which the lead has been modified",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "modifiedEndDate",
+            "description": "Upper limit of the date on which the lead has been modified",
+            "isMandatory": false,
+            "range": ""
+        }
+    ],
+    "outputFieldsDocument": [
+        {
+            "name": "lastName",
+            "description": "Lead's last name",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "firstName",
+            "description": "Lead's first name",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "middleName",
+            "description": "Lead's middle name",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "productName",
+            "description": "Name of the product associated to the lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "productId",
+            "description": "ID of the product associated to the lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "productType",
+            "description": "Type of the product",
+            "isMandatory": true,
+            "range": "Type of the product"
+        },
+        {
+            "name": "id",
+            "description": "Unique ID associated to the Lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "statusId",
+            "description": "Status ID of the Lead",
+            "isMandatory": true,
+            "range": "Status ID of the Lead"
+        },
+        {
+            "name": "salutation",
+            "description": "Lead's saluation",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "email",
+            "description": "Lead's email address",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "phoneNumber",
+            "description": "Lead's phone number",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "extension",
+            "description": "Lead's phone number extension",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "countryCode",
+            "description": "Country code of the lead's phone number",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "isCustomer",
+            "description": "Flag indicating if the lead is an existing customer",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "csrId",
+            "description": "ID of the CSR agent to whom the lead has been assigned",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "customerType",
+            "description": "Customer Type (incase the lead is an existing customer)",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "createdByFirstName",
+            "description": "First name of the CSR agent who created the lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "createdByMiddleName",
+            "description": "Middle name of the CSR agent who created the lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "createdByLastName",
+            "description": "Last name of the CSR agent who created the lead",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "assignedToFirstName",
+            "description": "First name of the CSR agent to whom the lead has been assigned",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "assignedToMiddleName",
+            "description": "Middle name of the CSR agent to whom the lead has been assigned",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "assignedToLastName",
+            "description": "Last name of the CSR agent to whom the lead has been assigned",
+            "isMandatory": false,
+            "range": ""
+        }
+    ],
+    "name": "Fetch Leads",
+    "url": "services/data/v1/LeadAndApplicant/operations/lead/fetchLeads",
+    "moduleName": "Lead Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "1942954",
+            "name": "Filter Test",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"statusIds\":\"SID_INPROGRESS,SID_NEW\",\"productId\":\"\",\"leadType\":\"CUSTOMER\",\"assignedTo\":\"\",\"phoneNumber\":\"\",\"emailAddress\":\"\",\"pageNumber\":1,\"recordsPerPage\":10,\"modifiedStartDate\":\"2000-06-12\",\"modifiedEndDate\":\"2020-06-13\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "34196896",
+                    "path": "$.statusCount[*].leadStatus",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "53460723",
+                    "path": "$.leads[*].middleName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": true,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "60399095",
+                    "path": "$.leads[*].lastName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "34811865",
+                    "path": "$.leads[*].firstName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "82833349",
+                    "path": "$.leads[*].id",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "85157127",
+                    "path": "$.leads[*].customerId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "99939662",
+                    "path": "$.leads[*].productType",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "2488978",
+                    "path": "$.leads[*].productId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "88628437",
+                    "path": "$.leads[*].phoneNumber",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "47228297",
+                    "path": "$.leads[*].statusId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "93918024",
+                    "path": "$.leads[*].csrId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": true,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "86679925",
+                    "path": "$.leads[*].customerType",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": true,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "24301037",
+                    "path": "$.leads[*].email",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "94095477",
+                    "path": "$.leads[*].extension",
+                    "dataType": "number",
+                    "value": "",
+                    "isNullable": true,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "33640650",
+                    "path": "$.leads[*].countryCode",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "33166707",
+                    "path": "$.leads[*].createdByFirstName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "83247095",
+                    "path": "$.leads[*].productName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "47862592",
+                    "path": "$.leads[*].createdByMiddleName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": true,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "18700850",
+                    "path": "$.leads[*].createdByLastName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "58418049",
+                    "path": "$.statusCount[0].count",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "78981456",
+                    "path": "$.leads[*].isCustomer",
+                    "dataType": "string",
+                    "value": "1",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "91934964",
+                    "path": "$.leads[*].isCustomer",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        }
+    ]
+}

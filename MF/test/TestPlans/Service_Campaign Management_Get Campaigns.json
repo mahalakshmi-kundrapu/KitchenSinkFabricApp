@@ -1,0 +1,135 @@
+{
+    "description": "This service is used to fetch all Campaigns.",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [
+        {
+            "name": "startDateTime",
+            "description": "Start Date Time of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "statusId",
+            "description": "Status Id of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "name",
+            "description": "Name of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "description",
+            "description": "Description of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "id",
+            "description": "Id of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "priority",
+            "description": "Priority of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "endDateTime",
+            "description": "End Date Time of a Campaign",
+            "isMandatory": true,
+            "range": ""
+        }
+    ],
+    "name": "Get Campaigns",
+    "url": "services/data/v1/CampaignManagementObjService/operations/campaign/getCampaigns",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "57512027",
+            "name": "Fetch Campaigns",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "23375414",
+                    "path": "$.campaigns[*].startDateTime",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "2623221",
+                    "path": "$.campaigns[*].statusId",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "42861716",
+                    "path": "$.campaigns[*].name",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "72175775",
+                    "path": "$.campaigns[*].description",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "56784932",
+                    "path": "$.campaigns[*].id",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "87297393",
+                    "path": "$.campaigns[*].endDateTime",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "79131931",
+                    "path": "$.campaigns[*].priority",
+                    "dataType": "number",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        }
+    ]
+}

@@ -1,0 +1,129 @@
+{
+  "name" : "Get Eligibility Criteria",
+  "url" : "services/data/v1/BusinessConfigObjService/operations/EligibilityCriteria/getEligibilityCriteria",
+  "moduleName" : "Business Configuration",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch Eligibility Criteria.",
+  "tests" : [ {
+    "id" : "26778410",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "31334440",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "87710486",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "76232385",
+    "name" : "Eligibility Criteria Summary Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "28643090",
+      "path" : "$.eligibilitycriteria[*].Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "58080866",
+      "path" : "$.eligibilitycriteria[*].Status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "7144105",
+      "path" : "$.eligibilitycriteria[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "order by",
+    "description" : "Order the Eligibility Criteria based on the specified parameter",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Description",
+    "description" : "Description of the Eligibility Criteria",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdby",
+    "description" : "Name of the user who created the Eligibility Criteria",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status of the Eligibility Criteria",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of getting Eligibility Criteria",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the Eligibility Criteria",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "Delete status of the record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

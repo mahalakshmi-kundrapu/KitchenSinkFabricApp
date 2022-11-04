@@ -1,0 +1,15 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "GetMakesByVehicleType" : "GetMakesByVehicleTypeMapping",
+    "GetModelByMakes" : "GetModelByMakesMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

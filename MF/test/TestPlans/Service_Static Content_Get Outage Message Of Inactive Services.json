@@ -1,0 +1,156 @@
+{
+  "name" : "Get Outage Message Of Inactive Services",
+  "url" : "services/data/v1/StaticContentObjService/operations/outageMessage/getOutageMessageOfInactiveServices",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch all the outage messages",
+  "tests" : [ {
+    "id" : "61147684",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "32507639",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "23524120",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "99705956",
+    "name" : "Fetch Outage Message Of Inactive Services ",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "62337466",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "52207713",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "Service_id",
+    "description" : "Id of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "lastmodifiedts",
+    "description" : "last modified time stamp of the message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status id of the message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "MessageText",
+    "description" : "Outage message Text",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Channel_id",
+    "description" : "Channel id of the message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdts",
+    "description" : "Created time stamp of the message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "softdeleteflag of the message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdby",
+    "description" : "User id of the user who created the outage message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "opstatus",
+    "description" : "Status of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "modifiedby",
+    "description" : "User id of the user who modified the outage message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "service_Status_id",
+    "description" : "Id of the service status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "Id of the outage message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "synctimestamp",
+    "description" : "Time stamp for sync",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status code in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

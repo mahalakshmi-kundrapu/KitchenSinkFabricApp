@@ -1,0 +1,28 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getFrequencyType" : "getFrequencyTypeMapping",
+    "editMFAScenario" : "editMFAScenarioMapping",
+    "deleteMFAScenario" : "deleteMFAScenarioMapping",
+    "getApp" : "getAppMapping",
+    "getMFAFeature" : "getMFAFeatureMapping",
+    "getMFAScenario" : "getMFAScenarioMapping",
+    "getAction" : "getActionMapping",
+    "editMFAConfiguration" : "editMFAConfigurationMapping",
+    "getMFAType" : "getMFATypeMapping",
+    "createMFAScenario" : "createMFAScenarioMapping",
+    "getMFAConfiguration" : "getMFAConfigurationMapping",
+    "getMFAMode" : "getMFAModeMapping",
+    "getAllFeatures" : "getAllFeaturesMapping",
+    "getAllActions" : "getAllActionsMapping",
+    "getMFAVariableReference" : "getMFAVariableReferenceMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

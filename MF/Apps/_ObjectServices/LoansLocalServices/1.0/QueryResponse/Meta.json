@@ -1,0 +1,33 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "createCreditCardLoan" : "createCreditCardLoanMapping",
+    "createPersonalLoan" : "createPersonalLoanMapping",
+    "SubmitVehicleLoan" : "SubmitVehicleLoanMapping",
+    "createQueryResponse" : "createQueryResponseMapping",
+    "getApplicationCustomer" : "getApplicationCustomerMapping",
+    "getRecentApplication" : "getRecentApplicationMapping",
+    "update" : "updateMapping",
+    "updateCreditCardApp" : "updateCreditCardAppMapping",
+    "getAllApplications" : "getAllApplicationsMapping",
+    "SubmitPersonalLoan" : "SubmitPersonalLoanMapping",
+    "getQueryResponseApplicationsList" : "getQueryResponseApplicationsListMapping",
+    "updatePersonalLoan" : "updatePersonalLoanMapping",
+    "SubmitCreditCardApp" : "SubmitCreditCardAppMapping",
+    "createVehicleLoan" : "createVehicleLoanMapping",
+    "updateVehicleLoan" : "updateVehicleLoanMapping",
+    "get" : "getMapping",
+    "GetLoanAnswersTrack" : "GetLoanAnswersTrackMapping",
+    "create" : "createMapping",
+    "GetLoanAnswers" : "GetLoanAnswersMapping",
+    "getQueryAnswers" : "getQueryAnswersMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

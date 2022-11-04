@@ -1,0 +1,166 @@
+{
+  "name" : "Create Alert Sub Type",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertsubtype/createAlertSubType",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to create Alert Sub Type.",
+  "tests" : [ {
+    "id" : "46299228",
+    "name" : "Create Alert Sub Type",
+    "testSequence" : 1,
+    "requestBody" : "{\"alertTypeCode\":\"PROFILE_UPDATE\",\"name\":\"Account Locked\",\"code\":\"ACCOUNT_LOCKED_1\",\"description\":\"Account Locked Message\",\"addedTemplates\":[{\"locale\":\"en-US\",\"statusId\":\"SID_EVENT_SUCCESS\",\"channelId\":\"CH_SMS\",\"content\":\"New Your account has been locked\",\"name\":\"New Account Locked SMS Template\"},{\"locale\":\"en-US\",\"statusId\":\"SID_EVENT_SUCCESS\",\"channelId\":\"CH_EMAIL\",\"content\":\"New Your account has been locked\",\"name\":\"New Account Locked Email Template\",\"subject\":\"New Kony Bank Account Update\",\"senderName\":\"New Kony Bank Admin\",\"senderEmail\":\"nkonybank@kony.com\"}],\"removedTemplates\":[\"1403151695\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "29608927",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "98677472",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "94284502",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "6933955",
+    "name" : "Empty Payload Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "41107228",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20900",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "54543419",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "32553050",
+      "path" : "$.message",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "28030201",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "6265367",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "alertTypeCode",
+    "description" : "Code of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "name",
+    "description" : "Name of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "code",
+    "description" : "Code of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Description of the Alert Sub Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "locale",
+    "description" : "Locale of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "statusId",
+    "description" : "Status ID of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channelId",
+    "description" : "Channel ID of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "content",
+    "description" : "Content of the template",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "removedTemplates",
+    "description" : "List of the templates to be deleted",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "status",
+    "description" : "Status of the operation",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

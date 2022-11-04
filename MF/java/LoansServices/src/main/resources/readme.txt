@@ -1,0 +1,1 @@
+Resources to be utilized by main java code should be defined in this package.

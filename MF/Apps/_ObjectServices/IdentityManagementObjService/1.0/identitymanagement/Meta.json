@@ -1,0 +1,33 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "updatePasswordRules" : "updatePasswordRulesMapping",
+    "getPasswordPolicy" : "getPasswordPolicyMapping",
+    "getUsernameAndPasswordRulesAndPolicies" : "getUsernameAndPasswordRulesAndPoliciesMapping",
+    "updateUsernamePolicy" : "updateUsernamePolicyMapping",
+    "deletePasswordPolicy" : "deletePasswordPolicyMapping",
+    "updateUsernameRules" : "updateUsernameRulesMapping",
+    "updatePasswordPolicy" : "updatePasswordPolicyMapping",
+    "getUsernameAndPasswordPolicies" : "getUsernameAndPasswordPoliciesMapping",
+    "deleteUsernamePolicy" : "deleteUsernamePolicyMapping",
+    "getUsernameRulesAndPolicy" : "getUsernameRulesAndPolicyMapping",
+    "updatePasswordLockoutSettings" : "updatePasswordLockoutSettingsMapping",
+    "getPasswordRules" : "getPasswordRulesMapping",
+    "getLocaleList" : "getLocaleListMapping",
+    "createPasswordPolicy" : "createPasswordPolicyMapping",
+    "createUsernamePolicy" : "createUsernamePolicyMapping",
+    "getUsernameRules" : "getUsernameRulesMapping",
+    "getPasswordLockoutSettings" : "getPasswordLockoutSettingsMapping",
+    "getUsernameAndPasswordRules" : "getUsernameAndPasswordRulesMapping",
+    "getUsernamePolicy" : "getUsernamePolicyMapping",
+    "getPasswordRulesAndPolicy" : "getPasswordRulesAndPolicyMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

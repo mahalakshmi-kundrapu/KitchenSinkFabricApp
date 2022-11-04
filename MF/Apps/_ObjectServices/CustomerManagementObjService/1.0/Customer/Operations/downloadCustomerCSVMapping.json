@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "downloadCustomerCSV5838",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "CustomerManagement",
+      "serviceVersion" : "1.0",
+      "operationName" : "downloadCustomerCSV"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "Customer",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "name" : "Edit Customer Basic Info",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/EditCustomerBasicInfo",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update the basic information of a customer.\n",
+  "tests" : [ {
+    "id" : "68017692",
+    "name" : "Remove Risks Chech",
+    "testSequence" : 1,
+    "requestBody" : "{\"Customer_id\":\"2\",\"Salutation\":\"Mr.\",\"EmployementStatus_id\":\"SID_EMPLOYED\",\"SpouseName\":\"\",\"ModifiedByName\":\"admin2\",\"eagreementStatus\":\"1\",\"listOfRemovedRisks\":[\"SID_FRAUDDETECTED\",\"SID_HIGHRISK\"],\"listOfAddedRisks\":[]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "27068402",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Edit successful",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "12096546",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "50537358",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "15727641",
+    "name" : "Invalid Customer Id check",
+    "testSequence" : 2,
+    "requestBody" : "{\"Customer_id\":\"3456\",\"Salutation\":\"Mr.\",\"EmployementStatus_id\":\"SID_EMPLOYED\",\"SpouseName\":\"\",\"ModifiedByName\":\"admin2\",\"eagreementStatus\":\"1\",\"listOfRemovedRisks\":[],\"listOfAddedRisks\":[\"SID_FRAUDDETECTED\",\"SID_HIGHRISK\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "70497310",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20885",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "30893218",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "66190533",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "58209216",
+    "name" : "Empty Customer Id Check",
+    "testSequence" : 3,
+    "requestBody" : "{\"Customer_id\":\"\",\"Salutation\":\"Mr.\",\"EmployementStatus_id\":\"SID_EMPLOYED\",\"SpouseName\":\"\",\"ModifiedByName\":\"admin2\",\"eagreementStatus\":\"1\",\"listOfRemovedRisks\":[],\"listOfAddedRisks\":[\"SID_FRAUDDETECTED\",\"SID_HIGHRISK\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "65822818",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "21098890",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20613",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "25171696",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "18758491",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "12025783",
+    "name" : "Edit Profile Check",
+    "testSequence" : 4,
+    "requestBody" : "{\"Customer_id\":\"2\",\"Salutation\":\"Mr.\",\"EmployementStatus_id\":\"SID_EMPLOYED\",\"SpouseName\":\"\",\"ModifiedByName\":\"admin2\",\"eagreementStatus\":\"1\",\"listOfRemovedRisks\":[],\"listOfAddedRisks\":[\"SID_FRAUDDETECTED\",\"SID_HIGHRISK\"]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "94879171",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "18933546",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "51812581",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "MaritalStatus_id",
+    "description" : "Marital status id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status id of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "BankingAccess",
+    "description" : "Banking access",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "listOfRemovedRisks",
+    "description" : "List of removed risks",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Customer_id",
+    "description" : "ID of the customer - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "EmployementStatus_id",
+    "description" : "Employement status id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "listOfAddedRisks",
+    "description" : "List of added risks",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Salutation",
+    "description" : "Salutation of the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "SpouseName",
+    "description" : "Spouse name of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,66 @@
+{
+  "name" : "Get Alert Conditions",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertcondition/getAlertConditions",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the Alert conditions.",
+  "tests" : [ {
+    "id" : "26519790",
+    "name" : "Fetch Alert Conditions Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "94640832",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "11275544",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "LanguageCode",
+    "description" : "Language Code of the Condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the Alert Condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "NoOfFields",
+    "description" : "Number of input fields to be rendered on UI",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the Condition",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,146 @@
+{
+    "description": "",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Create term and condition version",
+    "url": "services/data/v1/TermsAndConditionsObjService/operations/termsandconditions/createTermsAndConditionsVersion",
+    "moduleName": "TermsAndConditions",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "93710322",
+            "name": "Empty Payload",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "58276889",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20266",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "1144400",
+            "name": "Content type missing",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "{\"termsAndConditionsCode\":\"C360_CustomerOnboarding_TnC\",\"languageCode\":\"en-GB\",\"termsAndConditionsContent\":\"C360 Customer Onboarding services  version\",\"isSave\":\"false\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "1603820",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20272",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "17117211",
+            "name": "Saving TnC as Draft",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 3,
+            "requestBody": "{\"termsAndConditionsCode\":\"C360_CustomerOnboarding_TnC\",\"languageCode\":\"en-GB\",\"contentType\":\"URL\",\"termsAndConditionsContent\":\"C360 Customer Onboarding services  version\",\"isSave\":\"true\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "27912931",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "7945681",
+            "name": "Publishing draft version",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 4,
+            "requestBody": "{\"termsAndConditionsCode\":\"C360_CustomerOnboarding_TnC\",\"languageCode\":\"en-GB\",\"contentType\":\"URL\",\"termsAndConditionsContent\":\"C360 Customer Onboarding services  version\",\"isSave\":\"true\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "9013236",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "99217909",
+            "name": "Creating new version",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 5,
+            "requestBody": "{\"termsAndConditionsCode\":\"C360_CustomerOnboarding_TnC\",\"languageCode\":\"en-GB\",\"contentType\":\"URL\",\"termsAndConditionsContent\":\"C360 Customer Onboarding services  version\",\"isSave\":\"true\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "9281101",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

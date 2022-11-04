@@ -1,0 +1,65 @@
+{
+    "description": "",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Delete Term and Condition Version",
+    "url": "services/data/v1/TermsAndConditionsObjService/operations/termsandconditions/deleteTermsAndConditionsVersion",
+    "moduleName": "TermsAndConditions",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "18125261",
+            "name": "Empty payload",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "19338394",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "84896629",
+            "name": "Valid Payload",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "{\"termsAndConditionsCode\":\"C360_CustomerOnboarding\",\"languageCode\":\"en-GB\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "96194885",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

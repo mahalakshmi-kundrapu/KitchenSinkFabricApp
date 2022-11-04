@@ -1,0 +1,16 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "deleteFilter" : "deleteFilterMapping",
+    "getFilters" : "getFiltersMapping",
+    "createFilter" : "createFilterMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "name" : "Get Customer Logs",
+  "url" : "services/data/v1/AuditLogsObjSvc/operations/TransactionAndAuditLogs/getCustomerLogs",
+  "moduleName" : "Activity Logs",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "4250545",
+    "name" : "Fetch Customer Logs",
+    "testSequence" : 1,
+    "requestBody" : "{\"FilterData\":\"{'userName':'dbpolbuser','id':'1','isMemberActivity':true,'noOfRecords':'100','startDate':'12/12/2017 ','endDate':' 12/12/2019','sortDirection':'desc'}\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "90587726",
+      "path" : "$.count",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "16808743",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "69676203",
+      "path" : "$.logs[*].logType",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "13513956",
+      "path" : "$.logs[*].moduleName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "73490372",
+      "path" : "$.logs[*].channel",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "52558603",
+      "path" : "$.logs[*].ipAddress",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "35847264",
+      "path" : "$.logs[*].description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "90341905",
+      "path" : "$.logs[*].errorCode",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "39264558",
+      "path" : "$.logs[*].sessionId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "357086",
+      "path" : "$.logs[*].operatingSystem",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "49839749",
+      "path" : "$.logs[*].referenceId",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "33953157",
+      "path" : "$.logs[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "17026961",
+      "path" : "$.logs[*].activityType",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "98665971",
+      "path" : "$.logs[*].device",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "73066192",
+      "path" : "$.logs[*].username",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "14270954",
+      "path" : "$.logs[*].status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "sortDirection",
+    "description" : "desc:Sorts logs in ascending direction",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "endDate",
+    "description" : "End Date upto which logs are to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isMemberActivity",
+    "description" : "False:Fetches activities performed by admin on customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "noOfRecords",
+    "description" : "Customer's LastName",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "FilterData",
+    "description" : "Details about the applied filter",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userName",
+    "description" : "Customer's Username",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "startDate",
+    "description" : "Start Date from which logs are to be fetched",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "logType",
+    "description" : "Type of log",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "moduleName",
+    "description" : "Module on which the event has been performed",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channel",
+    "description" : "Channel ID of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ipAddress",
+    "description" : "IP address of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "description",
+    "description" : "Custom Description about the event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "sessionId",
+    "description" : "Customer's session ID",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdOn",
+    "description" : "DateTime at which the event was created",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "eventts",
+    "description" : "Time at which the event has occured",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operatingSystem",
+    "description" : "Operating System of the device used by customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "referenceId",
+    "description" : "Reference ID of the event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the Log Event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "activityType",
+    "description" : "Type of event",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "device",
+    "description" : "Name of customer's device",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Customer's Username",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Status of the event",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

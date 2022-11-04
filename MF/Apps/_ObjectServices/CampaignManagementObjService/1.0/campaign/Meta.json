@@ -1,0 +1,22 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "updateCampaignSettings" : "updateCampaignSettingsMapping",
+    "getCampaignSpecificationsAndGroups" : "getCampaignSpecificationsAndGroupsMapping",
+    "checkIfCampaignExists" : "checkIfCampaignExistsMapping",
+    "getCampaigns" : "getCampaignsMapping",
+    "createCampaign" : "createCampaignMapping",
+    "updateCampaignStatus" : "updateCampaignStatusMapping",
+    "getCampaignSettings" : "getCampaignSettingsMapping",
+    "getCampaignPriorityList" : "getCampaignPriorityListMapping",
+    "updateCampaign" : "updateCampaignMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

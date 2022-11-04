@@ -1,0 +1,105 @@
+{
+  "name" : "Manage Service Status",
+  "url" : "services/data/v1/StaticContentObjService/operations/service/manageServiceStatus",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update service details for a particular service.It is also used to activate/deactivate a service",
+  "tests" : [ {
+    "id" : "52743467",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"User_id\":\"UID10\",\"Service_id\":\"SERVICE_ID_7\",\"Status_id\":\"SID_ACTIVE\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "35165566",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "16186660",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "55515496",
+    "name" : "Manage Service Status Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"User_id\":\"UID10\",\"Service_id\":\"SERVICE_ID_7\",\"Status_id\":\"SID_ACTIVE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "12976316",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "95191815",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Service_id",
+    "description" : "Id of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Id of the service status",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "User_id",
+    "description" : "Id of the logged in user",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "opstatus",
+    "description" : "Status of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status code in HTTP.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

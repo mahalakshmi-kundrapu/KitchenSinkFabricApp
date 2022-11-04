@@ -1,0 +1,74 @@
+{
+  "name" : "Get Status",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/GetStatus",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to return the status of a customer<br>",
+  "tests" : [ {
+    "id" : "93511083",
+    "name" : "Fetch Status",
+    "testSequence" : 1,
+    "requestBody" : "{\"$filter\":\"Type_id eq STID_CUSTOMERDEVICE\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "14518426",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "68608061",
+      "path" : "$.status[*].Description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "43035263",
+      "path" : "$.status[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "14869475",
+      "path" : "$.status[*].Type_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "$filter",
+    "description" : "ODATA query to filter the statuses. Eg. {\"$filter\":\"Type_id eq STID_CUSTOMERDEVICE\"} where STID_CUSTOMERDEVICE is the status type id",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "status",
+    "description" : "List of all states (Master data)",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

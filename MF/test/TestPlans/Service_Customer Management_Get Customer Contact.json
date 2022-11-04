@@ -1,0 +1,133 @@
+{
+  "name" : "Get Customer Contact",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerContact/GetCustomerContact",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "CustomerContact-Get service is used to fetch the following information for a particular customer. \n\n1. Communication address \n2. Email address \n3. Contact numbers \n4. Preferred contact time and method \n\nCustomer_id (or) username field is mandatory.",
+  "tests" : [ {
+    "id" : "70643403",
+    "name" : "Customer Contact Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"username\":\"dbpolbuser\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "14727696",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Succesful",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "83142493",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "50547460",
+    "name" : "Empty Username Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"username\":\"\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "90187926",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Failure",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "51500510",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "3899878",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "25322303",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Customer_id",
+    "description" : "Primary key of the customer table. (Used by Admin Console application) - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Username of the customer. (Used by OLB application) - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation is successful or not.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Addresses",
+    "description" : "Contains the list of addresses the customer has.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "EmailIds",
+    "description" : "Contains the list of email addresses the customer has.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ContactNumbers",
+    "description" : "Contains the list of contact numbers the customer has.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "PreferredTime&Method",
+    "description" : "Contains the preferred time and method details.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

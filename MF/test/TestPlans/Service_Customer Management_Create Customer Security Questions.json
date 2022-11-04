@@ -1,0 +1,148 @@
+{
+  "name" : "Create Customer Security Questions",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerSecurityQuestions/createCustomerSecurityQuestions",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "The service is used to create the customer security questions",
+  "tests" : [ {
+    "id" : "74382815",
+    "name" : "Create Customer Security Questions",
+    "testSequence" : 1,
+    "requestBody" : "{\"userName\":\"konyrbdev\",\"securityQuestions\":[{\"questionId\":\"SEC_QUES_ID_1\",\"customerAnswer\":\"K V\"},{\"questionId\":\"SEC_QUES_ID_2\",\"customerAnswer\":\"Hyd\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "47980567",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "31424076",
+      "path" : "$.questionsMapped",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "6620566",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "73925853",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "75676266",
+    "name" : "Empty Username Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "14164832",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20612",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "44207693",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "74218845",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "61842446",
+      "path" : "$.status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "securityQuestions",
+    "description" : "Required. List of JSON objects which contains question and answer. Eg. [{ \"questionId\": \"SEC_QUES_ID_1\", \"customerAnswer\": \"K V\" }, { \"questionId\": \"SEC_QUES_ID_2\", \"customerAnswer\": \"Hyd\" }]",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "userName",
+    "description" : "Required. Username of the internal user",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "questionsMapped",
+    "description" : "Number of questions mapped to the customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "errorMessage",
+    "description" : "Error message",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "errorCode",
+    "description" : "Error code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Determines whether the operation was successful or not",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,117 @@
+{
+  "name" : "Get Dashboard Alerts",
+  "url" : "services/data/v1/DashboardObjService/operations/dashboardalerts/GetDashboardAlerts",
+  "moduleName" : "Admin Dashboard",
+  "httpMethod" : "POST",
+  "description" : "This service is used to fetch the alerts to be displayed on the dashboard",
+  "tests" : [ {
+    "id" : "34173129",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : { },
+    "responseBodyAssertions" : [ {
+      "id" : "58300857",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "52789182",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "62434639",
+    "name" : "Fetch Dasboard Alerts Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "37233336",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "91908665",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "60180464",
+      "path" : "$.dashboardalerts[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "Type",
+    "description" : "Type of the Dashboard Alert (Employee/Customer)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Alert message containing the displayed information",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "created",
+    "description" : "A String value indicating the time since alert was created",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Priority",
+    "description" : "Priority value of the Dashboard Alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Title",
+    "description" : "Title of Dashboard Alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "Unique Identifier of Dashboard Alert",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

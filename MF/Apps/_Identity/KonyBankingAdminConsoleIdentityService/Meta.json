@@ -1,0 +1,14 @@
+{
+  "name" : "KonyBankingAdminConsoleIdentityService",
+  "displayName" : "KonyBankingAdminConsoleIdentityService",
+  "type" : "custom",
+  "version" : "1.0",
+  "metaPreference" : -1,
+  "config" : "{\"header_params\":[\"x-kony-authorization\"],\"provider_params\":{},\"body_params\":{\"inputUserName\":\"user1\",\"inputPassword\":\"password1\"},\"custom_idp_url\":\"https://appsadminconsole.konylabs.net:8443/services/C360IdentityOrchService\"}",
+  "policyConfig" : "{\"def_user_status\":\"pending\",\"max_login_fail\":5}",
+  "admissionPolicy" : "no_approval_needed",
+  "identityMeta" : {
+    "allow_sso" : false
+  },
+  "ssoenabled" : false
+}

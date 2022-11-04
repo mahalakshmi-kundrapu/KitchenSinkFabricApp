@@ -1,0 +1,6 @@
+{
+  "description" : "This module will allow the admin to define the default payment limits and fees for all the fund transfers.",
+  "config" : {
+    "metadataSecurity" : "public"
+  }
+}

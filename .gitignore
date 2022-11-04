@@ -1,0 +1,20 @@
+.metadata
+.classpath
+.project
+.settings
+.DS_Store
+*.log
+target
+Servers
+migration_result*.log
+bin
+build
+!dist
+dist/*
+!dist/templates
+MF/test/dist
+test-output
+# IntelliJ IDE Data
+
+**/*.idea
+**/*.iml

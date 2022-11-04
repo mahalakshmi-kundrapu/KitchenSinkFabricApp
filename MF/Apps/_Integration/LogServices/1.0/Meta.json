@@ -1,0 +1,7 @@
+{
+  "serviceType" : "integration",
+  "jars" : [ {
+    "name" : "LogServices.jar",
+    "type" : "servicejar"
+  } ]
+}

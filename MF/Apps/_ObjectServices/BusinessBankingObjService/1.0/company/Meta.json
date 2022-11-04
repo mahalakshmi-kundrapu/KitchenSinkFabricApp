@@ -1,0 +1,22 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "getAllAccounts" : "getAllAccountsMapping",
+    "getCompanyAccounts" : "getCompanyAccountsMapping",
+    "getCompanyDetails" : "getCompanyDetailsMapping",
+    "unlinkAccounts" : "unlinkAccountsMapping",
+    "editCompany" : "editCompanyMapping",
+    "verifyOFACandCIP" : "verifyOFACandCIPMapping",
+    "validateTIN" : "validateTINMapping",
+    "createCompany" : "createCompanyMapping",
+    "getCompanyCustomers" : "getCompanyCustomersMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

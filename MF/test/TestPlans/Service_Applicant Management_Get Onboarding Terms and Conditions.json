@@ -1,0 +1,81 @@
+{
+  "name" : "Get Onboarding Terms and Conditions",
+  "url" : "services/data/v1/BusinessConfigObjService/operations/OnboardingTermsAndConditions/getOnboardingTermsAndConditions",
+  "moduleName" : "Applicant Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to get the Terms and Conditions of Assisted Onboarding.",
+  "tests" : [ {
+    "id" : "10085148",
+    "name" : "On Boarding Terms and Conditions Check",
+    "testSequence" : 1,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "42054254",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "6019441",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ {
+    "name" : "status_id",
+    "description" : "Status of the id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Description",
+    "description" : "Description of the Terms and condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "createdby",
+    "description" : "Name of the user who created Terms and condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "modifiedby",
+    "description" : "Name of the modified user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "id",
+    "description" : "ID of the terms and condition",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "softdeleteflag",
+    "description" : "soft delete status of the record",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the terms and condition",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

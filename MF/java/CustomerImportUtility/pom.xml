@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.kony.adminconsole</groupId>
+		<artifactId>AdminConsoleAggregator</artifactId>
+		<version>4.2.6.116</version>
+	</parent>
+
+	<artifactId>CustomerImportUtility</artifactId>
+	<name>Customer Import Utility</name>
+	<description>Utility to generate SQL scripts for bulk import of customers</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>CustomerImportUtility</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<archive>
+								<manifest>
+									<mainClass>com.kony.adminconsole.customerdata.parser.CustomerSQLScriptGenerator</mainClass>
+								</manifest>
+								<manifestEntries>
+									<Bundle-Release-Version>${project.version}</Bundle-Release-Version>
+								</manifestEntries>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

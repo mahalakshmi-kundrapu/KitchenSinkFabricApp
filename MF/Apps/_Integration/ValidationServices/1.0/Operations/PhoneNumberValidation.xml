@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service serviceGroup="" cachable="false" cacheduration="" description="" endpoint="default" groupType="" id="PhoneNumberValidation" passwordencrypted="false" security="authorized_app_user" type="jsonConnector" smscode="" smsenabled="false">
+    <service-config>
+        <config-param api-version="" appid="" name="preprocessorname" value="com.kony.adminconsole.preprocessor.NumberValidationPreprocessor"/>
+        <config-param api-version="" appid="" name="postprocessorname" value=""/>
+        <config-param api-version="" appid="" name="preprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="postprocessorJS" value=""/>
+        <config-param api-version="" appid="" name="kony_http_supported_methods" value="POST"/>
+        <config-param api-version="" appid="" name="endpointUrl" value="http://apilayer.net/api/validate?access_key=$apikey&amp;number=$phoneNo&amp;country_code=US"/>
+        <config-param api-version="" appid="" name="ignorehttpproxy" value="true"/>
+        <config-param api-version="" appid="" name="http.method" value="GET"/>
+        <config-param api-version="" appid="" name="dataObjectName" value=""/>
+        <config-param api-version="" appid="" name="sockettimeout" value=""/>
+        <config-param api-version="" appid="" name="responseEncoding" value="UTF-8"/>
+        <config-param api-version="" appid="" name="isembedxmlpresent" value="false"/>
+        <config-param api-version="" appid="" name="retrycount" value="0"/>
+        <config-param api-version="" appid="" name="jsonpath" value="true"/>
+        <config-param api-version="" appid="" name="jsonpath" value="true"/>
+        <config-param api-version="" appid="" name="jsonpath" value="true"/>
+    </service-config>
+    <service-input passthrough="false">
+        <header datatype="" name="" passthrough="false"/>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="phoneNo" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="4158586273" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="apikey" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="request" sourcevalue="" srcformatvalue="" target="request" targetdatatype="java.lang.String" testvalue="948d89c79663bc13f810ea1a043a728f" value="">
+            <accessType></accessType>
+        </param>
+        <stub-param value=""/>
+    </service-input>
+    <service-output passthrough="false">
+        <param datatype="boolean" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="valid" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.valid" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="number" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.number" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="country_code" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.country_code" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="carrier" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.carrier" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="international_format" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.international_format" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="local_format" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.local_format" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="country_prefix" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.country_prefix" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="line_type" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.line_type" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="country_name" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.country_name" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+        <param datatype="string" defaultvalue="" description="" encode="true" format="None" formatvalue="" name="location" order="" paramOrder="0" parentOrder="0" passnull="false" sms-name="" src="$.location" sourcevalue="" srcformatvalue="" target="response" targetdatatype="java.lang.String" testvalue="" value="">
+            <accessType></accessType>
+        </param>
+    </service-output>
+</service>

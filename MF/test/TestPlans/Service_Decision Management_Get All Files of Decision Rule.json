@@ -1,0 +1,124 @@
+{
+    "description": "This service is used to fetch the files of decision .",
+    "inputFieldsDocument": [
+        {
+            "name": "decisionId",
+            "description": "ID of the decision Type",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "decisionName",
+            "description": "Name of the Decision Type",
+            "isMandatory": true,
+            "range": ""
+        }
+    ],
+    "outputFieldsDocument": [
+        {
+            "name": "fileName",
+            "description": "Name of the File",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "comment",
+            "description": "comments of the file",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "uploadedBy",
+            "description": "User who uploaded the file",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "uploadedDate",
+            "description": "Date on which the file was uploaded",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "version",
+            "description": "version of the file",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "status",
+            "description": "status of the file",
+            "isMandatory": false,
+            "range": ""
+        }
+    ],
+    "name": "Get All Files of Decision Rule",
+    "url": "services/data/v1/DecisionManagement/operations/decision/GetAllFilesofDecisionRule",
+    "moduleName": "Decision Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "14717356",
+            "name": "Fetch files of Decision Type",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"decisionId\":\"DMN1332717b-92af-4dba-b269-7b9238581935\",\"decisionName\":\"PricingSimulationTest\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "67722288",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "35598708",
+                    "path": "$.rulesFileList[*].fileName",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "14189254",
+                    "path": "$.rulesFileList[*].comment",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "26188782",
+                    "path": "$.rulesFileList[*].version",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "18012086",
+                    "path": "$.rulesFileList[*].status",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

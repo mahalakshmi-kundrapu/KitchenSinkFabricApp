@@ -1,0 +1,37 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_sp_getAPRs5300",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">                            <map inputpath=\"response_in\" outputpath=\"response_out\">                <set-param inputpath=\"dbpErrCode\" outputpath=\"dbpErrCode\" />                                                    <set-param inputpath=\"dbpErrMsg\" outputpath=\"dbpErrMsg\" />            <map inputpath=\"records\" outputpath=\"LoanTypeAPRs\">                                                                              <set-param inputpath=\"LoanType_id\" outputpath=\"LoanType_id\" />\t\t                                                                              <set-param inputpath=\"APRValue\" outputpath=\"APRValue\" />                                                      <map inputpath=\"LoanProduct1\" outputpath=\"LoanProduct\">\t\t                                                                                                        <set-param inputpath=\"LoanProduct_id\" outputpath=\"LoanProduct_id\" />\t\t\t                                                                                                        <set-param inputpath=\"LoanType_id\" outputpath=\"LoanType_id\" />\t\t\t                                                                                                        <set-param inputpath=\"APR\" outputpath=\"APR\" />                                                      </map>\t                                                      </map>\t                          </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"LoanType\",\"xy\":\"770 100\",\"__gohashid\":18029},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"ConsumerLendingDB (1.0).dbxdb_sp_getAPRs\",\"xy\":\"150 100\",\"__gohashid\":18030}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:LoanType\",\"fromPort\":\"target\",\"toPort\":\"target:LoanType\",\"visible\":true,\"common\":false,\"__gohashid\":276},{\"from\":\"target:LoanType\",\"to\":\"target:LoanType:fields\",\"fromPort\":\"target:LoanType\",\"toPort\":\"target:LoanType:fields\",\"visible\":true,\"common\":false,\"__gohashid\":277},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:id:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:id:\",\"visible\":true,\"common\":false,\"__gohashid\":278},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:Description:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:Description:\",\"visible\":true,\"common\":false,\"__gohashid\":279},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:Code:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:Code:\",\"visible\":true,\"common\":false,\"__gohashid\":280},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:createdby:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":281},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:modifiedby:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":282},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:createdts:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":283},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:lastmodifiedts:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":284},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:synctimestamp:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":285},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:softdeleteflag:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":286},{\"from\":\"target:LoanType:fields\",\"to\":\"target:LoanType:APRValue:\",\"fromPort\":\"target:LoanType:fields\",\"toPort\":\"target:LoanType:APRValue:\",\"visible\":true,\"common\":false,\"__gohashid\":287}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_sp_getAPRs"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ {
+        "actionsAllSelected" : false,
+        "children" : [ ],
+        "name" : "LoanProduct",
+        "actions" : { },
+        "actionsPartiallySelected" : false,
+        "selected" : false
+      } ],
+      "name" : "LoanType",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

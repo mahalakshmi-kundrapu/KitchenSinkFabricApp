@@ -1,0 +1,31 @@
+{
+  "customCode" : {
+    "responseProcessorName" : "com.kony.adminconsole.postprocessor.CustomerRequestObjectServicePostProcessor"
+  },
+  "operationConfig" : {
+    "name" : "createNewCustomerRequestMessage5809",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CustomerRequest",
+      "serviceVersion" : "1.0",
+      "operationName" : "createNewCustomerRequestMessage"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "CustomerRequest",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

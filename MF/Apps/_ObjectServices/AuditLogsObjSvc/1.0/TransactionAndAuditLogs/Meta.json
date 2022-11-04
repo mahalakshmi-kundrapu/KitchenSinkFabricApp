@@ -1,0 +1,25 @@
+{
+  "type" : "svcdriven",
+  "custom" : false,
+  "junction" : false,
+  "customizable" : false,
+  "verbs" : {
+    "exportTransactionalLogs" : "exportTransactionalLogsMapping",
+    "getTransactionLogs" : "getTransactionLogsMapping",
+    "getTransactionMasterData" : "getTransactionMasterDataMapping",
+    "getAdminActivityMasterData" : "getAdminActivityMasterDataMapping",
+    "getModules" : "getModulesMapping",
+    "getActivityType" : "getActivityTypeMapping",
+    "SearchCustomerAuditLogs" : "SearchCustomerAuditLogsMapping",
+    "getCustomerLogs" : "getCustomerLogsMapping",
+    "exportCustomerActivityLogs" : "exportCustomerActivityLogsMapping",
+    "exportAdminConsoleLogs" : "exportAdminConsoleLogsMapping",
+    "getAdminActivityLogs" : "getAdminActivityLogsMapping",
+    "getCustomerActivityMasterData" : "getCustomerActivityMasterDataMapping"
+  },
+  "entityProperties" : {
+    "BatchMode" : "buffer",
+    "backendMeta" : { },
+    "designTimeBackendMeta" : { }
+  }
+}

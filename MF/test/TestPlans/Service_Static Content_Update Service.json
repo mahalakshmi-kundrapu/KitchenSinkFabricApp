@@ -1,0 +1,264 @@
+{
+  "name" : "Update Service",
+  "url" : "services/data/v1/StaticContentObjService/operations/service/updateService",
+  "moduleName" : "Static Content",
+  "httpMethod" : "POST",
+  "description" : "This service is used to update service details for a particular service.It is also used to activate/deactivate a service",
+  "tests" : [ {
+    "id" : "62486530",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"User_id\": \"UID11\", \"editedEntitlement\": [{ \"Service_id\": \"SERVICE_ID18\", \"Type_id\": \"SER_TYPE_TRNS\", \"Channel_id\": \"CH_ID_MOB_INT\", \"Code\": \"2\", \"Category_Id\": \"CID1\", \"DisplayName\": \"Display Credit\", \"DisplayDescription\": \"Description\", \"Name\": \"Credit Card Services\", \"Description\": \"Credit Card Services\", \"Status_id\": \"SID_ACTIVE\", \"MaxTransferLimit\": \"1000\", \"MinTransferLimit\": \"5000\", \"TransferDenominations\": \"100\", \"IsFutureTransaction\": \"1\", \"TransactionCharges\": \"20\", \"IsAuthorizationRequired\": \"0\", \"IsSMSAlertActivated\": \"0\", \"SMSCharges\": \"0\", \"IsBeneficiarySMSAlertActivated\": \"1\", \"BeneficiarySMSCharge\": \"15\", \"HasWeekendOperation\": \"0\", \"IsOutageMessageActive\": \"0\", \"IsAlertActive\": \"1\", \"IsTCActive\": \"1\", \"IsAgreementActive\": \"1\", \"IsCampaignActive\": \"0\", \"WorkSchedule_id\": \"WORK_SCH_ID1\", \"TransactionFee_id\": \"TID1\", \"TransactionLimit_id\": \"TID1\" } ], \"periodLimits\": [], \"transferFeeSlabs\": []}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "61988572",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "35986254",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "35713088",
+    "name" : "Update Service Check ",
+    "testSequence" : 2,
+    "requestBody" : "{\"User_id\":\"UID11\",\"editedEntitlement\":[{\"Service_id\":\"SERVICE_ID18\",\"Type_id\":\"SER_TYPE_TRNS\",\"Channel_id\":\"CH_ID_MOB_INT\",\"Code\":\"2\",\"Category_Id\":\"CID1\",\"DisplayName\":\"Display Credit\",\"DisplayDescription\":\"Description\",\"Name\":\"Credit Card Services\",\"Description\":\"Credit Card Services\",\"Status_id\":\"SID_ACTIVE\",\"MaxTransferLimit\":\"1000\",\"MinTransferLimit\":\"5000\",\"TransferDenominations\":\"100\",\"IsFutureTransaction\":\"1\",\"TransactionCharges\":\"20\",\"IsAuthorizationRequired\":\"0\",\"IsSMSAlertActivated\":\"0\",\"SMSCharges\":\"0\",\"IsBeneficiarySMSAlertActivated\":\"1\",\"BeneficiarySMSCharge\":\"15\",\"HasWeekendOperation\":\"0\",\"IsOutageMessageActive\":\"0\",\"IsAlertActive\":\"1\",\"IsTCActive\":\"1\",\"IsAgreementActive\":\"1\",\"IsCampaignActive\":\"0\",\"WorkSchedule_id\":\"WORK_SCH_ID1\",\"TransactionFee_id\":\"TID1\",\"TransactionLimit_id\":\"TID1\"}],\"periodLimits\":[],\"transferFeeSlabs\":[]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "80322059",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "25552811",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "87852923",
+    "name" : "Empty Payload",
+    "testSequence" : 3,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "20397956",
+      "path" : "$.errmsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "39212502",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "Description",
+    "description" : "Service description",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DisplayDescription",
+    "description" : "Dispaly description of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsSMSAlertActivated",
+    "description" : "Flag for SMS alerts",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "BeneficiarySMSCharge",
+    "description" : "The charge for each beneficiary sms alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAgreementActive",
+    "description" : "Flag to check whether agreement related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Channel_id",
+    "description" : "Channel type id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Name",
+    "description" : "Name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsFutureTransaction",
+    "description" : "Flag for Future transaction accessibility",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsBeneficiarySMSAlertActivated",
+    "description" : "Flag for beneficiary SMS alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsOutageMessageActive",
+    "description" : "Flag to check whether outage message related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "MaxTransferLimit",
+    "description" : "Maximum amount that can be transferred by using that service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "MinTransferLimit",
+    "description" : "Minimum amount that can be transferred by using that service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DisplayName",
+    "description" : "Display name of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "HasWeekendOperation",
+    "description" : "Flag for weekend operation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "User_id",
+    "description" : "Id of the logged in user",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionCharges",
+    "description" : "Charges applied for each transaction under this service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Status id of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAuthorizationRequired",
+    "description" : "Flag for authorization of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransferDenominations",
+    "description" : "Denominations in which amount to be transferred",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "SMSCharges",
+    "description" : "The charges for each sms alert",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsCampaignActive",
+    "description" : "Flag to check whether campaign related to that service is active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Code",
+    "description" : "Service code",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Category_Id",
+    "description" : "Id of the category under which service comes",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "WorkSchedule_id",
+    "description" : "Id of the service work schedule",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsTCActive",
+    "description" : "Flag to check whether Terms and conditions related to that service are active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "IsAlertActive",
+    "description" : "Flag to check whether alerts related to that service are active or not",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "TransactionLimit_id",
+    "description" : "Id of the service transaction limit",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Type_id",
+    "description" : "Service type id",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "opstatus",
+    "description" : "Status of the service",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status code in HTTP.",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

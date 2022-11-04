@@ -1,0 +1,28 @@
+{
+  "operationConfig" : {
+    "name" : "get_eligibilitycriteria4800",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CommonGetDataService",
+      "serviceVersion" : "1.0",
+      "operationName" : "get_eligibilitycriteria"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "EligibilityCriteria",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

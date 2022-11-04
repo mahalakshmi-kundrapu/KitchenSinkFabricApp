@@ -1,0 +1,73 @@
+{
+  "operationConfig" : {
+    "name" : "GetDisclaimerJava3426",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "odata" : [ {
+      "id" : "$select",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$filter",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$orderby",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$top",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$skip",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$expand",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchsize",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    }, {
+      "id" : "$batchid",
+      "dataType" : "string",
+      "encode" : true,
+      "accessType" : "readonly"
+    } ],
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">                      <map inputpath=\"response_in\" outputpath=\"response_out\">                                            <map inputpath=\"disclaimer\" outputpath=\"Disclaimer\">    \t                                                                            <set-param inputpath = \"id\" outputpath = \"id\"/>                                               <set-param inputpath = \"App_id\" outputpath = \"App_id\"/>\t  <set-param inputpath = \"ModuleName\" outputpath = \"ModuleName\"/>\t  <set-param inputpath = \"ContentType\" outputpath = \"ContentType\"/>\t  <set-param inputpath = \"DisclaimerName\" outputpath = \"DisclaimerName\"/>\t  <set-param inputpath = \"DisclaimerUrl\" outputpath = \"DisclaimerText\"/>\t  <set-param inputpath = \"DisclaimerText\" outputpath = \"DisclaimerText\"/>\t  <set-param inputpath = \"synctimestamp\" outputpath = \"synctimestamp\"/>\t  <set-param inputpath = \"modifiedby\" outputpath = \"modifiedby\"/>\t  <set-param inputpath = \"createdby\" outputpath = \"createdby\"/>\t  <set-param inputpath = \"softdeleteflag\" outputpath = \"softdeleteflag\"/>\t  <set-param inputpath = \"createdts\" outputpath = \"createdts\"/>\t  <set-param inputpath = \"lastmodifiedts\" outputpath = \"lastmodifiedts\"/>    </map>              </map></mapper>",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"Disclaimer\",\"xy\":\"770 100\",\"__gohashid\":323},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"dbpLoansLocalServicesJava (1.0).GetDisclaimerJava\",\"xy\":\"150 100\",\"__gohashid\":324}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:Disclaimer\",\"fromPort\":\"target\",\"toPort\":\"target:Disclaimer\",\"visible\":true,\"common\":false,\"__gohashid\":296},{\"from\":\"target:Disclaimer\",\"to\":\"target:Disclaimer:fields\",\"fromPort\":\"target:Disclaimer\",\"toPort\":\"target:Disclaimer:fields\",\"visible\":true,\"common\":false,\"__gohashid\":297},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:App_id:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:App_id:\",\"visible\":true,\"common\":false,\"__gohashid\":298},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:ContentType:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:ContentType:\",\"visible\":true,\"common\":false,\"__gohashid\":299},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:createdby:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:createdby:\",\"visible\":true,\"common\":false,\"__gohashid\":300},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:createdts:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:createdts:\",\"visible\":true,\"common\":false,\"__gohashid\":301},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:DisclaimerName:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:DisclaimerName:\",\"visible\":true,\"common\":false,\"__gohashid\":302},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:DisclaimerText:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:DisclaimerText:\",\"visible\":true,\"common\":false,\"__gohashid\":303},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:DisclaimerUrl:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:DisclaimerUrl:\",\"visible\":true,\"common\":false,\"__gohashid\":304},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:id:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:id:\",\"visible\":true,\"common\":false,\"__gohashid\":305},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:lastmodifiedts:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:lastmodifiedts:\",\"visible\":true,\"common\":false,\"__gohashid\":306},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:modifiedby:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:modifiedby:\",\"visible\":true,\"common\":false,\"__gohashid\":307},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:ModuleName:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:ModuleName:\",\"visible\":true,\"common\":false,\"__gohashid\":308},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:softdeleteflag:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:softdeleteflag:\",\"visible\":true,\"common\":false,\"__gohashid\":309},{\"from\":\"target:Disclaimer:fields\",\"to\":\"target:Disclaimer:synctimestamp:\",\"fromPort\":\"target:Disclaimer:fields\",\"toPort\":\"target:Disclaimer:synctimestamp:\",\"visible\":true,\"common\":false,\"__gohashid\":310}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "GetDisclaimerJava"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "Disclaimer",
+      "actions" : {
+        "get" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : true
+  }
+}

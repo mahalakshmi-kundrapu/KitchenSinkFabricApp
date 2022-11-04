@@ -1,0 +1,280 @@
+#responseBodyPaths_txtArea,
+#responseHeadersPaths_txtArea,
+#responseHeaders_txtArea,
+#requestBody_txtArea,
+#responseBody_txtArea {
+	overflow-y: scroll;
+	font-size: 12px;
+	width: 99%;
+	height: 250px;
+	resize: none;
+}
+
+#serviceDescription_textArea {
+	overflow-y: scroll;
+	font-size: 12px;
+	width: 90%;
+	height: 100px;
+	resize: none;
+}
+
+#authPayloadBody_txtArea,
+#authPayloadHeaders_txtArea {
+	overflow-y: scroll;
+	font-size: 12px;
+	width: 99%;
+	height: 150px;
+	resize: none;
+}
+
+#authPayloadHeaders_txtArea:disabled {
+	background-color: #f2f2f2;
+}
+
+#authPayloadBody_txtArea:disabled {
+	background-color: #f2f2f2;
+}
+
+hr {
+	border: 1px solid black;
+}
+
+p {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 6px;
+	margin: 6px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 10pt;
+	box-sizing: border-box;
+}
+
+select {
+	padding: 6px;
+	margin: 6px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 10pt;
+}
+
+.button {
+	min-width: 150px;
+	font-weight: 700;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	margin: 4px 2px 0px 0px;
+	-webkit-transition-duration: 0.3s;
+	white-space: nowrap;
+	width:auto;
+	/*  Safari */
+	transition-duration: 0.3s;
+	cursor: pointer;
+}
+
+.actionButton {
+	background-color: #e6e6e6;
+	color: black;
+	border: 1.2px solid #737373;
+}
+
+.actionButton:hover {
+	background-color: #f2f2f2;
+}
+
+.actionButton:active {
+	background-color: #bfbfbf;
+}
+
+.executeButton {
+	font-weight: 500;
+	color: white;
+	background-color: #3a99d8;
+}
+
+.executeButton:hover {
+	background-color: #6ab2e2;
+}
+
+.executeButton:active {
+	background-color: #3a99d8;
+	border: 1.5px solid #2682c0;
+}
+
+.executeButton:disabled {
+	background-color: #95c8ea;
+}
+
+.save_test_case_btn {
+	text-align: center;
+	align-content: center;
+	font-weight: 500;
+	background-color: #3a99d8;
+	color: white;
+}
+
+.save_test_case_btn:hover {
+	background-color: #6ab2e2;
+}
+
+.save_test_case_btn:active {
+	background-color: #2682c0;
+}
+
+.save_test_case_btn:disabled {
+	background-color: #D0D0D0;
+}
+
+.fieldBlock {
+	float: left;
+	display: block;
+}
+
+.noWrapCell {
+	white-space: nowrap;
+}
+
+#serviceDescription_InputFieldsTable tr,
+#serviceDescription_InputFieldsTable th,
+#serviceDescription_InputFieldsTable td,
+#serviceDescription_OutputFieldsTable tr,
+#serviceDescription_OutputFieldsTable th,
+#serviceDescription_OutputFieldsTable td {
+	padding: 5px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#serviceDescription_OutputFieldsTable,
+#serviceDescription_InputFieldsTable {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#serviceDescription_Table,
+#serviceOverview_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 95%;
+}
+
+#serviceDescription_Table th,
+#serviceDescription_Table td,
+#serviceOverview_table th,
+#serviceOverview_table td {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#testDefiniton_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+
+#testDefiniton_table th,
+#testDefiniton_table td {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#testCasesList_table,
+#testAssertion_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+
+#testCasesList_table th,
+#testCasesList_table td,
+#testAssertion_table th,
+#testAssertion_table td {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#actionItems_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+
+#actionItems_table th,
+#actionItems_table td {
+	padding: 8px;
+	word-wrap: break-word;
+}
+
+#serviceResponse_table td,
+#serviceResponse_table th {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#serviceResponse_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+
+#requestHeaders_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#requestHeaders_table th,
+#requestHeaders_table td {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#testAssertionsList_table {
+	font-family: Helvetica, Arial, sans-serif;
+	border-collapse: collapse;
+	width: 90%;
+}
+
+#testAssertionsList_table th,
+#testAssertionsList_table td {
+	padding: 8px;
+	border: 1px solid black;
+	word-wrap: break-word;
+}
+
+#previewAnchor,
+#showVariablesAnchor {
+	font-size: 13px;
+	text-decoration: underline;
+	color: #a4a4a8;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#previewAnchor:hover,
+#showVariablesAnchor:hover {
+	color: #0047b3;
+	cursor: pointer;
+}
+
+.deleteIcon {
+	visibility: visible;
+}
+
+.deleteIcon:hover {
+	cursor: pointer;
+	visibility: visible;
+}

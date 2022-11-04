@@ -1,0 +1,175 @@
+{
+    "description": "",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Edit Terms and Conditions",
+    "url": "services/data/v1/TermsAndConditionsObjService/operations/termsandconditions/editTermsAndConditions",
+    "moduleName": "TermsAndConditions",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "54829913",
+            "name": "Empty Payload",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "": ""
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "9135672",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20266",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "13373014",
+            "name": "Positive Flow",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "{\"termsAndConditionsCode\":\"DBX_Default_T&C\",\"languageCode\":\"en-US\",\"contentType\":\"TEXT\",\"termsAndConditionsTitle\":\"Default T&C\",\"termsAndConditionsDescription\":\"Default T&C\",\"termsAndConditionsContent\":\"Default T&C\",\"appPreferences\":{\"BUSINESS_BANKING\":true,\"CONSUMER_LENDING\":false,\"ONBOARDING\":true,\"RETAIL_BANKING\":true}}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "67144381",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "7617880",
+            "name": "Content Type Missing",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 3,
+            "requestBody": "{\"termsAndConditionsCode\":\"DBX_Default_T&C\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json",
+                "": ""
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "21229721",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20272",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "67081728",
+            "name": "Title missing",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 4,
+            "requestBody": "{\"termsAndConditionsCode\":\"DBX_Default_T&C\",\"languageCode\":\"en-US\",\"contentType\":\"TEXT\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "93391846",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20267",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "86599238",
+            "name": "Content Missing",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 5,
+            "requestBody": "{\"termsAndConditionsCode\":\"DBX_Default_T&C\",\"languageCode\":\"en-US\",\"contentType\":\"TEXT\",\"termsAndConditionsTitle\":\"Default T&C\",\"termsAndConditionsDescription\":\"Default T&C\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "52869274",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "20270",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        },
+        {
+            "id": "17676101",
+            "name": "Change content type from TEXT to URL",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "securityLevel": "AuthenticatedAppUser",
+            "testPriority": "P0",
+            "testSequence": 6,
+            "requestBody": "{\"termsAndConditionsCode\":\"DBX_Default_T&C\",\"languageCode\":\"en-US\",\"contentType\":\"URL\",\"termsAndConditionsTitle\":\"Default T&C\",\"termsAndConditionsDescription\":\"Default T&C\",\"termsAndConditionsContent\":\"www.kony.com\",\"appPreferences\":{\"BUSINESS_BANKING\":true,\"CONSUMER_LENDING\":false,\"ONBOARDING\":true,\"RETAIL_BANKING\":true}}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "86872112",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "isCustomAuthTest": false,
+            "customAuthBody": "",
+            "customAuthHeaders": {}
+        }
+    ]
+}

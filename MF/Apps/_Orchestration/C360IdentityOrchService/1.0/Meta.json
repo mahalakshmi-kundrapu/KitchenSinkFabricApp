@@ -1,0 +1,7 @@
+{
+  "serviceType" : "orchestration",
+  "jars" : [ {
+    "name" : "AdminConsoleServices.jar",
+    "type" : "jar"
+  } ]
+}

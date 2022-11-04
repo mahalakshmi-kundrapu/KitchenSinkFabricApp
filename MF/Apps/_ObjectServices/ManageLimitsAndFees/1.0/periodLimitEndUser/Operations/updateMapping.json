@@ -1,0 +1,27 @@
+{
+  "operationConfig" : {
+    "name" : "updatePeriodicLimitForEndUser3189",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "LimitsAndFeesIntegration",
+      "serviceVersion" : "1.0",
+      "operationName" : "updatePeriodicLimitForEndUser"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "periodLimitEndUser",
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

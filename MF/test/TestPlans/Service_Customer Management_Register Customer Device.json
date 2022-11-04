@@ -1,0 +1,150 @@
+{
+  "name" : "Register Customer Device",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/CustomerDevice/RegisterCustomerDevice",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to register a device for a customer",
+  "tests" : [ {
+    "id" : "98278207",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{ \"Device_id\":\"1234514998858\", \"username\":\"dbpolbuser\", \"Status_id\":\"SID_DEVICE_REGISTERED\", \"DeviceName\":\"One plus 5T +\", \"LastUsedIp\":\"100.23.46.22\", \"OperatingSystem\":\"Andriod\", \"channel_id\":\"CH_ID_MOB\", \"LastLoginTime\":\"2018-05-14T10:31:24\", \"appid\":\"KonyOLB\"}",
+    "testPriority" : "P3",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : null,
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "X-Kony-AC-API-Access-By" : "OLB",
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "30890261",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "79779511",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : true,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "41472980",
+    "name" : "Register Device ",
+    "testSequence" : 2,
+    "requestBody" : "{\"Device_id\":\"1234514998858\",\"username\":\"dbpolbuser\",\"Status_id\":\"SID_DEVICE_REGISTERED\",\"DeviceName\":\"One plus 5T +\",\"LastUsedIp\":\"100.23.46.22\",\"OperatingSystem\":\"Andriod\",\"channel_id\":\"CH_ID_MOB\",\"LastLoginTime\":\"2018-05-14T10:31:24\",\"appid\":\"KonyOLB\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "32564410",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "22721901",
+      "path" : "$.OperationCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "54191195",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "32515525",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "OperatingSystem",
+    "description" : "Required.Operating System",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "LastLoginTime",
+    "description" : "Required.Last login time",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Status_id",
+    "description" : "Required.Status id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Device_id",
+    "description" : "Required.Device id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channel_id",
+    "description" : "Required.channel id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "username",
+    "description" : "Required.username of the customer (Used by OLB application)",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "DeviceName",
+    "description" : "Required. Device name",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "LastUsedIp",
+    "description" : "Required.Last used IP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "Status",
+    "description" : "Determines whether the operation is successful or not.",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "RegisterResponse",
+    "description" : "Backend response",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

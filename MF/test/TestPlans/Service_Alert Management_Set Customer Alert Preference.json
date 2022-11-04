@@ -1,0 +1,173 @@
+{
+  "name" : "Set Customer Alert Preference",
+  "url" : "services/data/v1/AlertAndAlertTypes/operations/alertPreference/setAlertPreferences",
+  "moduleName" : "Alert Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to set Alert Preferences of the Customer.",
+  "tests" : [ {
+    "id" : "3561452",
+    "name" : "Set Preference",
+    "testSequence" : 1,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\",\"isSubscribed\":\"true\",\"channelPreference\":[{\"isSubscribed\":\"true\",\"channelId\":\"CH_EMAIL\"},{\"isSubscribed\":\"true\",\"channelId\":\"CH_SMS\"}],\"typePreference\":[{\"typeId\":\"MAKE_TRANSFER\",\"isSubscribed\":\"true\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "85852514",
+      "path" : "$.alertCategoryPreference.status",
+      "dataType" : "string",
+      "operator" : "equals",
+      "value" : "Success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "33295216",
+    "name" : "Set Preference - API User Auth",
+    "testSequence" : 2,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"CustomerId\":\"1\",\"isSubscribed\":\"true\",\"channelPreference\":[{\"isSubscribed\":\"true\",\"channelId\":\"CH_EMAIL\"},{\"isSubscribed\":\"true\",\"channelId\":\"CH_SMS\"}],\"typePreference\":[{\"typeId\":\"MAKE_TRANSFER\",\"isSubscribed\":\"true\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleAPIIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json",
+      "X-Kony-AC-API-Access-By" : "OLB"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "180198",
+      "path" : "$.alertCategoryPreference.status",
+      "dataType" : "string",
+      "operator" : "equalsIgnoreCase",
+      "value" : "Success",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "24053632",
+    "name" : "Invalid Payload - Missing Customer ID",
+    "testSequence" : 3,
+    "requestBody" : "{\"AlertCategoryId\":\"ALERT_CAT_TRANSACTIONAL\",\"isSubscribed\":\"true\",\"channelPreference\":[{\"isSubscribed\":\"true\",\"channelId\":\"CH_EMAIL\"},{\"isSubscribed\":\"true\",\"channelId\":\"CH_SMS\"}],\"typePreference\":[{\"typeId\":\"MAKE_TRANSFER\",\"isSubscribed\":\"true\"}]}",
+    "testPriority" : "P1",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "24135905",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20688",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "79576514",
+    "name" : "Invalid Payload - Missing Alert Category ID",
+    "testSequence" : 4,
+    "requestBody" : "{\"CustomerId\":\"1\",\"isSubscribed\":\"true\",\"channelPreference\":[{\"isSubscribed\":\"true\",\"channelId\":\"CH_EMAIL\"},{\"isSubscribed\":\"true\",\"channelId\":\"CH_SMS\"}],\"typePreference\":[{\"typeId\":\"MAKE_TRANSFER\",\"isSubscribed\":\"true\"}]}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "26701127",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20920",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "AlertCategoryId",
+    "description" : "ID of the Alert Category - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CustomerId",
+    "description" : "ID of the Customer - Mandatory",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "isSubscribed",
+    "description" : "Subscription Status of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "channelId",
+    "description" : "ID of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "typeId",
+    "description" : "ID of the Alert Type",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "customerId",
+    "description" : "ID of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "operation",
+    "description" : "Indicates if the particular Alert Type Preference was created or updated",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "alertCategoryId",
+    "description" : "ID of the Alert Category",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "status",
+    "description" : "Status of the Operation ",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "CustomerId",
+    "description" : "ID of the Customer",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "AlertTypeId",
+    "description" : "ID of the Alert type",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "ChannelId",
+    "description" : "ID of the Channel",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

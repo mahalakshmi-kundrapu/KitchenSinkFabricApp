@@ -1,0 +1,55 @@
+{
+  "name" : "Get Suggestions",
+  "url" : "services/data/v1/ServerManagementObjService/operations/maplocation/getSuggestions",
+  "moduleName" : "Location Details",
+  "httpMethod" : "POST",
+  "description" : "",
+  "tests" : [ {
+    "id" : "74486064",
+    "name" : "Fetch Suggestions",
+    "testSequence" : 1,
+    "requestBody" : "{\"api-key\":\"AIzaSyC500xsFEMna_FNtuRyuU1Lt2gYY7rR7FY\",\"input\":\"3\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "43772560",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "58522345",
+      "path" : "$.predictions[*].description",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "76861434",
+      "path" : "$.predictions[*].place_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

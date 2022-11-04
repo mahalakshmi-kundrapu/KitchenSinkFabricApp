@@ -1,0 +1,139 @@
+{
+    "description": "This service is used to edit the decision .",
+    "inputFieldsDocument": [
+        {
+            "name": "decisionName",
+            "description": "Name of the decision",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "decisionId",
+            "description": "ID of the decision",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "description",
+            "description": "Description of the decision type",
+            "isMandatory": true,
+            "range": ""
+        },
+        {
+            "name": "isActive",
+            "description": "Active status of the decision",
+            "isMandatory": false,
+            "range": ""
+        },
+        {
+            "name": "isSoftDelete",
+            "description": "Delete Status of the decision",
+            "isMandatory": false,
+            "range": ""
+        }
+    ],
+    "outputFieldsDocument": [
+        {
+            "name": "status",
+            "description": "Status of the edit decision",
+            "isMandatory": true,
+            "range": ""
+        }
+    ],
+    "name": "Edit Decision",
+    "url": "services/data/v1/DecisionManagement/operations/decision/editDecisionRule",
+    "moduleName": "Decision Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "47285478",
+            "name": "Edit Decision Rule",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"decisionName\":\"PriceSimulation\",\"description\":\"PriceSimulation\",\"decisionId\":\"DMN794f7d98-0f75-4aa9-80c6-976f710ad1aa\",\"isActive\":\"1\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "78356814",
+                    "path": "$.status",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "445015",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "96720352",
+            "name": "Empty Decision Id Check",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "{\"decisionName\":\"PriceSimulation\",\"description\":\"PriceSimulation\",\"decisionId\":\"\",\"isActive\":\"1\"}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "38753784",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "21575",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "52795144",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "5587017",
+                    "path": "$.dbpErrMsg",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                },
+                {
+                    "id": "64702680",
+                    "path": "$.status",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

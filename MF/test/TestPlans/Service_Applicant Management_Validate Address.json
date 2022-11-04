@@ -1,0 +1,169 @@
+{
+  "name" : "Validate Address",
+  "url" : "services/data/v1/ServerManagementObjService/operations/address/validateAddress",
+  "moduleName" : "Applicant Management",
+  "httpMethod" : "POST",
+  "description" : "This service is used to validate an Address",
+  "tests" : [ {
+    "id" : "45412018",
+    "name" : "Validate Address",
+    "testSequence" : 1,
+    "requestBody" : "{\"Address1\":\"\",\"Address2\":\"75 St Alphonsus St\",\"City\":\"Boston\",\"State\":\"Massachusetts\",\"Zip5\":\"02120\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "89522533",
+      "path" : "$.AddressValidateResponse[*].Address.DeliveryPoint",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "62820150",
+      "path" : "$.AddressValidateResponse[*].Address.DPVCMRA",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "56213770",
+      "path" : "$.AddressValidateResponse[*].Address.Address2",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "99566291",
+      "path" : "$.AddressValidateResponse[*].Address.City",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "54882694",
+      "path" : "$.AddressValidateResponse[*].Address.State",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "70223556",
+      "path" : "$.AddressValidateResponse[*].Address.Zip4",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "44885449",
+      "path" : "$.AddressValidateResponse[*].Address.Zip5",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "60031228",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "11070777",
+    "name" : "Empty Payload Check",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "56832756",
+      "path" : "$.AddressValidateResponse[0].Address.Error",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "26560184",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "city",
+    "description" : "city of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "State",
+    "description" : "State of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Address 1",
+    "description" : "Address 1 of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "zip5",
+    "description" : "zip5 of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "Address Line 2",
+    "description" : "Address Line 2 of the applicant",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "opstatus",
+    "description" : "status of the address validation",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "httpStatusCode",
+    "description" : "Status in HTTP",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

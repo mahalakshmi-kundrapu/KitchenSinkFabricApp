@@ -1,0 +1,186 @@
+{
+  "name" : "Create Member",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Customer/createMember",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : null,
+  "tests" : [ {
+    "id" : "34863936",
+    "name" : "Status Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"Username\":\"testuser5\",\"FirstName\":\"Test\",\"LastName\":\"User\",\"PrimaryEmail\":\"Test@kony.com\",\"PrimaryContactNumber\":\"1234567890\",\"Salutation\":\"Mr.\",\"Gender\":\"Male\",\"DateOfBirth\":\"2018-08-10T15:30:06\",\"Ssn\":\"123456789\",\"MaritalStatus_id\":\"SID_SINGLE\",\"SpouseName\":\"ana\",\"EmployementStatus_id\":\"SID_EMPLOYED\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "3851879",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "40080700",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "2429658",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "65469484",
+    "name" : "Duplicate Username Check",
+    "testSequence" : 2,
+    "requestBody" : "{\"Username\":\"testuser5\",\"FirstName\":\"Test\",\"LastName\":\"User\",\"PrimaryEmail\":\"Test@kony.com\",\"PrimaryContactNumber\":\"1234567890\",\"Salutation\":\"Mr.\",\"Gender\":\"Male\",\"DateOfBirth\":\"2018-08-10T15:30:06\",\"Ssn\":\"123456789\",\"MaritalStatus_id\":\"SID_SINGLE\",\"SpouseName\":\"ana\",\"EmployementStatus_id\":\"SID_EMPLOYED\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "83473826",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "47749766",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20877",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "18617766",
+      "path" : "$.FailureReason",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "64179969",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "55661488",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "15461672",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "89928072",
+    "name" : "Empty Username check",
+    "testSequence" : 3,
+    "requestBody" : "{\"Username\":\"\",\"FirstName\":\"Test\",\"LastName\":\"User\",\"PrimaryEmail\":\"Test@kony.com\",\"PrimaryContactNumber\":\"1234567890\",\"Salutation\":\"Mr.\",\"Gender\":\"Male\",\"DateOfBirth\":\"2018-08-10T15:30:06\",\"Ssn\":\"123456789\",\"MaritalStatus_id\":\"SID_SINGLE\",\"SpouseName\":\"ana\",\"EmployementStatus_id\":\"SID_EMPLOYED\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "44275657",
+      "path" : "$.Status",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "61575146",
+      "path" : "$.dbpErrCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "20868",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "83405128",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    }, {
+      "id" : "21119458",
+      "path" : "$.dbpErrMsg",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "29264972",
+      "path" : "$.httpStatusCode",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ ],
+  "outputFieldsDocument" : [ ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

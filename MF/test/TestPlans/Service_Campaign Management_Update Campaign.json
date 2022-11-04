@@ -1,0 +1,83 @@
+{
+    "description": "This service is used to Update the Campaign",
+    "inputFieldsDocument": [],
+    "outputFieldsDocument": [],
+    "name": "Update Campaign",
+    "url": "services/data/v1/CampaignManagementObjService/operations/campaign/updateCampaign",
+    "moduleName": "Campaign Management",
+    "httpMethod": "POST",
+    "tests": [
+        {
+            "id": "11668288",
+            "name": "Update Campaign Test",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 1,
+            "requestBody": "{\"id\":\"4c38c1b3-5051-48c9-bdb6-09279935219e\",\"name\":\"Test Campaign M9\",\"priority\":25,\"description\":\"Test Campaign description M9\",\"startDateTime\":\"09/01/2019\",\"endDateTime\":\"09/30/2019\",\"specifications\":[{\"channelId\":\"MOBILE\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageResolution\":\"343x198\",\"imageURL\":\"https://googleM9.com\",\"destinationURL\":\"https://googleM9.com\"},{\"channelId\":\"WEB\",\"screenId\":\"ACCOUNT_DASHBOARD\",\"imageResolution\":\"1170x516\",\"imageURL\":\"https://googleM9.com\",\"destinationURL\":\"https://googleM9.com\"},{\"channelId\":\"WEB\",\"screenId\":\"APPLY_FOR_NEW_ACCOUNT\",\"imageResolution\":\"1170x516\",\"imageURL\":\"https://googleM9.com\",\"destinationURL\":\"https://googleM9.com\"}]}",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "36311397",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        },
+        {
+            "id": "81524974",
+            "name": "Empty Payload Test",
+            "securityLevel": "AuthenticatedAppUser",
+            "identityService": "KonyBankingAdminConsoleIdentityService",
+            "testPriority": "P0",
+            "testSequence": 2,
+            "requestBody": "",
+            "requestHeaders": {
+                "Content-Type": "application/json"
+            },
+            "responseBodyAssertions": [
+                {
+                    "id": "97059039",
+                    "path": "$.dbpErrCode",
+                    "dataType": "number",
+                    "value": "21709",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "82224730",
+                    "path": "$.opstatus",
+                    "dataType": "number",
+                    "value": "0",
+                    "isNullable": false,
+                    "isValueAgnostic": false,
+                    "operator": "equals"
+                },
+                {
+                    "id": "46514492",
+                    "path": "$.dbpErrMsg",
+                    "dataType": "string",
+                    "value": "",
+                    "isNullable": false,
+                    "isValueAgnostic": true,
+                    "operator": ""
+                }
+            ],
+            "responseHeaderAssertions": [],
+            "customAuthBody": "",
+            "customAuthHeaders": {},
+            "isCustomAuthTest": false
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "operationConfig" : {
+    "name" : "dbxdb_loansconfigurationmasters_update2637",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"request_in\" outputpath=\"request_out\"><set-param inputpath=\"role\" outputpath=\"role\"/><set-param inputpath=\"channels\" outputpath=\"channels\"/><set-param inputpath=\"device_id\" outputpath=\"device_id\"/><set-param inputpath=\"app_version\" outputpath=\"app_version\"/><set-param inputpath=\"user_id\" outputpath=\"user_id\"/><set-param inputpath=\"bundle_id\" outputpath=\"bundle_id\"/><set-param inputpath=\"app_id\" outputpath=\"app_id\"/></map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\"><map inputpath=\"response_in\" outputpath=\"response_out\"><map inputpath=\"loansconfigurationmasters\" outputpath=\"LoansConfigurationMasters\"><set-param inputpath=\"role\" outputpath=\"role\"/><set-param inputpath=\"channels\" outputpath=\"channels\"/><set-param inputpath=\"device_id\" outputpath=\"device_id\"/><set-param inputpath=\"app_version\" outputpath=\"app_version\"/><set-param inputpath=\"user_id\" outputpath=\"user_id\"/><set-param inputpath=\"bundle_id\" outputpath=\"bundle_id\"/><set-param inputpath=\"app_id\" outputpath=\"app_id\"/></map></map></mapper>",
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "ConsumerLendingDB",
+      "serviceVersion" : "1.0",
+      "operationName" : "dbxdb_loansconfigurationmasters_update"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "LoansConfigurationMasters",
+      "actions" : {
+        "create" : true,
+        "update" : true,
+        "partialupdate" : true,
+        "delete" : true
+      },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "operationConfig" : {
+    "name" : "GetModelByMakes9243",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "iMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">    <map inputpath=\"request_in\" outputpath=\"request_out\">        <set-param inputpath=\"VehicleType\" outputpath=\"VehicleType\"/>        <set-param inputpath=\"MakeName\" outputpath=\"MakeName\"/>      <set-param inputpath=\"Year\" outputpath=\"Year\"/>    </map></mapper>",
+    "oMapping" : "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><mapper xmlns=\"http://www.kony.com/ns/mapper\">    <map inputpath=\"response_in\" outputpath=\"response_out\">        <map inputpath=\"dbpErrMsg\" outputpath=\"dbpErrMsg\" />                                      <map inputpath=\"dbpErrCode\" outputpath=\"dbpErrCode\" />                  <map inputpath=\"Results\" outputpath=\"Results\">            <set-param inputpath=\"Model_Name\" outputpath=\"Model_Name\"/>        </map>    </map></mapper>",
+    "iVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"request_in\",\"text\":\"GetMakesModel\",\"xy\":\"150 100\",\"__gohashid\":3649},{\"isGroup\":true,\"key\":\"request_out\",\"text\":\"dbpLoansLocalServicesJava (1.0).GetModelByMakes\",\"xy\":\"770 100\",\"__gohashid\":3650}],\"linkDataArray\":[{\"from\":\"source\",\"to\":\"source:GetMakesModel\",\"fromPort\":\"source\",\"toPort\":\"source:GetMakesModel\",\"visible\":true,\"common\":false,\"__gohashid\":220},{\"from\":\"source:GetMakesModel\",\"to\":\"source:GetMakesModel:fields\",\"fromPort\":\"source:GetMakesModel\",\"toPort\":\"source:GetMakesModel:fields\",\"visible\":true,\"common\":false,\"__gohashid\":221},{\"from\":\"target\",\"to\":\"target:parameters\",\"fromPort\":\"target\",\"toPort\":\"target:parameters\",\"visible\":true,\"common\":false,\"__gohashid\":222},{\"from\":\"target:parameters\",\"to\":\"target:MakeName:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:MakeName:\",\"visible\":true,\"common\":false,\"__gohashid\":223},{\"from\":\"target:parameters\",\"to\":\"target:VehicleType:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:VehicleType:\",\"visible\":true,\"common\":false,\"__gohashid\":224},{\"from\":\"target:parameters\",\"to\":\"target:Year:\",\"fromPort\":\"target:parameters\",\"toPort\":\"target:Year:\",\"visible\":true,\"common\":false,\"__gohashid\":225}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "oVisualMappingData" : "{\"nodeDataArray\":[{\"isGroup\":true,\"key\":\"response_out\",\"text\":\"GetMakesModel\",\"xy\":\"770 100\",\"__gohashid\":6523},{\"isGroup\":true,\"key\":\"response_in\",\"text\":\"dbpLoansLocalServicesJava (1.0).GetModelByMakes\",\"xy\":\"150 100\",\"__gohashid\":6524}],\"linkDataArray\":[{\"from\":\"target\",\"to\":\"target:GetMakesModel\",\"fromPort\":\"target\",\"toPort\":\"target:GetMakesModel\",\"visible\":true,\"common\":false,\"__gohashid\":12742},{\"from\":\"target:GetMakesModel\",\"to\":\"target:GetMakesModel:fields\",\"fromPort\":\"target:GetMakesModel\",\"toPort\":\"target:GetMakesModel:fields\",\"visible\":true,\"common\":false,\"__gohashid\":12743}],\"blockCount\":{\"variableCount\":0},\"variableMap\":{},\"xmlMappingOverride\":true}",
+    "applyCommonMapping" : false,
+    "applyRequestCommonMapping" : false,
+    "applyResponseCommonMapping" : false,
+    "backendMeta" : {
+      "serviceName" : "dbpLoansLocalServicesJava",
+      "serviceVersion" : "1.0",
+      "operationName" : "GetModelByMakes"
+    },
+    "relationshipHierarchyMapping" : {
+      "children" : [ ],
+      "name" : "GetMakesModel",
+      "actions" : { },
+      "selected" : true
+    },
+    "requestXmlMappingOverride" : true,
+    "responseXmlMappingOverride" : true
+  }
+}

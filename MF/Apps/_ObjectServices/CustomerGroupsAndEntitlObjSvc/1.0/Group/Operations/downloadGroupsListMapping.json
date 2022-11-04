@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "downloadGroupsList5501",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "public",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CustomerGroupsAndEntitlements",
+      "serviceVersion" : "1.0",
+      "operationName" : "downloadGroupsList"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}

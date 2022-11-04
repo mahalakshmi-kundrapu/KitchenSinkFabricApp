@@ -1,0 +1,149 @@
+{
+  "name" : "Get Notes",
+  "url" : "services/data/v1/CustomerManagementObjService/operations/Note/GetNotes",
+  "moduleName" : "Customer Management",
+  "httpMethod" : "POST",
+  "description" : "Service to fetch the notes of the customer<br>",
+  "tests" : [ {
+    "id" : "41275671",
+    "name" : "Fetch Customer Notes Check",
+    "testSequence" : 1,
+    "requestBody" : "{\"$filter\":\"Customer_id eq 1\",\"$orderby\":\"createdts\"}",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "78906279",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  }, {
+    "id" : "5351405",
+    "name" : "Empty Payload",
+    "testSequence" : 2,
+    "requestBody" : "",
+    "testPriority" : "P0",
+    "securityLevel" : "AuthenticatedAppUser",
+    "customAuthBody" : "",
+    "identityService" : "KonyBankingAdminConsoleIdentityService",
+    "isCustomAuthTest" : false,
+    "requestHeaders" : {
+      "Content-Type" : "application/json"
+    },
+    "responseBodyAssertions" : [ {
+      "id" : "10167404",
+      "path" : "$.customernotes_view[*].InternalUser_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "60631670",
+      "path" : "$.customernotes_view[*].Customer_Username",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "50320399",
+      "path" : "$.customernotes_view[*].InternalUser_Email",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "7285310",
+      "path" : "$.customernotes_view[*].Customer_Status_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "84082667",
+      "path" : "$.customernotes_view[*].Customer_id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "67248433",
+      "path" : "$.customernotes_view[*].Note",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "76998207",
+      "path" : "$.customernotes_view[*].Customer_FirstName",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "14176492",
+      "path" : "$.customernotes_view[*].id",
+      "dataType" : "string",
+      "operator" : "",
+      "value" : "",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : true
+    }, {
+      "id" : "4943657",
+      "path" : "$.opstatus",
+      "dataType" : "number",
+      "operator" : "equals",
+      "value" : "0",
+      "variableName" : null,
+      "isNullable" : false,
+      "isValueAgnostic" : false
+    } ],
+    "responseHeaderAssertions" : [ ],
+    "customAuthHeaders" : { }
+  } ],
+  "inputFieldsDocument" : [ {
+    "name" : "$filter",
+    "description" : "Required. ODATA query to filter the customer notes. Eg. { \"$filter\":\"Customer_id eq 1\", \"$orderby\":\"createdts\" } where 1 is the customer_id",
+    "isMandatory" : false,
+    "range" : ""
+  }, {
+    "name" : "$orderby",
+    "description" : "ODATA query to sort the customer notifications. Eg. { \"$filter\":\"Customer_id eq 1\", \"$orderby\":\"createdts\" } where createdts is the column name",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "outputFieldsDocument" : [ {
+    "name" : "customernotes_view",
+    "description" : "List of customer notes",
+    "isMandatory" : false,
+    "range" : ""
+  } ],
+  "inputFieldsDescription" : { },
+  "outputFieldsDescription" : { }
+}

@@ -1,0 +1,22 @@
+{
+  "operationConfig" : {
+    "name" : "CustomerAssignRoleService3822",
+    "type" : "MappedToBackend",
+    "cachable" : false,
+    "smsEnabled" : false,
+    "security" : "authorized_app_user",
+    "responseEncoding" : "UTF-8",
+    "httpMethod" : "GET",
+    "decodeResponseBody" : false,
+    "applyCommonMapping" : true,
+    "applyRequestCommonMapping" : true,
+    "applyResponseCommonMapping" : true,
+    "backendMeta" : {
+      "serviceName" : "CustomerGroupsAndEntitlements",
+      "serviceVersion" : "1.0",
+      "operationName" : "CustomerAssignRoleService"
+    },
+    "requestXmlMappingOverride" : false,
+    "responseXmlMappingOverride" : false
+  }
+}
